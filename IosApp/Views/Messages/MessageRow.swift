@@ -24,10 +24,10 @@ struct MessageRow: View {
                 .frame(width: 55, height: 55)
                 .cornerRadius(.infinity)
                 .padding(.trailing, 5)
-            VStack(alignment: .leading){
-                HStack(alignment: .center){
+            VStack(alignment: .leading, spacing: 12){
+                HStack{
                     Text(messageAutor)
-                        .fontWeight(.medium)
+                        .fontWeight(.bold)
                     if isOnline{
                         Online()
                     }
@@ -36,20 +36,20 @@ struct MessageRow: View {
                         .foregroundColor(.gray)
                         .font(.system(size: 12))
                 }
-                Spacer()
                 HStack(alignment: .center){
                     Text(lastMessage)
                         .foregroundColor(.gray)
+                        .font(.system(size: 17))
                     Spacer()
                     if !isReaded{
                         ReadStatus()
                     }
                 }
-                Spacer()
+                .offset(y: -5)
             }
-            .padding(.top, 5)
         }
-        .frame(height: 55)
+        .frame(height: 55, alignment: .center)
+        .padding(.bottom, -7)
     }
 }
 

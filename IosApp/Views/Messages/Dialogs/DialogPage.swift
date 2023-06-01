@@ -19,10 +19,9 @@ struct DialogPage: View {
     var image: String;
     
     var body: some View {
-        
         GeometryReader { reader in
             ScrollView{
-                VStack(spacing: 2){
+                VStack(spacing: 4){
                     ForEach(messages){message in
                         SendedMessage(messageText: message.text, time: "22:02", fromMe: message.fromMe)
                     }

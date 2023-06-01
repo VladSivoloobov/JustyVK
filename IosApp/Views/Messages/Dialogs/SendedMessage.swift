@@ -18,7 +18,7 @@ struct SendedMessage: View {
                 HStack(alignment: .bottom){
                     Group{
                         Text(messageText)
-                            .font(.subheadline)
+                            .font(.system(size: 17))
                             .foregroundColor(.white)
                             .fixedSize(horizontal: false, vertical: true)
                         Text(time)
@@ -27,7 +27,7 @@ struct SendedMessage: View {
                     }
                 }
                 .padding(.horizontal, 10)
-                .padding(.vertical, 5)
+                .padding(.vertical, 6)
                 .background(fromMe ? Color.blue : Color.gray)
                 .cornerRadius(15)
                 .compositingGroup()

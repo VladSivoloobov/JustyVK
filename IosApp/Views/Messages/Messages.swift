@@ -9,6 +9,7 @@ import SwiftUI
 
 struct Messages: View {
     @State var searchString = "";
+    @State var viewWidth = CGFloat.zero
     
     var body: some View {
         NavigationStack{
@@ -48,6 +49,9 @@ struct Messages: View {
                                 Label("Удалить", systemImage: "trash")
                                     .foregroundColor(.red)
                             }
+                        } preview: {
+                            DialogPage(name: dialog.name, image: dialog.image)
+                                .frame(minWidth: 0, idealWidth: 500, maxWidth: 500, minHeight: 0, idealHeight: 500, maxHeight: 500, alignment: .center)
                         }
                         .overlay{
                             NavigationLink(
