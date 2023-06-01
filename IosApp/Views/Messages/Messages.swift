@@ -21,6 +21,34 @@ struct Messages: View {
                             isOnline: dialog.isOnline,
                             avatar: dialog.image
                         )
+                        .contextMenu{
+                            Button {
+                                
+                            } label: {
+                                Label("Закрепить", systemImage: "pin")
+                            }
+                            Button {
+                                
+                            } label: {
+                                Label("Отключить уведомления", systemImage: "bell.slash")
+                            }
+                            Button {
+                                
+                            } label: {
+                                Label("Добавить в архив", systemImage: "archivebox")
+                            }
+                            Button{
+                                
+                            } label: {
+                                Label("Добавить в избранное", systemImage: "star")
+                            }
+                            Button(role: .destructive){
+                                
+                            } label: {
+                                Label("Удалить", systemImage: "trash")
+                                    .foregroundColor(.red)
+                            }
+                        }
                         .overlay{
                             NavigationLink(
                                 destination: DialogPage(name: dialog.name, image: dialog.image), label: {EmptyView()}
@@ -31,7 +59,7 @@ struct Messages: View {
                 }
                 .listSectionSeparator(.hidden)
             }
-            .listStyle(PlainListStyle())
+            .listStyle(.plain)
             .searchable(
                 text: $searchString,
                 prompt: "Поиск по сообщениям"

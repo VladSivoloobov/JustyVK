@@ -19,7 +19,7 @@ struct ContentView: View {
     var body: some View {
         TabView(selection: $selectedTab){
             Friends().tabItem{
-                Image(systemName: "person.crop.circle")
+                Image(systemName: "person.2.fill")
                 Text("Друзья")
             }
             .tag(Tabs.friends)
