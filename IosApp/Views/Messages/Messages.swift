@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Messages: View {
     @State var searchString = "";
-    @State var viewWidth = CGFloat.zero
+    @State var viewWidth = CGFloat.zero;
+    @Binding var tabBarVisibleBinding: Bool;
+    @Environment(\.isPresented) var isPresented;
     
     var body: some View {
         NavigationStack{
@@ -20,7 +22,9 @@ struct Messages: View {
                             lastMessage: dialog.lastMessage,
                             messageAutor: dialog.name,
                             isOnline: dialog.isOnline,
-                            avatar: dialog.image
+                            avatar: dialog.image,
+                            isReaded: dialog.isReaded,
+                            unreadCount: dialog.unreadCount
                         )
                         .contextMenu{
                             Button {
@@ -52,10 +56,23 @@ struct Messages: View {
                         } preview: {
                             DialogPage(name: dialog.name, image: dialog.image)
                                 .frame(minWidth: 0, idealWidth: 500, maxWidth: 500, minHeight: 0, idealHeight: 500, maxHeight: 500, alignment: .center)
+
                         }
                         .overlay{
                             NavigationLink(
-                                destination: DialogPage(name: dialog.name, image: dialog.image), label: {EmptyView()}
+                                destination: {
+                                    DialogPage(name: dialog.name, image: dialog.image)
+                                        .onAppear(){
+                                            self.tabBarVisibleBinding.toggle();
+                                        }
+                                        .onDisappear(){
+                                            withAnimation(.spring()){
+                                                self.tabBarVisibleBinding.toggle();
+                                            }
+                                        }
+                                }, label: {
+                                    EmptyView()
+                                }
                             )
                             .opacity(0)
                         }
@@ -73,10 +90,4 @@ struct Messages: View {
         }
     }
     
-}
-
-struct Messages_Previews: PreviewProvider {
-    static var previews: some View {
-        Messages()
-    }
 }

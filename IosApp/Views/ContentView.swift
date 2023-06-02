@@ -15,25 +15,31 @@ enum Tabs: String{
 
 struct ContentView: View {
     @State private var selectedTab: Tabs = .messages;
+    @State var tabBarIsHidden: Bool = false;
     
     var body: some View {
         TabView(selection: $selectedTab){
-            Friends().tabItem{
-                Image(systemName: "person.2.fill")
-                Text("Друзья")
-            }
-            .tag(Tabs.friends)
-            Messages().tabItem{
-                Image(systemName: "message")
-                Text("Сообщения")
-            }
-            .tag(Tabs.messages)
-            Settings().tabItem{
-                Image(systemName: "gear")
-                Text("Настройки")
-            }
-            .tag(Tabs.settings)
+            Friends()
+                .tabItem{
+                    Image(systemName: "person.2.fill")
+                    Text("Друзья")
+                }
+                .tag(Tabs.friends)
+            Messages(tabBarVisibleBinding: $tabBarIsHidden)
+                .tabItem{
+                    Image(systemName: "message")
+                    Text("Сообщения")
+                }
+                .tag(Tabs.messages)
+                .toolbar(tabBarIsHidden ? .hidden : .visible, for: .tabBar)
+            Settings()
+                .tabItem{
+                    Image(systemName: "gear")
+                    Text("Настройки")
+                }
+                .tag(Tabs.settings)
         }
+    
     }
 }
 

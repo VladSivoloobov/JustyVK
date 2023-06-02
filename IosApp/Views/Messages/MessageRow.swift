@@ -15,6 +15,7 @@ struct MessageRow: View {
     var avatar: String;
     var isReaded: Bool = false;
     var time: String = "10:24";
+    @State var unreadCount = 0;
     
     var body: some View {
         HStack(alignment: .top){
@@ -43,6 +44,10 @@ struct MessageRow: View {
                     Spacer()
                     if !isReaded{
                         ReadStatus()
+                    }
+                    
+                    if unreadCount > 0{
+                        UnreadCountCircle(count: unreadCount)
                     }
                 }
                 .offset(y: -5)

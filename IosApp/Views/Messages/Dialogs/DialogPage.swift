@@ -15,43 +15,53 @@ extension UINavigationController {
 }
 
 struct DialogPage: View {
+    @State var uiTabarController: UITabBarController?
     var name: String;
     var image: String;
     
     var body: some View {
-        GeometryReader { reader in
-            ScrollView{
-                VStack(spacing: 4){
-                    ForEach(messages){message in
-                        SendedMessage(messageText: message.text, time: "22:02", fromMe: message.fromMe)
+        ScrollViewReader{ scrollReader in
+            GeometryReader { reader in
+                ScrollView{
+                    VStack(spacing: 4){
+                        ForEach(0..<messages.count, id: \.self){messageIndex in
+                            let message = messages[messageIndex];
+                            SendedMessage(
+                                messageText: message.text,
+                                time: "22:02",
+                                fromMe: message.fromMe
+                            )
+                            .id(messageIndex)
+                        }
+                    }
+                    .frame(minHeight: reader.size.height - 20, alignment: .bottom)
+                    .padding(.top, 10)
+                    .padding(.leading, 7)
+                    .padding(.bottom, 10)
+                }
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar{
+                    ToolbarItem(placement: .navigationBarTrailing){
+                        Image(image)
+                            .resizable(resizingMode: .stretch)
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 40, height: 40)
+                            .cornerRadius(.infinity)
+                            .padding(.trailing, 5)
+                    }
+                    ToolbarItem(placement: .principal){
+                        Navbar(name: name)
                     }
                 }
-                .frame(minHeight: reader.size.height - 20, alignment: .bottom)
-                .padding(.vertical, 20)
-                .padding(.top, 30)
-                .padding(.leading, 7)
+                .toolbarBackground(.visible, for: .navigationBar)
             }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar{
-                ToolbarItem(placement: .navigationBarTrailing){
-                    Image(image)
-                        .resizable(resizingMode: .stretch)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 40, height: 40)
-                        .cornerRadius(.infinity)
-                        .padding(.trailing, 5)
-                }
-                ToolbarItem(placement: .principal){
-                    VStack{
-                        Text(name)
-                            .fontWeight(.medium)
-                        Text("онлайн")
-                            .font(.subheadline)
-                            .foregroundColor(.blue)
-                    }
-                }
+            .onAppear{
+                // В будущем поменять логику
+                scrollReader.scrollTo(messages.count - 1)
             }
-            .toolbarBackground(.visible, for: .navigationBar)
+            .padding(.bottom, -20)
+            MessageInput()
+                .offset(y: 10)
         }
     }
 }
