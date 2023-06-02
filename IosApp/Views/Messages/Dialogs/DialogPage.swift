@@ -22,46 +22,51 @@ struct DialogPage: View {
     var body: some View {
         ScrollViewReader{ scrollReader in
             GeometryReader { reader in
-                ScrollView{
-                    VStack(spacing: 4){
-                        ForEach(0..<messages.count, id: \.self){messageIndex in
-                            let message = messages[messageIndex];
-                            SendedMessage(
-                                messageText: message.text,
-                                time: "22:02",
-                                fromMe: message.fromMe
-                            )
-                            .id(messageIndex)
+                ZStack(){
+                    ScrollView{
+                        VStack(spacing: 4){
+                            ForEach(0..<messages.count, id: \.self){messageIndex in
+                                let message = messages[messageIndex];
+                                SendedMessage(
+                                    messageText: message.text,
+                                    time: "22:02",
+                                    fromMe: message.fromMe
+                                )
+                                .id(messageIndex)
+                            }
+                        }
+                        .frame(minHeight: reader.size.height - 20, alignment: .bottom)
+                        .padding(.top, 10)
+                        .padding(.leading, 7)
+                        .padding(.bottom, 74)
+                    }
+                    .navigationBarTitleDisplayMode(.inline)
+                    .toolbar{
+                        ToolbarItem(placement: .navigationBarTrailing){
+                            Image(image)
+                                .resizable(resizingMode: .stretch)
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 40, height: 40)
+                                .cornerRadius(.infinity)
+                                .padding(.trailing, 5)
+                        }
+                        ToolbarItem(placement: .principal){
+                            Navbar(name: name)
                         }
                     }
-                    .frame(minHeight: reader.size.height - 20, alignment: .bottom)
-                    .padding(.top, 10)
-                    .padding(.leading, 7)
-                    .padding(.bottom, 10)
+                    .toolbarBackground(.visible, for: .navigationBar)
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        Image(image)
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 40, height: 40)
-                            .cornerRadius(.infinity)
-                            .padding(.trailing, 5)
-                    }
-                    ToolbarItem(placement: .principal){
-                        Navbar(name: name)
-                    }
+                .onAppear{
+                    // В будущем поменять логику
+                    scrollReader.scrollTo(messages.count - 1)
                 }
-                .toolbarBackground(.visible, for: .navigationBar)
+                .padding(.bottom, -20)
+                VStack{
+                    Spacer()
+                    MessageInput()
+                        .offset(y: 10)
+                }
             }
-            .onAppear{
-                // В будущем поменять логику
-                scrollReader.scrollTo(messages.count - 1)
-            }
-            .padding(.bottom, -20)
-            MessageInput()
-                .offset(y: 10)
         }
     }
 }

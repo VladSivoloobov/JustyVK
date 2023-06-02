@@ -21,8 +21,8 @@ struct MessageInput: View {
             }
             ZStack(alignment: .center){
                 RoundedRectangle(cornerRadius: 20)
-                    .fill(Color.black)
-                    .frame(maxHeight: 30)
+                    .fill(Color(uiColor: UIColor.systemBackground))
+                    .frame(maxHeight: 35)
                 TextField("Сообщение", text: $messageText)
                     .padding(.horizontal, 10)
             }
@@ -37,7 +37,7 @@ struct MessageInput: View {
         .padding(.horizontal, 15)
         .padding(.bottom, 15)
         .padding(.top, 10)
-        .background(.ultraThickMaterial)
+        .background(.ultraThinMaterial)
     }
 }
 
