@@ -11,29 +11,40 @@ struct MessageInput: View {
     @State var messageText: String = "";
     
     var body: some View {
-        HStack{
+        HStack(alignment: .bottom){
             Button{
                 
             } label: {
                 Image(systemName: "paperclip")
                     .foregroundColor(.gray)
-                    .font(.system(size: 22))
+                    .font(.system(size: 25))
             }
-            ZStack(alignment: .center){
+            TextField("Сообщение", text: $messageText, axis: .vertical)
+            .padding(.horizontal, 10)
+            .lineLimit(0...30)
+            .frame(minHeight: 20, maxHeight: 180)
+            .background(
                 RoundedRectangle(cornerRadius: 20)
                     .fill(Color(uiColor: UIColor.systemBackground))
-                    .frame(maxHeight: 35)
-                TextField("Сообщение", text: $messageText)
-                    .padding(.horizontal, 10)
+                    .padding(.vertical, -2)
+        
+            )
+            Button{
+                
+            } label: {
+                Image(systemName: "face.smiling")
+                    .foregroundColor(.gray)
+                    .font(.system(size: 25))
             }
             Button{
                 
             } label: {
                 Image(systemName: "mic")
                     .foregroundColor(.gray)
-                    .font(.system(size: 22))
+                    .font(.system(size: 25))
             }
         }
+        .fixedSize(horizontal: false, vertical: true)
         .padding(.horizontal, 15)
         .padding(.bottom, 15)
         .padding(.top, 10)
