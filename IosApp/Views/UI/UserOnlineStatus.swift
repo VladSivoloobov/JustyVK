@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Online: View {
+struct UserOnlineStatus: View {
     @State var isOnline = false;
     var body: some View {
         Circle()
@@ -18,6 +18,6 @@ struct Online: View {
 
 struct Online_Previews: PreviewProvider {
     static var previews: some View {
-        Online()
+        UserOnlineStatus()
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SendedMessage: View {
+struct MessageCloud: View {
     var messageText: String;
     var time: String;
     var fromMe: Bool = true;
@@ -71,6 +71,6 @@ struct SendedMessage: View {
 
 struct SendedMessage_Previews: PreviewProvider {
     static var previews: some View {
-        SendedMessage(messageText: "Привет", time: "22:02", fromMe: false)
+        MessageCloud(messageText: "Привет", time: "22:02", fromMe: false)
     }
 }

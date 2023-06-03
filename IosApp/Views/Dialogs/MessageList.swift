@@ -14,7 +14,7 @@ extension UINavigationController {
   }
 }
 
-struct DialogPage: View {
+struct MessageList: View {
     @State var uiTabarController: UITabBarController?
     @State var name: String;
     @State var image: String;
@@ -27,7 +27,7 @@ struct DialogPage: View {
                         VStack(spacing: 4){
                             ForEach(0..<messages.count, id: \.self){messageIndex in
                                 let message = messages[messageIndex];
-                                SendedMessage(
+                                MessageCloud(
                                     messageText: message.text,
                                     time: "22:02",
                                     fromMe: message.fromMe
@@ -51,7 +51,7 @@ struct DialogPage: View {
                                 .padding(.trailing, 5)
                         }
                         ToolbarItem(placement: .principal){
-                            Navbar(name: name)
+                            MessageNavbar(name: name)
                         }
                     }
                     .toolbarBackground(.visible, for: .navigationBar)
@@ -74,7 +74,7 @@ struct DialogPage: View {
 
 struct DialogPage_Previews: PreviewProvider {
     static var previews: some View {
-        DialogPage(name: "Анна Гростимова", image: "Avatar")
+        MessageList(name: "Анна Гростимова", image: "Avatar")
             .previewLayout(.fixed(width: 320, height: 600))
             .padding(.vertical, 10)
     }

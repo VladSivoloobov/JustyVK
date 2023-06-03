@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Navbar: View {
+struct MessageNavbar: View {
     @State private var bottomSheetOpened = false;
     var name: String;
     
@@ -31,6 +31,6 @@ struct Navbar: View {
 
 struct Navbar_Previews: PreviewProvider {
     static var previews: some View {
-        Navbar(name: "Арина Мануйлова")
+        MessageNavbar(name: "Арина Мануйлова")
     }
 }

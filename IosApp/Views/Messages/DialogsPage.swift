@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Messages: View {
+struct DialogsListPage: View {
     @State var searchString = "";
     @State var viewWidth = CGFloat.zero;
     @Binding var tabBarVisibleBinding: Bool;
@@ -18,7 +18,7 @@ struct Messages: View {
             List{
                 Section{
                     ForEach(dialogs){ dialog in
-                        MessageRow(
+                        DialogRow(
                             lastMessage: dialog.lastMessage,
                             messageAutor: dialog.name,
                             isOnline: dialog.isOnline,
@@ -61,14 +61,14 @@ struct Messages: View {
                                     .foregroundColor(.red)
                             }
                         } preview: {
-                            DialogPage(name: dialog.name, image: dialog.image)
+                            DialogWithPersonPage(name: dialog.name, image: dialog.image)
                                 .frame(minWidth: 0, idealWidth: 500, maxWidth: 500, minHeight: 0, idealHeight: 500, maxHeight: 500, alignment: .center)
 
                         }
                         .overlay{
                             NavigationLink(
                                 destination: {
-                                    DialogPage(name: dialog.name, image: dialog.image)
+                                    DialogWithPersonPage(name: dialog.name, image: dialog.image)
                                         .onAppear(){
                                             self.tabBarVisibleBinding.toggle();
                                         }

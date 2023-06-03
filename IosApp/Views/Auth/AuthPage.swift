@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftyVK
 
-struct Login: View {
+struct AuthPage: View {
     func application(
         _ application: UIApplication,
         open url: URL,
@@ -29,6 +29,6 @@ struct Login: View {
 
 struct Login_Previews: PreviewProvider {
     static var previews: some View {
-        Login()
+        AuthPage()
     }
 }

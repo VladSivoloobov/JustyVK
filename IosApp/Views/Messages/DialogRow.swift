@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MessageRow: View {
+struct DialogRow: View {
     @State var lastMessage: String;
     @State var messageAutor: String;
     @State var messageAvatar: Image?;
@@ -26,7 +26,7 @@ struct MessageRow: View {
                 .cornerRadius(.infinity)
                 .padding(.trailing, 5)
                 .overlay(
-                    Online(isOnline: isOnline)
+                    UserOnlineStatus(isOnline: isOnline)
                         .frame(width: 55, height: 55, alignment: .bottomTrailing)
                         .offset(x: -3, y: -2)
                 )
@@ -50,7 +50,7 @@ struct MessageRow: View {
                         .frame(maxHeight: 55, alignment: .top)
                     Spacer()
                     if !isReaded{
-                        ReadStatus()
+                        UserReadMessageStatus()
                     }
                 }
                 .frame(maxHeight: 55)
@@ -64,7 +64,7 @@ struct MessageRow: View {
 
 struct Message_Previews: PreviewProvider {
     static var previews: some View {
-        MessageRow(lastMessage: "Привет", messageAutor: "Анна Гростимова", isOnline: true, avatar: "Avatar")
+        DialogRow(lastMessage: "Привет", messageAutor: "Анна Гростимова", isOnline: true, avatar: "Avatar")
             .previewLayout(.fixed(width: 350, height: 90))
     }
 }

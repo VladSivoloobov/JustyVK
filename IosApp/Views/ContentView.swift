@@ -20,13 +20,13 @@ struct ContentView: View {
     var body: some View {
         // TODO: Сделать кастомный таббар
         TabView(selection: $selectedTab){
-            Friends()
+            FriendsPage()
                 .tabItem{
                     Image(systemName: "person.2.fill")
                     Text("Друзья")
                 }
                 .tag(Tabs.friends)
-            Messages(tabBarVisibleBinding: $tabBarIsHidden)
+            DialogList(tabBarVisibleBinding: $tabBarIsHidden)
                 .tabItem{
                     Image(systemName: "message")
                     Text("Сообщения")

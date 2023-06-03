@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Friends: View {
+struct FriendsPage: View {
     @State var searchableFriendsText: String = "";
     
     var body: some View {
@@ -43,6 +43,6 @@ struct Friends: View {
 
 struct Friends_Previews: PreviewProvider {
     static var previews: some View {
-        Friends()
+        FriendsPage()
     }
 }

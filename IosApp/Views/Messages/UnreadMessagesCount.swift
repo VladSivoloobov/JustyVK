@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UnreadCountCircle: View {
+struct UnreadMessagesCount: View {
     @State var count: Int;
     var body: some View {
         Text("\(count)")
@@ -21,6 +21,6 @@ struct UnreadCountCircle: View {
 
 struct UnreadCountCircle_Previews: PreviewProvider {
     static var previews: some View {
-        UnreadCountCircle(count: 5)
+        UnreadMessagesCount(count: 5)
     }
 }
