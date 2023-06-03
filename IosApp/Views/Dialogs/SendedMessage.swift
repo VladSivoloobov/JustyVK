@@ -37,25 +37,25 @@ struct SendedMessage: View {
                 .compositingGroup()
                 .contextMenu{
                     Button{
-                        /* Логика копирования */
+                        // TODO: Добавить возможность копирования текста сообщения в буфер обмена
                         
                     } label: {
                         Label("Скопировать", systemImage: "doc.on.doc")
                     }
                     Button{
-                        /* Логика ответа */
+                        // TODO: Добавить возможность ответа на сообщение в текущем диалоге
                         
                     } label : {
                         Label("Ответить", systemImage: "arrowshape.turn.up.left")
                     }
                     Button{
-                        /* Логика пересылки */
+                        // TODO: Добавить возможность пересылки сообщения в другой диалог
                         
                     } label : {
                         Label("Переслать", systemImage: "arrowshape.turn.up.left.2")
                     }
                     Button(role: .destructive){
-                        /* Логика пересылки */
+                        // TODO: Добавить возможность удаления сообщения для одного или обоих участников
                         
                     } label : {
                         Label("Удалить", systemImage: "trash")

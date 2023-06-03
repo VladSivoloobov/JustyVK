@@ -13,7 +13,7 @@ struct MessageInput: View {
     var body: some View {
         HStack(alignment: .bottom){
             Button{
-                
+                // TODO: Добавить возможность прикрепления вложений к сообщению
             } label: {
                 Image(systemName: "paperclip")
                     .foregroundColor(.gray)
@@ -31,14 +31,14 @@ struct MessageInput: View {
             )
             if messageText.isEmpty {
                 Button{
-                    
+                    // TODO: Добавить возможность отправки стикеров через боттом шит
                 } label: {
                     Image(systemName: "face.smiling")
                         .foregroundColor(.gray)
                         .font(.system(size: 25))
                 }
                 Button{
-                    
+                    // TODO: Добавить возможность отправки голосовых сообщений и видеосообщений
                 } label: {
                     Image(systemName: "mic")
                         .foregroundColor(.gray)
@@ -47,7 +47,7 @@ struct MessageInput: View {
             }
             else {
                 Button {
-                    
+                    // TODO: Добавить возможность отправки сообщений
                 } label: {
                     Image(systemName: "arrow.up.circle.fill")
                         .font(.system(size: 27))

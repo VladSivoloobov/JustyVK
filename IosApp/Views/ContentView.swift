@@ -18,6 +18,7 @@ struct ContentView: View {
     @State var tabBarIsHidden: Bool = false;
     
     var body: some View {
+        // TODO: Сделать кастомный таббар
         TabView(selection: $selectedTab){
             Friends()
                 .tabItem{

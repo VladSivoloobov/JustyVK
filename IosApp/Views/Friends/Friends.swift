@@ -22,12 +22,13 @@ struct Friends: View {
                 .searchable(
                     text: $searchableFriendsText,
                     prompt: "Поиск по друзьям"
+                    // TODO: Добавить возможность поиска друзей
                 )
                 .navigationTitle("Друзья")
                 .toolbar{
                     ToolbarItemGroup(placement: .navigationBarTrailing){
                         Button{
-                            
+                            // TODO: Добавить возможность сортировки друзей по алфавиту и по статусу онлайн
                         } label: {
                             Label("Сортировка", systemImage: "arrow.up.arrow.down")
                                 .foregroundColor(.blue)

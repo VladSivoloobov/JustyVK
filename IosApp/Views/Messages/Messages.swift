@@ -28,34 +28,34 @@ struct Messages: View {
                         )
                         .swipeActions{
                             Button(role: .destructive) {
-                                
+                                // TODO: Добавить экшн баттон для удаления
                             } label: {
                                 Label("Добавить в архив", systemImage: "trash")
                             }
                         }
                         .contextMenu{
                             Button {
-                                
+                                // TODO: Добавить контекстную кнопку закреления
                             } label: {
                                 Label("Закрепить", systemImage: "pin")
                             }
                             Button {
-                                
+                                // TODO: Добавить контекстную кнопку отключения уведомлений
                             } label: {
                                 Label("Отключить уведомления", systemImage: "bell.slash")
                             }
                             Button {
-                                
+                                // TODO: Добавить кнопку добавления в архив
                             } label: {
                                 Label("Добавить в архив", systemImage: "archivebox")
                             }
                             Button{
-                                
+                                // TODO: Добавить кнопку добавления в избранное
                             } label: {
                                 Label("Добавить в избранное", systemImage: "star")
                             }
                             Button(role: .destructive){
-                                
+                                // TODO: Добавить кнопку удаления
                             } label: {
                                 Label("Удалить", systemImage: "trash")
                                     .foregroundColor(.red)
@@ -97,12 +97,12 @@ struct Messages: View {
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
                     Button{
-                        
+                        // TODO: Здесь нужно сделать работающей кнопку архива, в нём будет список чатов, которые пользователь скрыл
                     } label: {
                         Image(systemName: "archivebox.fill")
                     }
                     Button{
-                        
+                        // TODO: Здесь нужно сделать кнопку с закладкам, закладка это любой чат, пользователь или контент, который был помечен, как "закладка"
                     } label: {
                         Image(systemName: "bookmark.fill")
                     }

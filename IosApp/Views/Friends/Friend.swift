@@ -13,6 +13,7 @@ struct FriendRow: View {
     @State var image: String;
     
     var body: some View {
+        // TODO: Сделать возможность просмотра профиля
         HStack(alignment: .top){
             Image(image)
                 .resizable(resizingMode: .stretch)

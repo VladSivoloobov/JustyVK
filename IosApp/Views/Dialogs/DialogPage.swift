@@ -57,7 +57,7 @@ struct DialogPage: View {
                     .toolbarBackground(.visible, for: .navigationBar)
                 }
                 .onAppear{
-                    // В будущем поменять логику
+                    // TODO: При взаимодействии с api изменить скролл
                     scrollReader.scrollTo(messages.count - 1)
                 }
                 .padding(.bottom, -20)
