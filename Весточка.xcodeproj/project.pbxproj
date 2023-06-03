@@ -21,7 +21,7 @@
 		869CBDE72A27FA57006171DD /* SendedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CBDE62A27FA57006171DD /* SendedMessage.swift */; };
 		86B897B02A27D13D00D0D633 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B897AF2A27D13D00D0D633 /* Login.swift */; };
 		86B897B32A27D32700D0D633 /* VKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B897B22A27D32700D0D633 /* VKDelegate.swift */; };
-		86FB95982A2113660069BFA1 /* IosAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB95972A2113660069BFA1 /* IosAppApp.swift */; };
+		86FB95982A2113660069BFA1 /* AppInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB95972A2113660069BFA1 /* AppInstance.swift */; };
 		86FB959A2A2113660069BFA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB95992A2113660069BFA1 /* ContentView.swift */; };
 		86FB959C2A2113680069BFA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FB959B2A2113680069BFA1 /* Assets.xcassets */; };
 		86FB959F2A2113680069BFA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86FB959E2A2113680069BFA1 /* Preview Assets.xcassets */; };
@@ -43,11 +43,11 @@
 		867EC29B2A2957500003645F /* DialogNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogNavbar.swift; sourceTree = "<group>"; };
 		867EC29D2A295AE80003645F /* UnreadCountCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnreadCountCircle.swift; sourceTree = "<group>"; };
 		869CBDE62A27FA57006171DD /* SendedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendedMessage.swift; sourceTree = "<group>"; };
-		86B897AC2A27D0C000D0D633 /* IosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86B897AC2A27D0C000D0D633 /* Весточка.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Весточка.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B897AF2A27D13D00D0D633 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		86B897B22A27D32700D0D633 /* VKDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VKDelegate.swift; sourceTree = "<group>"; };
 		86B897B42A27DE7500D0D633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		86FB95972A2113660069BFA1 /* IosAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosAppApp.swift; sourceTree = "<group>"; };
+		86FB95972A2113660069BFA1 /* AppInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInstance.swift; sourceTree = "<group>"; };
 		86FB95992A2113660069BFA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		86FB959B2A2113680069BFA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		86FB959E2A2113680069BFA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -133,7 +133,7 @@
 				86FB95962A2113660069BFA1 /* IosApp */,
 				BCA91F9492B002EF1FF59CFF /* Pods */,
 				0BA171BFDF686112A48D4262 /* Frameworks */,
-				86B897AC2A27D0C000D0D633 /* IosApp.app */,
+				86B897AC2A27D0C000D0D633 /* Весточка.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -143,7 +143,7 @@
 				86B897B42A27DE7500D0D633 /* Info.plist */,
 				86FB959D2A2113680069BFA1 /* Preview Content */,
 				86FB959B2A2113680069BFA1 /* Assets.xcassets */,
-				86FB95972A2113660069BFA1 /* IosAppApp.swift */,
+				86FB95972A2113660069BFA1 /* AppInstance.swift */,
 				860FC3A32A26188B00922426 /* Model */,
 				860FC3A22A26181A00922426 /* Views */,
 			);
@@ -170,9 +170,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86FB95932A2113660069BFA1 /* IosApp */ = {
+		86FB95932A2113660069BFA1 /* Весточка */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86FB95A22A2113680069BFA1 /* Build configuration list for PBXNativeTarget "IosApp" */;
+			buildConfigurationList = 86FB95A22A2113680069BFA1 /* Build configuration list for PBXNativeTarget "Весточка" */;
 			buildPhases = (
 				F04B4023284610B6B8871630 /* [CP] Check Pods Manifest.lock */,
 				86FB95902A2113660069BFA1 /* Sources */,
@@ -184,9 +184,9 @@
 			);
 			dependencies = (
 			);
-			name = IosApp;
+			name = "Весточка";
 			productName = IosApp;
-			productReference = 86B897AC2A27D0C000D0D633 /* IosApp.app */;
+			productReference = 86B897AC2A27D0C000D0D633 /* Весточка.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -204,7 +204,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86FB958F2A2113660069BFA1 /* Build configuration list for PBXProject "IosApp" */;
+			buildConfigurationList = 86FB958F2A2113660069BFA1 /* Build configuration list for PBXProject "Весточка" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -217,7 +217,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86FB95932A2113660069BFA1 /* IosApp */,
+				86FB95932A2113660069BFA1 /* Весточка */,
 			);
 		};
 /* End PBXProject section */
@@ -295,7 +295,7 @@
 				8624F3EB2A26C36800FA20B1 /* ReadStatus.swift in Sources */,
 				867EC29C2A2957500003645F /* DialogNavbar.swift in Sources */,
 				867EC29E2A295AE80003645F /* UnreadCountCircle.swift in Sources */,
-				86FB95982A2113660069BFA1 /* IosAppApp.swift in Sources */,
+				86FB95982A2113660069BFA1 /* AppInstance.swift in Sources */,
 				86B897B32A27D32700D0D633 /* VKDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,7 +486,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86FB958F2A2113660069BFA1 /* Build configuration list for PBXProject "IosApp" */ = {
+		86FB958F2A2113660069BFA1 /* Build configuration list for PBXProject "Весточка" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86FB95A02A2113680069BFA1 /* Debug */,
@@ -495,7 +495,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86FB95A22A2113680069BFA1 /* Build configuration list for PBXNativeTarget "IosApp" */ = {
+		86FB95A22A2113680069BFA1 /* Build configuration list for PBXNativeTarget "Весточка" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86FB95A32A2113680069BFA1 /* Debug */,

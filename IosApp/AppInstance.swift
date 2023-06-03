@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct IosAppApp: App {
+struct AppInstance: App {
     init(){
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Отмена"
     }

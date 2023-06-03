@@ -37,9 +37,9 @@ struct DialogPage: View {
                         }
                         .frame(minHeight: reader.size.height - 20, alignment: .bottom)
                         .padding(.top, 10)
-                        .padding(.leading, 7)
                         .padding(.bottom, 74)
                     }
+                    .scrollIndicators(.hidden)
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar{
                         ToolbarItem(placement: .navigationBarTrailing){
@@ -61,6 +61,7 @@ struct DialogPage: View {
                     scrollReader.scrollTo(messages.count - 1)
                 }
                 .padding(.bottom, -20)
+                
                 VStack{
                     Spacer()
                     MessageInput()

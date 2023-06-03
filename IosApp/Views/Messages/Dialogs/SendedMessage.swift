@@ -28,7 +28,11 @@ struct SendedMessage: View {
                 }
                 .padding(.horizontal, 10)
                 .padding(.vertical, 6)
-                .background(fromMe ? Color.blue : Color.gray)
+                .background(
+                    fromMe
+                    ? Color.blue
+                    : Color(red: 35 / 255, green: 35 / 255, blue: 36 / 255)
+                )
                 .cornerRadius(15)
                 .compositingGroup()
                 .contextMenu{
@@ -61,12 +65,12 @@ struct SendedMessage: View {
             .frame(maxWidth: 300, alignment: fromMe ? .trailing : .leading)
         }
         .frame(maxWidth: .infinity, alignment: fromMe ? .trailing : .leading)
-        .padding(.horizontal, 7)
+        .padding(.horizontal, 5)
     }
 }
 
 struct SendedMessage_Previews: PreviewProvider {
     static var previews: some View {
-        SendedMessage(messageText: "Привет", time: "22:02")
+        SendedMessage(messageText: "Привет", time: "22:02", fromMe: false)
     }
 }
