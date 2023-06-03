@@ -16,8 +16,8 @@ extension UINavigationController {
 
 struct DialogPage: View {
     @State var uiTabarController: UITabBarController?
-    var name: String;
-    var image: String;
+    @State var name: String;
+    @State var image: String;
     
     var body: some View {
         ScrollViewReader{ scrollReader in

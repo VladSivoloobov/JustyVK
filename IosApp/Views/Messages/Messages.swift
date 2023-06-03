@@ -101,6 +101,11 @@ struct Messages: View {
                     } label: {
                         Image(systemName: "archivebox.fill")
                     }
+                    Button{
+                        
+                    } label: {
+                        Image(systemName: "bookmark.fill")
+                    }
                 }
             }
         }

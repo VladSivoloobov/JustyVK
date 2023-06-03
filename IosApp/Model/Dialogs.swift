@@ -21,12 +21,12 @@ struct Dialog: Identifiable{
 
 var dialogs: [Dialog] = [
     Dialog(name: "Анна Иванова", lastMessage: "Привет", image: "Avatar", isOnline: true, isReaded: true),
-    Dialog(name: "Иван Петров", lastMessage: "Вы: Она просто дура", image: "Avatar2", isOnline: false, isReaded: false),
-    Dialog(name: "Мария Сидорова", lastMessage: "Вы: Не знаю", image: "Avatar3", isOnline: false, isReaded: false),
+    Dialog(name: "Иван Петров", lastMessage: "Она просто дура", image: "Avatar2", isOnline: false, isReaded: false),
+    Dialog(name: "Мария Сидорова", lastMessage: "Не знаю", image: "Avatar3", isOnline: false, isReaded: false),
     Dialog(name: "Алексей Кузнецов", lastMessage: "Как дела?", image: "Avatar4", isOnline: false, isReaded: true),
-    Dialog(name: "Елена Николаева", lastMessage: "Вы: Давай познакомимся, красавчик", image: "Avatar5", isOnline: false, isReaded: false),
-    Dialog(name: "Николай Ивановичев", lastMessage: "Вы: Извини", image: "Avatar7", isOnline: false, isReaded: false),
-    Dialog(name: "Ольга Смирнова", lastMessage: "Да ладно тебе", image: "Avatar6", isOnline: false, isReaded: false),
+    Dialog(name: "Елена Николаева", lastMessage: "Давай познакомимся, красавчик", image: "Avatar5", isOnline: false, isReaded: false),
+    Dialog(name: "Николай Ивановичев", lastMessage: "Извини", image: "Avatar7", isOnline: false, isReaded: false),
+    Dialog(name: "Ольга Смирнова", lastMessage: "Да ладно тебе, я итак знаю про созданных тварей в афганском приводе, и всё же непонятно только одно, как это возможно", image: "Avatar6", isOnline: false, isReaded: false),
     Dialog(name: "Дмитрий Козлов", lastMessage: "ахаххаххах", image: "Avatar8", isOnline: false, isReaded: false)
 ];
 

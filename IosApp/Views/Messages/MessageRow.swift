@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct MessageRow: View {
-    var lastMessage: String;
-    var messageAutor: String;
-    var messageAvatar: Image?;
-    var isOnline: Bool;
-    var avatar: String;
-    var isReaded: Bool = false;
-    var time: String = "10:24";
+    @State var lastMessage: String;
+    @State var messageAutor: String;
+    @State var messageAvatar: Image?;
+    @State var isOnline: Bool;
+    @State var avatar: String;
+    @State var isReaded: Bool = false;
+    @State var time: String = "10:24";
     @State var unreadCount = 0;
     
     var body: some View {
@@ -25,32 +25,35 @@ struct MessageRow: View {
                 .frame(width: 55, height: 55)
                 .cornerRadius(.infinity)
                 .padding(.trailing, 5)
+                .overlay(
+                    Online(isOnline: isOnline)
+                        .frame(width: 55, height: 55, alignment: .bottomTrailing)
+                        .offset(x: -3, y: -2)
+                )
             
-            VStack(alignment: .leading, spacing: 12){
+            VStack(alignment: .leading, spacing: 5){
                 HStack{
                     Text(messageAutor)
                         .fontWeight(.medium)
-                    if isOnline{
-                        Online()
-                    }
                     Spacer()
                     Text(time)
                         .foregroundColor(.gray)
-                        .font(.system(size: 12))
+                        .font(.system(size: 14))
+                        .fontWeight(.medium)
                 }
-                HStack(alignment: .center){
+                HStack(){
                     Text(lastMessage)
                         .foregroundColor(.gray)
-                        .font(.system(size: 17))
+                        .font(.system(size: 15))
+                        .fixedSize(horizontal: false, vertical: true)
+                        .lineLimit(1...2)
+                        .frame(maxHeight: 55, alignment: .top)
                     Spacer()
                     if !isReaded{
                         ReadStatus()
                     }
-                    
-                    if unreadCount > 0{
-                        UnreadCountCircle(count: unreadCount)
-                    }
                 }
+                .frame(maxHeight: 55)
                 .offset(y: -5)
             }
         }
