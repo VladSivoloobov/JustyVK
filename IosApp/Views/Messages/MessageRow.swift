@@ -25,10 +25,11 @@ struct MessageRow: View {
                 .frame(width: 55, height: 55)
                 .cornerRadius(.infinity)
                 .padding(.trailing, 5)
+            
             VStack(alignment: .leading, spacing: 12){
                 HStack{
                     Text(messageAutor)
-                        .fontWeight(.bold)
+                        .fontWeight(.medium)
                     if isOnline{
                         Online()
                     }

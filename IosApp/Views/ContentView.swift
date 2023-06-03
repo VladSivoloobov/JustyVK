@@ -39,7 +39,7 @@ struct ContentView: View {
                 }
                 .tag(Tabs.settings)
         }
-    
+        .zIndex(-1)
     }
 }
 

@@ -26,6 +26,13 @@ struct Messages: View {
                             isReaded: dialog.isReaded,
                             unreadCount: dialog.unreadCount
                         )
+                        .swipeActions{
+                            Button(role: .destructive) {
+                                
+                            } label: {
+                                Label("Добавить в архив", systemImage: "trash")
+                            }
+                        }
                         .contextMenu{
                             Button {
                                 
@@ -87,6 +94,15 @@ struct Messages: View {
             )
             .toolbarBackground(.visible, for: .tabBar)
             .navigationTitle("Сообщения")
+            .toolbar{
+                ToolbarItemGroup(placement: .navigationBarTrailing){
+                    Button{
+                        
+                    } label: {
+                        Image(systemName: "archivebox.fill")
+                    }
+                }
+            }
         }
     }
     

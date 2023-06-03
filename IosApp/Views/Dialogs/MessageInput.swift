@@ -29,21 +29,33 @@ struct MessageInput: View {
                     .padding(.vertical, -2)
         
             )
-            Button{
-                
-            } label: {
-                Image(systemName: "face.smiling")
-                    .foregroundColor(.gray)
-                    .font(.system(size: 25))
+            if messageText.isEmpty {
+                Button{
+                    
+                } label: {
+                    Image(systemName: "face.smiling")
+                        .foregroundColor(.gray)
+                        .font(.system(size: 25))
+                }
+                Button{
+                    
+                } label: {
+                    Image(systemName: "mic")
+                        .foregroundColor(.gray)
+                        .font(.system(size: 25))
+                }
             }
-            Button{
-                
-            } label: {
-                Image(systemName: "mic")
-                    .foregroundColor(.gray)
-                    .font(.system(size: 25))
+            else {
+                Button {
+                    
+                } label: {
+                    Image(systemName: "arrow.up.circle.fill")
+                        .font(.system(size: 27))
+                        .foregroundColor(.blue)
+                }
             }
         }
+        .animation(.easeOut(duration: 0.1), value: messageText)
         .fixedSize(horizontal: false, vertical: true)
         .padding(.horizontal, 15)
         .padding(.bottom, 15)

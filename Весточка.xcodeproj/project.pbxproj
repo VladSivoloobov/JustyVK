@@ -18,6 +18,7 @@
 		866667002A2A10CB0089A054 /* MessageInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866666FF2A2A10CB0089A054 /* MessageInput.swift */; };
 		867EC29C2A2957500003645F /* DialogNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EC29B2A2957500003645F /* DialogNavbar.swift */; };
 		867EC29E2A295AE80003645F /* UnreadCountCircle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EC29D2A295AE80003645F /* UnreadCountCircle.swift */; };
+		8686099C2A2B81F000611BC6 /* Friend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686099B2A2B81F000611BC6 /* Friend.swift */; };
 		869CBDE72A27FA57006171DD /* SendedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CBDE62A27FA57006171DD /* SendedMessage.swift */; };
 		86B897B02A27D13D00D0D633 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B897AF2A27D13D00D0D633 /* Login.swift */; };
 		86B897B32A27D32700D0D633 /* VKDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B897B22A27D32700D0D633 /* VKDelegate.swift */; };
@@ -42,6 +43,7 @@
 		866666FF2A2A10CB0089A054 /* MessageInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInput.swift; sourceTree = "<group>"; };
 		867EC29B2A2957500003645F /* DialogNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogNavbar.swift; sourceTree = "<group>"; };
 		867EC29D2A295AE80003645F /* UnreadCountCircle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnreadCountCircle.swift; sourceTree = "<group>"; };
+		8686099B2A2B81F000611BC6 /* Friend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Friend.swift; sourceTree = "<group>"; };
 		869CBDE62A27FA57006171DD /* SendedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendedMessage.swift; sourceTree = "<group>"; };
 		86B897AC2A27D0C000D0D633 /* Весточка.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Весточка.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86B897AF2A27D13D00D0D633 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -78,10 +80,11 @@
 			isa = PBXGroup;
 			children = (
 				86FB95992A2113660069BFA1 /* ContentView.swift */,
+				869CBDE82A27FA61006171DD /* Dialogs */,
 				86B897B12A27D14200D0D633 /* Auth */,
 				8624F3E32A266E8800FA20B1 /* Messages */,
 				8624F3DD2A266CE900FA20B1 /* Settings.swift */,
-				8624F3DF2A266D2A00FA20B1 /* Friends.swift */,
+				8686099A2A2B812600611BC6 /* Friends */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -102,10 +105,18 @@
 				8624F3E12A266E7F00FA20B1 /* MessageRow.swift */,
 				8624F3E42A26748700FA20B1 /* Online.swift */,
 				8624F3EA2A26C36800FA20B1 /* ReadStatus.swift */,
-				869CBDE82A27FA61006171DD /* Dialogs */,
 				867EC29D2A295AE80003645F /* UnreadCountCircle.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		8686099A2A2B812600611BC6 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				8624F3DF2A266D2A00FA20B1 /* Friends.swift */,
+				8686099B2A2B81F000611BC6 /* Friend.swift */,
+			);
+			path = Friends;
 			sourceTree = "<group>";
 		};
 		869CBDE82A27FA61006171DD /* Dialogs */ = {
@@ -295,6 +306,7 @@
 				8624F3EB2A26C36800FA20B1 /* ReadStatus.swift in Sources */,
 				867EC29C2A2957500003645F /* DialogNavbar.swift in Sources */,
 				867EC29E2A295AE80003645F /* UnreadCountCircle.swift in Sources */,
+				8686099C2A2B81F000611BC6 /* Friend.swift in Sources */,
 				86FB95982A2113660069BFA1 /* AppInstance.swift in Sources */,
 				86B897B32A27D32700D0D633 /* VKDelegate.swift in Sources */,
 			);
