@@ -6,19 +6,26 @@
 //
 
 import SwiftUI
+import PhotosUI
 
 struct MessageInput: View {
     @State var messageText: String = "";
+    @State var photosPickerIsActive: Bool = false;
+    @State var selectedPhotos = [Image]();
+    @State var selectedPhotosItems = [PhotosPickerItem]();
     
     var body: some View {
         HStack(alignment: .bottom){
-            Button{
-                // TODO: Добавить возможность прикрепления вложений к сообщению
-            } label: {
+            // TODO: Реализовать прикрепление и отправку вложений на сервер вк через vk api
+            PhotosPicker(
+                selection: $selectedPhotosItems,
+                matching: .any(of: [.images, .videos])
+            ){
                 Image(systemName: "paperclip")
                     .foregroundColor(.gray)
                     .font(.system(size: 25))
             }
+            
             TextField("Сообщение", text: $messageText, axis: .vertical)
             .padding(.horizontal, 10)
             .lineLimit(0...30)

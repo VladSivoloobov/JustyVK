@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-// TODO: Переименовать все структуры на нормальные названия
-
 @main
 struct AppInstance: App {
     init(){

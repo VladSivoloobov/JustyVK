@@ -81,10 +81,10 @@
 			children = (
 				86FB95992A2113660069BFA1 /* ContentView.swift */,
 				866DF0922A2C073800EFE771 /* UI */,
-				869CBDE82A27FA61006171DD /* Dialogs */,
+				869CBDE82A27FA61006171DD /* Messages */,
 				86B897B12A27D14200D0D633 /* Auth */,
 				8686099A2A2B812600611BC6 /* Friends */,
-				8624F3E32A266E8800FA20B1 /* Messages */,
+				8624F3E32A266E8800FA20B1 /* Dialogs */,
 				866DF0912A2C05CC00EFE771 /* Settings */,
 			);
 			path = Views;
@@ -99,14 +99,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		8624F3E32A266E8800FA20B1 /* Messages */ = {
+		8624F3E32A266E8800FA20B1 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
 				8624F3DB2A266C1F00FA20B1 /* DialogList.swift */,
 				8624F3E12A266E7F00FA20B1 /* DialogRow.swift */,
 				867EC29D2A295AE80003645F /* UnreadMessagesCount.swift */,
 			);
-			path = Messages;
+			path = Dialogs;
 			sourceTree = "<group>";
 		};
 		866DF0912A2C05CC00EFE771 /* Settings */ = {
@@ -135,7 +135,7 @@
 			path = Friends;
 			sourceTree = "<group>";
 		};
-		869CBDE82A27FA61006171DD /* Dialogs */ = {
+		869CBDE82A27FA61006171DD /* Messages */ = {
 			isa = PBXGroup;
 			children = (
 				8608162B2A2756CD00AF16C7 /* MessageList.swift */,
@@ -143,7 +143,7 @@
 				867EC29B2A2957500003645F /* MessageNavbar.swift */,
 				866666FF2A2A10CB0089A054 /* MessageInput.swift */,
 			);
-			path = Dialogs;
+			path = Messages;
 			sourceTree = "<group>";
 		};
 		86B897B12A27D14200D0D633 /* Auth */ = {
