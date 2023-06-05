@@ -9,12 +9,17 @@
 /* Begin PBXBuildFile section */
 		8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608162B2A2756CD00AF16C7 /* MessageList.swift */; };
 		8608162F2A27589E00AF16C7 /* Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608162E2A27589E00AF16C7 /* Dialogs.swift */; };
+		861BD67A2A2D06DC002F5404 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BD6792A2D06DC002F5404 /* UserProfile.swift */; };
+		861BD67C2A2D0FC0002F5404 /* ProfileButtonLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BD67B2A2D0FC0002F5404 /* ProfileButtonLabel.swift */; };
+		861BD67E2A2D1170002F5404 /* ProfileButtonsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BD67D2A2D1170002F5404 /* ProfileButtonsBar.swift */; };
+		861BD6802A2D1E6E002F5404 /* HorizontalProfileAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BD67F2A2D1E6E002F5404 /* HorizontalProfileAttachments.swift */; };
 		8624F3DC2A266C1F00FA20B1 /* DialogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3DB2A266C1F00FA20B1 /* DialogList.swift */; };
 		8624F3DE2A266CE900FA20B1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3DD2A266CE900FA20B1 /* Settings.swift */; };
-		8624F3E02A266D2A00FA20B1 /* FriendsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3DF2A266D2A00FA20B1 /* FriendsPage.swift */; };
+		8624F3E02A266D2A00FA20B1 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3DF2A266D2A00FA20B1 /* FriendList.swift */; };
 		8624F3E22A266E7F00FA20B1 /* DialogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3E12A266E7F00FA20B1 /* DialogRow.swift */; };
 		8624F3E52A26748700FA20B1 /* UserOnlineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3E42A26748700FA20B1 /* UserOnlineStatus.swift */; };
 		8624F3EB2A26C36800FA20B1 /* ReadMessageStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3EA2A26C36800FA20B1 /* ReadMessageStatus.swift */; };
+		865A3E812A2D7C6400F6303F /* UserProfileInfoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865A3E802A2D7C6400F6303F /* UserProfileInfoRow.swift */; };
 		866667002A2A10CB0089A054 /* MessageInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 866666FF2A2A10CB0089A054 /* MessageInput.swift */; };
 		867EC29C2A2957500003645F /* MessageNavbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EC29B2A2957500003645F /* MessageNavbar.swift */; };
 		867EC29E2A295AE80003645F /* UnreadMessagesCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EC29D2A295AE80003645F /* UnreadMessagesCount.swift */; };
@@ -34,12 +39,17 @@
 		72B26015A56371F28C623B88 /* Pods-IosApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosApp.release.xcconfig"; path = "Target Support Files/Pods-IosApp/Pods-IosApp.release.xcconfig"; sourceTree = "<group>"; };
 		8608162B2A2756CD00AF16C7 /* MessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
 		8608162E2A27589E00AF16C7 /* Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogs.swift; sourceTree = "<group>"; };
+		861BD6792A2D06DC002F5404 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		861BD67B2A2D0FC0002F5404 /* ProfileButtonLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonLabel.swift; sourceTree = "<group>"; };
+		861BD67D2A2D1170002F5404 /* ProfileButtonsBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonsBar.swift; sourceTree = "<group>"; };
+		861BD67F2A2D1E6E002F5404 /* HorizontalProfileAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProfileAttachments.swift; sourceTree = "<group>"; };
 		8624F3DB2A266C1F00FA20B1 /* DialogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogList.swift; sourceTree = "<group>"; };
 		8624F3DD2A266CE900FA20B1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		8624F3DF2A266D2A00FA20B1 /* FriendsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPage.swift; sourceTree = "<group>"; };
+		8624F3DF2A266D2A00FA20B1 /* FriendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
 		8624F3E12A266E7F00FA20B1 /* DialogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRow.swift; sourceTree = "<group>"; };
 		8624F3E42A26748700FA20B1 /* UserOnlineStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOnlineStatus.swift; sourceTree = "<group>"; };
 		8624F3EA2A26C36800FA20B1 /* ReadMessageStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMessageStatus.swift; sourceTree = "<group>"; };
+		865A3E802A2D7C6400F6303F /* UserProfileInfoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileInfoRow.swift; sourceTree = "<group>"; };
 		866666FF2A2A10CB0089A054 /* MessageInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInput.swift; sourceTree = "<group>"; };
 		867EC29B2A2957500003645F /* MessageNavbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageNavbar.swift; sourceTree = "<group>"; };
 		867EC29D2A295AE80003645F /* UnreadMessagesCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnreadMessagesCount.swift; sourceTree = "<group>"; };
@@ -81,6 +91,7 @@
 			children = (
 				86FB95992A2113660069BFA1 /* ContentView.swift */,
 				866DF0922A2C073800EFE771 /* UI */,
+				861BD6782A2D06C2002F5404 /* UserProfile */,
 				869CBDE82A27FA61006171DD /* Messages */,
 				86B897B12A27D14200D0D633 /* Auth */,
 				8686099A2A2B812600611BC6 /* Friends */,
@@ -97,6 +108,18 @@
 				86B897B22A27D32700D0D633 /* VKDelegate.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		861BD6782A2D06C2002F5404 /* UserProfile */ = {
+			isa = PBXGroup;
+			children = (
+				861BD6792A2D06DC002F5404 /* UserProfile.swift */,
+				861BD67B2A2D0FC0002F5404 /* ProfileButtonLabel.swift */,
+				861BD67D2A2D1170002F5404 /* ProfileButtonsBar.swift */,
+				861BD67F2A2D1E6E002F5404 /* HorizontalProfileAttachments.swift */,
+				865A3E802A2D7C6400F6303F /* UserProfileInfoRow.swift */,
+			);
+			path = UserProfile;
 			sourceTree = "<group>";
 		};
 		8624F3E32A266E8800FA20B1 /* Dialogs */ = {
@@ -129,7 +152,7 @@
 		8686099A2A2B812600611BC6 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				8624F3DF2A266D2A00FA20B1 /* FriendsPage.swift */,
+				8624F3DF2A266D2A00FA20B1 /* FriendList.swift */,
 				8686099B2A2B81F000611BC6 /* FriendRow.swift */,
 			);
 			path = Friends;
@@ -315,13 +338,18 @@
 				869CBDE72A27FA57006171DD /* MessageCloud.swift in Sources */,
 				8624F3DC2A266C1F00FA20B1 /* DialogList.swift in Sources */,
 				8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */,
+				861BD67E2A2D1170002F5404 /* ProfileButtonsBar.swift in Sources */,
 				8624F3E52A26748700FA20B1 /* UserOnlineStatus.swift in Sources */,
+				861BD67A2A2D06DC002F5404 /* UserProfile.swift in Sources */,
 				8624F3DE2A266CE900FA20B1 /* Settings.swift in Sources */,
+				865A3E812A2D7C6400F6303F /* UserProfileInfoRow.swift in Sources */,
 				8624F3E22A266E7F00FA20B1 /* DialogRow.swift in Sources */,
-				8624F3E02A266D2A00FA20B1 /* FriendsPage.swift in Sources */,
+				8624F3E02A266D2A00FA20B1 /* FriendList.swift in Sources */,
 				8624F3EB2A26C36800FA20B1 /* ReadMessageStatus.swift in Sources */,
 				867EC29C2A2957500003645F /* MessageNavbar.swift in Sources */,
+				861BD6802A2D1E6E002F5404 /* HorizontalProfileAttachments.swift in Sources */,
 				867EC29E2A295AE80003645F /* UnreadMessagesCount.swift in Sources */,
+				861BD67C2A2D0FC0002F5404 /* ProfileButtonLabel.swift in Sources */,
 				8686099C2A2B81F000611BC6 /* FriendRow.swift in Sources */,
 				86FB95982A2113660069BFA1 /* AppInstance.swift in Sources */,
 				86B897B32A27D32700D0D633 /* VKDelegate.swift in Sources */,

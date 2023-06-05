@@ -22,7 +22,7 @@ struct DialogRow: View {
             Image(avatar)
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fill)
-                .frame(width: 55, height: 55)
+                .frame(width: 60, height: 60)
                 .cornerRadius(.infinity)
                 .padding(.trailing, 5)
                 .overlay(
@@ -31,7 +31,7 @@ struct DialogRow: View {
                         .offset(x: -3, y: -2)
                 )
             
-            VStack(alignment: .leading, spacing: 5){
+            VStack(alignment: .leading, spacing: 8){
                 HStack{
                     Text(messageAutor)
                         .fontWeight(.medium)
@@ -53,12 +53,11 @@ struct DialogRow: View {
                         UserReadMessageStatus()
                     }
                 }
-                .frame(maxHeight: 55)
                 .offset(y: -5)
             }
         }
-        .frame(height: 55, alignment: .center)
         .padding(.bottom, -7)
+        .frame(maxHeight: 55, alignment: .center)
     }
 }
 

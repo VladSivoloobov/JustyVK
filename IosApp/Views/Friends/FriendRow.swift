@@ -23,15 +23,14 @@ struct FriendRow: View {
                 .padding(.trailing, 5)
             VStack(alignment: .leading){
                 Text(name)
-                    .font(.system(size: 15))
+                    .font(.system(size: 17))
                     .fontWeight(.medium)
                 Text(online)
                     .foregroundColor(.gray)
                     .font(.system(size: 13))
             }
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .frame(height: 55, alignment: .center)
-        .padding(.vertical, -10)
     }
 }
 

@@ -65,7 +65,6 @@ struct MessageInput: View {
         .animation(.easeOut(duration: 0.1), value: messageText)
         .fixedSize(horizontal: false, vertical: true)
         .padding(.horizontal, 15)
-        .padding(.bottom, 15)
         .padding(.top, 10)
         .background(.ultraThinMaterial)
     }

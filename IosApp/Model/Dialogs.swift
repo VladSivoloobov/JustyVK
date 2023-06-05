@@ -27,6 +27,7 @@ var dialogs: [Dialog] = [
     Dialog(name: "Елена Николаева", lastMessage: "Давай познакомимся, красавчик", image: "Avatar5", isOnline: false, isReaded: false),
     Dialog(name: "Николай Ивановичев", lastMessage: "Извини", image: "Avatar7", isOnline: false, isReaded: false),
     Dialog(name: "Ольга Смирнова", lastMessage: "Да ладно тебе, я итак знаю про созданных тварей в афганском приводе, и всё же непонятно только одно, как это возможно", image: "Avatar6", isOnline: false, isReaded: false),
+    Dialog(name: "Дмитрий Козлов", lastMessage: "ахаххаххах", image: "Avatar8", isOnline: false, isReaded: false),
     Dialog(name: "Дмитрий Козлов", lastMessage: "ахаххаххах", image: "Avatar8", isOnline: false, isReaded: false)
 ];
 

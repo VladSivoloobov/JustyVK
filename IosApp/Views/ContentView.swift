@@ -20,7 +20,7 @@ struct ContentView: View {
     var body: some View {
         // TODO: Сделать кастомный таббар
         TabView(selection: $selectedTab){
-            FriendsPage()
+            FriendList(tabBarVisibleBinding: $tabBarIsHidden)
                 .tabItem{
                     Image(systemName: "person.2.fill")
                     Text("Друзья")

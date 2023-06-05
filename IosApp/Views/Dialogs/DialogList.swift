@@ -15,6 +15,7 @@ struct DialogList: View {
     
     var body: some View {
         NavigationStack{
+            // TODO: Исправить скроллбар!!
             List{
                 Section{
                     ForEach(dialogs){ dialog in
@@ -66,6 +67,7 @@ struct DialogList: View {
 
                         }
                         .overlay{
+                            // TODO: Создать отдельный модификатор для этого
                             NavigationLink(
                                 destination: {
                                     MessageList(name: dialog.name, image: dialog.image)
@@ -87,6 +89,7 @@ struct DialogList: View {
                 }
                 .listSectionSeparator(.hidden)
             }
+            .environment(\.defaultMinListRowHeight, 80)
             .listStyle(.plain)
             .searchable(
                 text: $searchString,
@@ -110,5 +113,4 @@ struct DialogList: View {
             }
         }
     }
-    
 }
