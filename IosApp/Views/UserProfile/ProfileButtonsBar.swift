@@ -36,8 +36,42 @@ struct ProfileButtonsBar: View {
                 Spacer()
             }
             Group{
-                Button{
-                    // TODO: Добавить логику нажатия на кнопку ещё
+                Menu{
+                    Button{
+                        // TODO: Сделать эту кнопку рабочей
+                    } label: {
+                        Label("Добавить в закладки", systemImage: "star")
+                    }
+                    Button{
+                        // TODO: Сделать эту кнопку рабочей
+                    } label: {
+                        Label("Закрепить", systemImage: "pin")
+                    }
+                    Button{
+                        // TODO: Сделать эту кнопку рабочей
+                    } label: {
+                        Label("Поделиться", systemImage: "square.and.arrow.up")
+                    }
+                    Button{
+                        // TODO: Сделать эту кнопку рабочей
+                    } label: {
+                        Label("Архивировать", systemImage: "archivebox")
+                    }
+                    Button(role: .destructive){
+                        // TODO: Сделать эту кнопку рабочей
+                    } label: {
+                        Label("Пожаловаться", systemImage: "exclamationmark.bubble")
+                    }
+                    Button(role: .destructive){
+                        // TODO: Сделать эту кнопку рабочей
+                    } label: {
+                        Label("Удалить переписку", systemImage: "trash")
+                    }
+                    Button(role: .destructive){
+                        // TODO: Сделать эту кнопку рабочей
+                    } label: {
+                        Label("Добавить в черный список", systemImage: "book.closed")
+                    }
                 } label: {
                     ProfileButtonLabel(systemImage: "ellipsis.circle", title: "Ещё")
                 }

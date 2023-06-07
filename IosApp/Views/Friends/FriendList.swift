@@ -57,8 +57,16 @@ struct FriendList: View {
             .navigationTitle("Друзья")
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
-                    Button{
+                    Menu(){
                         // TODO: Добавить возможность сортировки друзей по алфавиту и по статусу онлайн
+                        Section("Сортировка"){
+                            Button("По дате посещения"){
+                                // TODO: Сделать эту кнопку рабочей
+                            }
+                            Button("По алфавиту"){
+                                // TODO: Сделать эту кнопку рабочей
+                            }
+                        }
                     } label: {
                         Label("Сортировка", systemImage: "arrow.up.arrow.down")
                             .foregroundColor(.blue)

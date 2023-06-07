@@ -66,7 +66,9 @@ struct MessageInput: View {
         .fixedSize(horizontal: false, vertical: true)
         .padding(.horizontal, 15)
         .padding(.top, 10)
+        .padding(.bottom, 25)
         .background(.ultraThinMaterial)
+        .animation(.linear, value: messageText)
     }
 }
 

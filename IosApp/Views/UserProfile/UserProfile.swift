@@ -33,7 +33,7 @@ struct UserProfile: View {
                                     mass: 1,
                                     stiffness: 80,
                                     damping: 15,
-                                    initialVelocity: 20)
+                                    initialVelocity: 10)
                             ){
                                 scale = 120;
                                 avatarCornerRadius = 200;

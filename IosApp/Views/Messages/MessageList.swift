@@ -19,6 +19,15 @@ struct MessageList: View {
     @State var name: String;
     @State var image: String;
     
+    func hideKeyboardWithAnimation(_ scrollReader: ScrollViewProxy){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+            withAnimation(.easeIn(duration: 0.5)) {
+                scrollReader.scrollTo(messages.count - 1, anchor: .bottom)
+            }
+        }
+    }
+    
+    // TODO: Найти способ нормальной прокрутки scrollView при появлении клавиатуры
     var body: some View {
         ScrollViewReader{ scrollReader in
             GeometryReader { reader in
@@ -36,7 +45,20 @@ struct MessageList: View {
                     }
                     .frame(minHeight: reader.size.height - 20, alignment: .bottom)
                     .padding(.top, 10)
-                    .padding(.bottom, 74)
+                    .padding(.bottom, 2)
+                    .onTapGesture(perform: UIApplication.shared.endEditing)
+                    .gesture(
+                        DragGesture()
+                            .onChanged { _ in
+                                UIApplication.shared.endEditing()
+                            }
+                            .onEnded { _ in
+                                UIApplication.shared.endEditing()
+                            }
+                    )
+                }
+                .safeAreaInset(edge: .bottom){
+                    MessageInput()
                 }
                 .scrollIndicators(.hidden)
                 .navigationBarTitleDisplayMode(.inline)
@@ -59,10 +81,17 @@ struct MessageList: View {
                 // TODO: При взаимодействии с api изменить скролл
                 scrollReader.scrollTo(messages.count - 1)
             }
-            .padding(.bottom, -20)
-            .overlay(alignment: .bottom){
-                MessageInput()
+            .onReceive(NotificationCenter.default.publisher(
+                for: UIResponder.keyboardWillShowNotification
+            )){ _ in
+                hideKeyboardWithAnimation(scrollReader);
             }
+            .onReceive(NotificationCenter.default.publisher(
+                for: UIResponder.keyboardWillHideNotification
+            )){ _ in
+                hideKeyboardWithAnimation(scrollReader);
+            }
+            .padding(.bottom, -20)
         }
     }
 }

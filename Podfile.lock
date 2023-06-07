@@ -1,16 +1,20 @@
 PODS:
+  - Introspect (0.6.0)
   - SwiftyVK (3.4.2)
 
 DEPENDENCIES:
+  - Introspect
   - SwiftyVK
 
 SPEC REPOS:
   trunk:
+    - Introspect
     - SwiftyVK
 
 SPEC CHECKSUMS:
+  Introspect: 59378bd7e1774f0327244ad2d06b1b9c805cb9ed
   SwiftyVK: 5005dac6e85f7b0fd44e21ed2f021a397dff4cab
 
-PODFILE CHECKSUM: bfebb1ab60bba8de74218c7b8ffd56d75371116e
+PODFILE CHECKSUM: 3587c16883b39eb09083f45ef713c2ae4f0965de
 
 COCOAPODS: 1.12.1

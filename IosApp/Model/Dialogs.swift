@@ -118,8 +118,10 @@ var messages: [Message] = [
     Message(text: "Какой твой любимый вид спортивной обуви?"),
     Message(text: "Что ты думаешь о экологии?"),
     Message(text: "Какой твой любимый вид салатов?"),
+    Message(text: "Цезарь", fromMe: false),
     Message(text: "Какой твой любимый вид морских гадов?"),
     Message(text: "Что тебе нравится в своей личной жизни?"),
+    Message(text: "Да всякое, если честно", fromMe: false),
     Message(text: "Какой твой любимый вид морских фруктов?"),
     Message(text: "Пиздец ты настрочил", fromMe: false)
 ];
