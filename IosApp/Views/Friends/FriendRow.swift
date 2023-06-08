@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SDWebImage
+import SDWebImageSwiftUI
 
 struct FriendRow: View {
     @State var name: String;
@@ -15,7 +17,7 @@ struct FriendRow: View {
     var body: some View {
         // TODO: Сделать возможность просмотра профиля
         HStack(alignment: .center){
-            Image(image)
+            WebImage(url: URL(string: image))
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 40, height: 40)

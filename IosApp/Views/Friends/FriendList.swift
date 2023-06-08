@@ -11,23 +11,25 @@ struct FriendList: View {
     @State var searchableFriendsText: String = "";
     //TODO: Вынести этот биндинг отдельно куда-нибудь
     @Binding var tabBarVisibleBinding: Bool;
+    @EnvironmentObject var userInfo: UserInfo;
+    @State var friendList = [SwiftVK.SwiftVKFriends.Friend]()
     
     var body: some View {
         NavigationStack{
             List{
                 Section{
-                    ForEach(0..<dialogs.count, id: \.self){ index in
+                    ForEach(0..<friendList.count, id: \.self){ index in
                         FriendRow(
-                            name: dialogs.reversed()[index].name,
-                            image: dialogs.reversed()[index].image
+                            name: friendList[index].firstName + " " + friendList[index].lastName,
+                            image: friendList[index].photo
                         )
                         .overlay{
                             // TODO: Создать отдельный модификатор для этого
                             NavigationLink(
                                 destination: {
                                     UserProfile(
-                                        name: dialogs.reversed()[index].name,
-                                        avatar: dialogs.reversed()[index].image
+                                        name: friendList[index].firstName + " " + friendList[index].lastName,
+                                        avatar: friendList[index].photo
                                     )
                                         .onAppear(){
                                             self.tabBarVisibleBinding.toggle();
@@ -46,6 +48,12 @@ struct FriendList: View {
                     }
                 }
                 .listSectionSeparator(.hidden)
+            }
+            .onAppear{
+                let vk = SwiftVK(token: userInfo.token);
+                vk.friends.get(){ friends in
+                    self.friendList = friends;
+                }
             }
             .environment(\.defaultMinListRowHeight, 50)
             .listStyle(.plain)

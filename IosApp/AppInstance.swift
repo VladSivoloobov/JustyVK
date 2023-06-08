@@ -9,13 +9,21 @@ import SwiftUI
 
 @main
 struct AppInstance: App {
+    @StateObject var userInfo = UserInfo()
+    
     init(){
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Отмена"
     }
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if(userInfo.token.isEmpty){
+                Login()
+                    .environmentObject(userInfo)
+            } else{
+                ContentView()
+                    .environmentObject(userInfo)
+            }
         }
     }
 }

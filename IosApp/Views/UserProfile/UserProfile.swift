@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SDWebImage
+import SDWebImageSwiftUI
 
 struct UserProfile: View {
     @State var name: String;
@@ -20,7 +22,7 @@ struct UserProfile: View {
         // TODO: Адаптировать под светлую тему
         ScrollView{
             VStack(spacing: 0){
-                Image(avatar)
+                WebImage(url: URL(string: avatar))
                     .resizable()
                     .aspectRatio(contentMode: .fill)
                     .frame(width: scale, height: scale)
