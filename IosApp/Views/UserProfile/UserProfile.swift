@@ -10,13 +10,16 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct UserProfile: View {
+    var userId: Int;
     @State var name: String;
-    @State var avatar: String;
+    @State private var avatar: String = "";
     @State var id: String = "anorakm56";
     @State var lastOnline: String = "был(а) 5 минут назад";
     @State var scale: CGFloat = 120;
     @State var avatarCornerRadius: CGFloat = 200;
     @State var avatarOffset: CGFloat = 70;
+    
+    @EnvironmentObject var userInfo: UserInfo;
     
     var body: some View {
         // TODO: Адаптировать под светлую тему
@@ -94,11 +97,11 @@ struct UserProfile: View {
         .offset(y: avatarOffset)
         .toolbarBackground(.hidden, for: .navigationBar)
         .ignoresSafeArea()
-    }
-}
-
-struct UserProfile_Previews: PreviewProvider {
-    static var previews: some View {
-        UserProfile(name: "Ольга Смирнова", avatar: "Avatar6")
+        .onAppear{
+            let vk = SwiftVK(token: userInfo.token);
+            vk.photos.get(ownerId: String(userId), albumId: "profile", rev: 1){ photos in
+                avatar = photos[0].sizes.last!.url;
+            }
+        }
     }
 }

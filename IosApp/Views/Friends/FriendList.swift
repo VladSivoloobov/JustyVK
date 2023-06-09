@@ -28,8 +28,8 @@ struct FriendList: View {
                             NavigationLink(
                                 destination: {
                                     UserProfile(
-                                        name: friendList[index].firstName + " " + friendList[index].lastName,
-                                        avatar: friendList[index].photo
+                                        userId: friendList[index].id,
+                                        name: friendList[index].firstName + " " + friendList[index].lastName
                                     )
                                         .onAppear(){
                                             self.tabBarVisibleBinding.toggle();

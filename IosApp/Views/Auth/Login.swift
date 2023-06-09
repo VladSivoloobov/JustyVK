@@ -10,6 +10,7 @@ import SwiftUI
 struct Login: View {
     var body: some View {
         VKAuthWebView()
+            .ignoresSafeArea(.all)
     }
 }
 
