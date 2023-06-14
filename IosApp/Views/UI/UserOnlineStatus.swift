@@ -13,6 +13,9 @@ struct UserOnlineStatus: View {
         Circle()
             .frame(width: 10)
             .foregroundColor(isOnline ? .green : .clear)
+            .overlay{
+                Circle().stroke(isOnline ? .black : .clear, lineWidth: 2)
+            }
     }
 }
 

@@ -22,31 +22,13 @@ struct FriendList: View {
                         FriendRow(
                             name: friendList[index].firstName + " " + friendList[index].lastName,
                             image: friendList[index].photo100!,
-                            lastSeenTime: friendList[index].lastSeen?.time ?? -404
+                            lastSeenTime: friendList[index].lastSeen?.time ?? -404,
+                            lastSeenPlatform: friendList[index].lastSeen?.platform ?? -404,
+                            sex: friendList[index].sex!,
+                            isOnline: friendList[index].online!,
+                            user: friendList[index],
+                            tabBarVisibleBinding: $tabBarVisibleBinding
                         )
-                        .overlay{
-                            NavigationLink(
-                                destination: {
-                                    UserProfile(
-                                        userId: friendList[index].id,
-                                        name: friendList[index].firstName + " " + friendList[index].lastName,
-                                        id: friendList[index].screenName ?? "",
-                                        status: friendList[index].status ?? ""
-                                    )
-                                        .onAppear(){
-                                            self.tabBarVisibleBinding.toggle();
-                                        }
-                                        .onDisappear(){
-                                            withAnimation(.spring()){
-                                                self.tabBarVisibleBinding.toggle();
-                                            }
-                                        }
-                                }, label: {
-                                    EmptyView()
-                                }
-                            )
-                            .opacity(0)
-                        }
                     }
                 }
                 .listSectionSeparator(.hidden)
@@ -58,7 +40,9 @@ struct FriendList: View {
                         "status",
                         "photo_100",
                         "screen_name",
-                        "last_seen"
+                        "last_seen",
+                        "sex",
+                        "online"
                     ]
                 ){ friends in
                     self.friendList = friends;

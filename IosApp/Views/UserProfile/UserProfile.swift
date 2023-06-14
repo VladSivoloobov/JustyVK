@@ -14,7 +14,7 @@ struct UserProfile: View {
     @State var name: String;
     @State private var avatar: String = "";
     @State var id: String;
-    @State var lastOnline: String = "был(а) 5 минут назад";
+    @State var lastOnline: String;
     @State var scale: CGFloat = 120;
     @State var avatarCornerRadius: CGFloat = 200;
     @State var avatarOffset: CGFloat = 70;
