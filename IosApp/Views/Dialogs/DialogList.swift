@@ -15,7 +15,6 @@ struct DialogList: View {
     
     var body: some View {
         NavigationStack{
-            // TODO: Исправить скроллбар!!
             List{
                 Section{
                     ForEach(dialogs){ dialog in

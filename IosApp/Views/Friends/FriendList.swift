@@ -17,7 +17,7 @@ struct FriendList: View {
     var body: some View {
         NavigationStack{
             List{
-                Section{
+                Section(){
                     ForEach(friendList, id: \.uuid){ friend in
                         FriendRow(
                             name: friend.firstName + " " + friend.lastName,
@@ -58,16 +58,20 @@ struct FriendList: View {
                 prompt: "Поиск по друзьям"
                 // TODO: Добавить возможность поиска друзей
             )
-            .navigationTitle("Друзья • \(friendList.count)")
+            .navigationTitle("Друзья")
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
                     Menu(){
                         Section("Сортировка"){
                             Button("Сначала онлайн"){
-                                friendList = filterFriendsByOnline(friends: friendList);
+                                withAnimation{
+                                    friendList = filterFriendsByOnline(friends: friendList);
+                                }
                             }
                             Button("По алфавиту"){
-                                // TODO: Сделать эту кнопку рабочей
+                                withAnimation{
+                                    friendList = friendList.sorted{$0.firstName < $1.firstName};
+                                }
                             }
                         }
                     } label: {
