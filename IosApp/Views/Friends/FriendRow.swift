@@ -56,7 +56,8 @@ struct FriendRow: View {
                         name: name,
                         id: user.screenName ?? "",
                         lastOnline: lastSeenString,
-                        status: user.status ?? ""
+                        status: user.status ?? "",
+                        user: user
                     )
                         .onAppear(){
                             self.tabBarVisibleBinding.toggle();

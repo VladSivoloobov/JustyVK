@@ -27,7 +27,7 @@ extension Calendar {
         let dateFormatter = DateFormatter();
         switch(difference){
         case 1:
-            return getDateFormatterString(dateFormat: "в HH:mm")
+            return getDateFormatterString(dateFormat: "сегодня в HH:mm")
         case 2:
             return getDateFormatterString(dateFormat: "вчера в HH:mm")
         case 3:

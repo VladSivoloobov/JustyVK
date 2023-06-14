@@ -10,6 +10,7 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct UserProfile: View {
+    //TODO: Заменить все переменные на одну структуру
     var userId: Int;
     @State var name: String;
     @State private var avatar: String = "";
@@ -19,6 +20,7 @@ struct UserProfile: View {
     @State var avatarCornerRadius: CGFloat = 200;
     @State var avatarOffset: CGFloat = 70;
     @State var status: String;
+    @State var user: User;
     
     @EnvironmentObject var userInfo: UserInfo;
     
@@ -65,7 +67,7 @@ struct UserProfile: View {
                     .fontWeight(.medium)
                 
                 Text(lastOnline)
-                    .foregroundColor(.gray)
+                    .foregroundColor(user.online! == 1 ? .green : .gray)
                     .font(.system(size: 15))
                 
                 VStack{

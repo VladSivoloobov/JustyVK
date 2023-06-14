@@ -1,4 +1,7 @@
+import Foundation
+
 struct User: Decodable{
+    var uuid = UUID();
     var id: Int;
     var firstName: String;
     var lastName: String;

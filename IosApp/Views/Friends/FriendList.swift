@@ -18,15 +18,15 @@ struct FriendList: View {
         NavigationStack{
             List{
                 Section{
-                    ForEach(0..<friendList.count, id: \.self){ index in
+                    ForEach(friendList, id: \.uuid){ friend in
                         FriendRow(
-                            name: friendList[index].firstName + " " + friendList[index].lastName,
-                            image: friendList[index].photo100!,
-                            lastSeenTime: friendList[index].lastSeen?.time ?? -404,
-                            lastSeenPlatform: friendList[index].lastSeen?.platform ?? -404,
-                            sex: friendList[index].sex!,
-                            isOnline: friendList[index].online!,
-                            user: friendList[index],
+                            name: friend.firstName + " " + friend.lastName,
+                            image: friend.photo100!,
+                            lastSeenTime: friend.lastSeen?.time ?? -404,
+                            lastSeenPlatform: friend.lastSeen?.platform ?? -404,
+                            sex: friend.sex!,
+                            isOnline:friend.online!,
+                            user: friend,
                             tabBarVisibleBinding: $tabBarVisibleBinding
                         )
                     }
@@ -34,6 +34,9 @@ struct FriendList: View {
                 .listSectionSeparator(.hidden)
             }
             .onAppear{
+                if(friendList.count > 0){
+                    return;
+                }
                 let vk = SwiftVK(token: userInfo.token);
                 vk.friends.get(
                     fields: [
@@ -45,7 +48,7 @@ struct FriendList: View {
                         "online"
                     ]
                 ){ friends in
-                    self.friendList = friends;
+                    self.friendList = filterFriendsByOnline(friends: friends);
                 }
             }
             .environment(\.defaultMinListRowHeight, 50)
@@ -55,14 +58,13 @@ struct FriendList: View {
                 prompt: "Поиск по друзьям"
                 // TODO: Добавить возможность поиска друзей
             )
-            .navigationTitle("Друзья")
+            .navigationTitle("Друзья • \(friendList.count)")
             .toolbar{
                 ToolbarItemGroup(placement: .navigationBarTrailing){
                     Menu(){
-                        // TODO: Добавить возможность сортировки друзей по алфавиту и по статусу онлайн
                         Section("Сортировка"){
-                            Button("По дате посещения"){
-                                // TODO: Сделать эту кнопку рабочей
+                            Button("Сначала онлайн"){
+                                friendList = filterFriendsByOnline(friends: friendList);
                             }
                             Button("По алфавиту"){
                                 // TODO: Сделать эту кнопку рабочей
@@ -76,6 +78,18 @@ struct FriendList: View {
             }
         }
         .toolbarBackground(.visible, for: .tabBar)
+    }
+    
+    func filterFriendsByOnline(friends: [User]) -> [User]{
+        let onlineFriends = friends.filter{ friend in
+            return friend.online == 1
+        }
+        
+        let offlineFriends = friends.filter{ friend in
+            return friend.online != 1;
+        }
+        
+        return onlineFriends + offlineFriends;
     }
 }
 
