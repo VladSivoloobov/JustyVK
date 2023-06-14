@@ -6,6 +6,5 @@ target 'Весточка' do
   use_frameworks!
   
   # Pods for IosApp
-  pod 'SwiftyVK'
-  pod 'Introspect'
+  pod 'Alamofire'
 end

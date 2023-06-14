@@ -12,7 +12,7 @@ struct FriendList: View {
     //TODO: Вынести этот биндинг отдельно куда-нибудь
     @Binding var tabBarVisibleBinding: Bool;
     @EnvironmentObject var userInfo: UserInfo;
-    @State var friendList = [SwiftVK.SwiftVKFriends.Friend]()
+    @State var friendList = [User]()
     
     var body: some View {
         NavigationStack{
@@ -21,15 +21,17 @@ struct FriendList: View {
                     ForEach(0..<friendList.count, id: \.self){ index in
                         FriendRow(
                             name: friendList[index].firstName + " " + friendList[index].lastName,
-                            image: friendList[index].photo
+                            image: friendList[index].photo100!,
+                            lastSeenTime: friendList[index].lastSeen?.time ?? -404
                         )
                         .overlay{
-                            // TODO: Создать отдельный модификатор для этого
                             NavigationLink(
                                 destination: {
                                     UserProfile(
                                         userId: friendList[index].id,
-                                        name: friendList[index].firstName + " " + friendList[index].lastName
+                                        name: friendList[index].firstName + " " + friendList[index].lastName,
+                                        id: friendList[index].screenName ?? "",
+                                        status: friendList[index].status ?? ""
                                     )
                                         .onAppear(){
                                             self.tabBarVisibleBinding.toggle();
@@ -51,7 +53,14 @@ struct FriendList: View {
             }
             .onAppear{
                 let vk = SwiftVK(token: userInfo.token);
-                vk.friends.get(){ friends in
+                vk.friends.get(
+                    fields: [
+                        "status",
+                        "photo_100",
+                        "screen_name",
+                        "last_seen"
+                    ]
+                ){ friends in
                     self.friendList = friends;
                 }
             }

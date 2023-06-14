@@ -13,11 +13,12 @@ struct UserProfile: View {
     var userId: Int;
     @State var name: String;
     @State private var avatar: String = "";
-    @State var id: String = "anorakm56";
+    @State var id: String;
     @State var lastOnline: String = "был(а) 5 минут назад";
     @State var scale: CGFloat = 120;
     @State var avatarCornerRadius: CGFloat = 200;
     @State var avatarOffset: CGFloat = 70;
+    @State var status: String;
     
     @EnvironmentObject var userInfo: UserInfo;
     
@@ -70,19 +71,23 @@ struct UserProfile: View {
                 VStack{
                     ProfileButtonsBar()
                         .padding(.top, 17)
-                    UserProfileInfoRow(
-                        title: "короткий адрес",
-                        text: Text(
-                            "@prostspak23"
+                    if(!id.isEmpty){
+                        UserProfileInfoRow(
+                            title: "короткий адрес",
+                            text: Text(
+                                "@" + id
+                            )
+                            .foregroundColor(.blue)
                         )
-                        .foregroundColor(.blue)
-                    )
-                    UserProfileInfoRow(
-                        title: "статус",
-                        text: Text(
-                            "Когда у меня заканчиваются слова за меня начинает говорить моя мама"
+                    }
+                    if(!status.isEmpty){
+                        UserProfileInfoRow(
+                            title: "статус",
+                            text: Text(
+                                status
+                            )
                         )
-                    )
+                    }
                 }
                 .padding(.horizontal, 15)
             }
@@ -100,8 +105,17 @@ struct UserProfile: View {
         .onAppear{
             let vk = SwiftVK(token: userInfo.token);
             vk.photos.get(ownerId: String(userId), albumId: "profile", rev: 1){ photos in
-                avatar = photos[0].sizes.last!.url;
+                avatar = photos[0].sizes.last?.url ?? "https://vk.com/images/camera_400.png";
             }
+            print(status)
+            
+//            vk.users.get(userId: userId, fields: [
+//                "status",
+//                "screen_name"
+//            ]){ user in
+//                status = user[0].status ?? "";
+//                id = user[0].screenName ?? "";
+//            }
         }
     }
 }

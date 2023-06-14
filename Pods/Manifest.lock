@@ -1,20 +1,16 @@
 PODS:
-  - Introspect (0.6.0)
-  - SwiftyVK (3.4.2)
+  - Alamofire (5.7.1)
 
 DEPENDENCIES:
-  - Introspect
-  - SwiftyVK
+  - Alamofire
 
 SPEC REPOS:
   trunk:
-    - Introspect
-    - SwiftyVK
+    - Alamofire
 
 SPEC CHECKSUMS:
-  Introspect: 59378bd7e1774f0327244ad2d06b1b9c805cb9ed
-  SwiftyVK: 5005dac6e85f7b0fd44e21ed2f021a397dff4cab
+  Alamofire: 0123a34370cb170936ae79a8df46cc62b2edeb88
 
-PODFILE CHECKSUM: 3587c16883b39eb09083f45ef713c2ae4f0965de
+PODFILE CHECKSUM: b2d7d3bc49fea503c933e1f7cebfbeb515cd259c
 
 COCOAPODS: 1.12.1

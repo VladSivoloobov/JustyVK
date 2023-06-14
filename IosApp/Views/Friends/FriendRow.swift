@@ -10,12 +10,14 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct FriendRow: View {
+    
     @State var name: String;
-    @State var online: String = "Был(а) 5 минут назад"
     @State var image: String;
+    @State var lastSeenTime: Int;
+    @State private var lastSeenString = "Был(а) в сети ";
+    @EnvironmentObject var userInfo: UserInfo;
     
     var body: some View {
-        // TODO: Сделать возможность просмотра профиля
         HStack(alignment: .center){
             WebImage(url: URL(string: image))
                 .resizable(resizingMode: .stretch)
@@ -27,17 +29,11 @@ struct FriendRow: View {
                 Text(name)
                     .font(.system(size: 17))
                     .fontWeight(.medium)
-                Text(online)
+                Text(lastSeenString + (lastSeenTime == -404 ? "недавно" : String(lastSeenTime)))
                     .foregroundColor(.gray)
                     .font(.system(size: 13))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-    }
-}
-
-struct FriendRow_Previews: PreviewProvider {
-    static var previews: some View {
-        FriendRow(name: "Анна Громова", image: "Avatar6")
     }
 }
