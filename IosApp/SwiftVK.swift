@@ -12,7 +12,7 @@ public struct SwiftVK {
         self.token = token
         self.friends = SwiftVKFriends(token: token)
         self.users = SwiftVKUsers(token: token)
-        self.messages = SwiftVKMessages()
+        self.messages = SwiftVKMessages(token: token)
         self.photos = SwiftVKPhotos(token: token)
     }
     
@@ -29,28 +29,52 @@ public struct SwiftVK {
                 "v": "5.131",
             ];
             
-            AF.request(url, method: .post, parameters: params).response{ result in
-                do{
-                    if let data = result.data{
-                        let users = try JSONDecoder().decode(UsersResponse.self, from: data).response;
-                        completion(users);
-                    }
-                }
-                catch{
-                    print("usersError: " + error.localizedDescription)
+            fetchData(url: url, method: .post, parameters: params){
+                (messages: UsersResponse?) in
+                if let fetchedMessages = messages {
+                    completion(fetchedMessages.response);
                 }
             }
         }
     }
     
     public struct SwiftVKMessages{
-        func get(){
+        public let token: String;
+        private let url = "https://api.vk.com/method/messages.getHistory"
+        
+        func getHistory(offset: Int?,
+                        count: Int?,
+                        userId: Int?,
+                        peerId: Int?,
+                        rev: Int?,
+                        extended: Int?,
+                        fields: String?,
+                        groupId: Int?,
+                        completion: @escaping ([VKMesage]) -> ()){
+            let params: Parameters = [
+                "access_token": token,
+                "user_id": userId ?? "",
+                "peer_id": peerId ?? "",
+                "rev": rev ?? "",
+                "extended": extended ?? "",
+                "fields": fields ?? "",
+                "group_id": groupId ?? "",
+                "count": count ?? 200,
+                "v": "5.131"
+            ]
             
+            fetchData(url: url, method: .post, parameters: params){
+                (messages: MessagesResponse?) in
+                if let fetchedMessages = messages {
+                    completion(fetchedMessages.response.items);
+                }
+            }
         }
     }
     
     public struct SwiftVKPhotos{
         public let token: String;
+        let url = "https://api.vk.com/method/photos.get";
         
         func get(ownerId: String,
                  albumId: String,
@@ -59,7 +83,6 @@ public struct SwiftVK {
                  offset: String = "",
                  count: Int = 100,
                  completion: @escaping ([Photo]) -> ()){
-            let url = "https://api.vk.com/method/photos.get";
             let params: Parameters = [
                 "access_token": token,
                 "owner_id": ownerId,
@@ -71,15 +94,10 @@ public struct SwiftVK {
                 "v": "5.131",
             ];
             
-            AF.request(url, method: .post, parameters: params).response{ result in
-                do{
-                    if let data = result.data{
-                        let photos = try JSONDecoder().decode(PhotosResponse.self, from: data).response.items;
-                        completion(photos);
-                    }
-                }
-                catch{
-                    print("photosError: " + error.localizedDescription)
+            fetchData(url: url, method: .post, parameters: params) {
+                (photos: PhotosResponse?) in
+                if let fetchedPhotos = photos{
+                    completion(fetchedPhotos.response.items)
                 }
             }
         }
@@ -96,15 +114,10 @@ public struct SwiftVK {
                 "v": "5.131",
             ];
             
-            AF.request(url, method: .post, parameters: params).response{ result in
-                do{
-                    if let data = result.data{
-                        let friends = try JSONDecoder().decode(FriendsResponse.self, from: data).response.items;
-                        completion(friends);
-                    }
-                }
-                catch{
-                    print(error)
+            fetchData(url: url, method: .post, parameters: params) {
+                (friends: FriendsResponse?) in
+                if let fetchedFriends = friends {
+                    completion(fetchedFriends.response.items);
                 }
             }
         }

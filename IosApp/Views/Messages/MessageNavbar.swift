@@ -15,6 +15,7 @@ struct MessageNavbar: View {
         VStack{
             Text(name)
                 .fontWeight(.medium)
+                .padding(.bottom, -8)
             Text("онлайн")
                 .font(.subheadline)
                 .foregroundColor(.blue)

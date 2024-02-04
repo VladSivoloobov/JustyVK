@@ -26,7 +26,8 @@ struct VKAuthWebView: UIViewRepresentable{
             URLQueryItem(name: "client_id", value: "51662026"),
             URLQueryItem(name: "redirect_uri", value: "http://oauth.vk.com/blank.html"),
             URLQueryItem(name: "display", value: "mobile"),
-            URLQueryItem(name: "response_type", value: "token")
+            URLQueryItem(name: "response_type", value: "token"),
+            URLQueryItem(name: "scope", value: "[friends, messages, video, audio, stories, pages, status, wall, ads, offline, docs, groups, notifications, stats, email, phone_number]")
         ]
         
         let req = URLRequest(url: url.url!);
@@ -72,6 +73,7 @@ class VKDelegate: NSObject, WKNavigationDelegate{
             }
 
         if let accessToken = params["access_token"]{
+            // TODO: Изменить этот способ сохранения токена на keychain
             UserDefaults.standard.set(accessToken, forKey: "accessToken");
             token(accessToken);
         }

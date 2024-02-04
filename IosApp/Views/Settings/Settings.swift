@@ -8,10 +8,17 @@
 import SwiftUI
 
 struct Settings: View {
+    @EnvironmentObject var userInfo: UserInfo;
+    
     var body: some View {
         NavigationStack{
             List{
-                
+                Button(action: {
+                    () -> Void in
+                    userInfo.token = "";
+                }){
+                    Label("Выйти", systemImage: "door.left.hand.open")
+                }
             }
             .navigationTitle("Настройки")
         }

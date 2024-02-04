@@ -75,7 +75,7 @@ struct UserProfile: View {
                         .padding(.top, 17)
                     if(!id.isEmpty){
                         UserProfileInfoRow(
-                            title: "короткий адрес",
+                            title: "Короткий адрес",
                             text: Text(
                                 "@" + id
                             )
@@ -84,7 +84,7 @@ struct UserProfile: View {
                     }
                     if(!status.isEmpty){
                         UserProfileInfoRow(
-                            title: "статус",
+                            title: "Статус",
                             text: Text(
                                 status
                             )

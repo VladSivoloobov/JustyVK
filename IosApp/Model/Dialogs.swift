@@ -21,14 +21,13 @@ struct Dialog: Identifiable{
 
 var dialogs: [Dialog] = [
     Dialog(name: "Анна Иванова", lastMessage: "Привет", image: "Avatar", isOnline: true, isReaded: true),
-    Dialog(name: "Иван Петров", lastMessage: "Она просто дура", image: "Avatar2", isOnline: false, isReaded: false),
+    Dialog(name: "Иван Петров", lastMessage: "Она странная просто", image: "Avatar2", isOnline: false, isReaded: false),
     Dialog(name: "Мария Сидорова", lastMessage: "Не знаю", image: "Avatar3", isOnline: false, isReaded: false),
     Dialog(name: "Алексей Кузнецов", lastMessage: "Как дела?", image: "Avatar4", isOnline: false, isReaded: true),
-    Dialog(name: "Елена Николаева", lastMessage: "Давай познакомимся, красавчик", image: "Avatar5", isOnline: false, isReaded: false),
+    Dialog(name: "Елена Николаева", lastMessage: "Чем занимаешься?", image: "Avatar5", isOnline: false, isReaded: false),
     Dialog(name: "Николай Ивановичев", lastMessage: "Извини", image: "Avatar7", isOnline: false, isReaded: false),
     Dialog(name: "Ольга Смирнова", lastMessage: "Да ладно тебе, я итак знаю про созданных тварей в афганском приводе, и всё же непонятно только одно, как это возможно", image: "Avatar6", isOnline: false, isReaded: false),
     Dialog(name: "Дмитрий Козлов", lastMessage: "ахаххаххах", image: "Avatar8", isOnline: false, isReaded: false),
-    Dialog(name: "Дмитрий Козлов", lastMessage: "ахаххаххах", image: "Avatar8", isOnline: false, isReaded: false)
 ];
 
 struct Message: Identifiable{
@@ -89,7 +88,7 @@ var messages: [Message] = [
     Message(text: "Что тебе нравится в своих коллегах?"),
     Message(text: "Какой твой любимый вид цветов?"),
     Message(text: "Какой твой любимый вид фотографии?"),
-    Message(text: "Какой твой любимый вид путешествий?"),
+    Message(text: "Какой твой любимый вид путешествий?", fromMe: false),
     Message(text: "Что тебе нравится в своей жизни больше всего?"),
     Message(text: "Какой твой любимый вид спортивной экипировки?"),
     Message(text: "Какой твой любимый вид блюд на гриле?"),
@@ -107,14 +106,14 @@ var messages: [Message] = [
     Message(text: "Какой твой любимый вид фруктовых салатов?"),
     Message(text: "Какой твой любимый вид супов?"),
     Message(text: "Какой твой любимый вид мясных блюд?"),
-    Message(text: "Что ты думаешь о семейных ценностях?"),
+    Message(text: "Что ты думаешь о семейных ценностях?", fromMe: false),
     Message(text: "Какой твой любимый вид коктейлей?"),
     Message(text: "Какой твой любимый вид закусок?"),
     Message(text: "Какой твой любимый вид сладостей?"),
     Message(text: "Что тебе нравится в своих увлечениях?"),
     Message(text: "Какой твой любимый вид морепродуктовых салатов?"),
     Message(text: "Какой твой любимый вид пасты?"),
-    Message(text: "Какой твой любимый вид овощей?"),
+    Message(text: "Какой твой любимый вид овощей?", fromMe: false),
     Message(text: "Какой твой любимый вид спортивной обуви?"),
     Message(text: "Что ты думаешь о экологии?"),
     Message(text: "Какой твой любимый вид салатов?"),
@@ -123,5 +122,5 @@ var messages: [Message] = [
     Message(text: "Что тебе нравится в своей личной жизни?"),
     Message(text: "Да всякое, если честно", fromMe: false),
     Message(text: "Какой твой любимый вид морских фруктов?"),
-    Message(text: "Пиздец ты настрочил", fromMe: false)
+    Message(text: "Как много тестовых сообщений", fromMe: false)
 ];

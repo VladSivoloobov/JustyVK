@@ -11,7 +11,7 @@ struct DialogList: View {
     @State var searchString = "";
     @State var viewWidth = CGFloat.zero;
     @Binding var tabBarVisibleBinding: Bool;
-    @Environment(\.isPresented) var isPresented;
+    @EnvironmentObject var userInfo: UserInfo;
     
     var body: some View {
         NavigationStack{
@@ -110,6 +110,18 @@ struct DialogList: View {
                     }
                 }
             }
+            .onAppear(){
+                SwiftVK(token: userInfo.token).messages.getHistory(offset: nil, count: nil, userId: 428156427, peerId: nil, rev: nil, extended: nil, fields: nil, groupId: nil){
+                    messages in
+                    for message in messages{
+                        print(message.text);
+                    }
+                }
+            }
         }
     }
+}
+
+#Preview{
+    DialogList(searchString: "", viewWidth: CGFloat.zero, tabBarVisibleBinding: .constant(false))
 }

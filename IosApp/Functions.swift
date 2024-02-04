@@ -1,8 +1,15 @@
-//
-//  Functions.swift
-//  Весточка
-//
-//  Created by Vladislav on 14.06.2023.
-//
+import Alamofire
 
-import Foundation
+func fetchData<T: Decodable>(url: String, method: HTTPMethod, parameters: Parameters, completion: @escaping (T?) -> Void) {
+    AF.request(url, method: method, parameters: parameters).response { response in
+        do {
+            if let data = response.data {
+                let decodedData = try JSONDecoder().decode(T.self, from: data)
+                completion(decodedData)
+            }
+        } catch {
+            print(error)
+            completion(nil)
+        }
+    }
+}
