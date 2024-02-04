@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import SDWebImage
+import SDWebImageSwiftUI
 
 struct DialogRow: View {
     @State var lastMessage: String;
@@ -19,7 +21,7 @@ struct DialogRow: View {
     
     var body: some View {
         HStack(alignment: .top){
-            Image(avatar)
+            WebImage(url: URL(string: avatar))
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 60, height: 60)

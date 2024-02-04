@@ -57,7 +57,7 @@ struct DialogOverlay: ViewModifier{
             // TODO: Создать отдельный модификатор для этого
             NavigationLink(
                 destination: {
-                    MessageList(name: "Тестовый юзер", image: dialogs[0].image, companionId: 2)
+                    MessageList(name: dialog.chatSettings?.title ?? "Тестовый Пользователь", image: dialogs[0].image, companionId: 2)
                         .onAppear(){
                             self.tabBarVisibleBinding.toggle();
                         }

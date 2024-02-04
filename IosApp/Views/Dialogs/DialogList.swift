@@ -21,10 +21,10 @@ struct DialogList: View {
                     ForEach(conversations, id: \.self.lastMessage.fromId){ conversation in
                         DialogRow(
                             lastMessage: conversation.lastMessage.text,
-                            messageAutor: "Тестоый юзер",
-                            isOnline: true,
-                            avatar: dialogs[0].image,
-                            isReaded: false,
+                            messageAutor: conversation.conversation.chatSettings?.title ?? "Пока без имени",
+                            isOnline: false,
+                            avatar: conversation.conversation.chatSettings?.photo.photo200 ?? "https://kartinki.pics/uploads/posts/2022-12/1670449450_5-kartinkin-net-p-kharder-sobaka-vkontakte-5.png",
+                            isReaded: true,
                             unreadCount: 0
                         )
                         .dialogContextMenu()
