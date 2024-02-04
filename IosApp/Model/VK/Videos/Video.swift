@@ -6,8 +6,8 @@ struct Video: Decodable{
     var title: String?;
     var description: String?;
     var duration: Int;
-    var image: [VideoImage];
-    var firstFrame: [VideoImage];
+    var image: [VideoImage]?;
+    var firstFrame: [VideoImage]?;
     var date: Int;
     var addingDate: Int?;
     var views: Int;
@@ -20,8 +20,8 @@ struct Video: Decodable{
     var accessKey: String;
     var processing: Int?;
     var canAttachLink: Int?;
-    var width: Int;
-    var height: Int;
+    var width: Int?;
+    var height: Int?;
     var userId: Int?;
     var converting: Int?;
     var added: Int?;

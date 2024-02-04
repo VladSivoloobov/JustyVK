@@ -49,6 +49,7 @@ struct DialogSwipeActions: ViewModifier{
 
 struct DialogOverlay: ViewModifier{
     var dialog: Conversation;
+    var companionId: Int;
     @Binding var tabBarVisibleBinding: Bool;
     
     func body(content: Content) -> some View{
@@ -57,7 +58,7 @@ struct DialogOverlay: ViewModifier{
             // TODO: Создать отдельный модификатор для этого
             NavigationLink(
                 destination: {
-                    MessageList(name: dialog.chatSettings?.title ?? "Тестовый Пользователь", image: dialogs[0].image, companionId: 2)
+                    MessageList(name: dialog.chatSettings?.title ?? "Тестовый Пользователь", image: dialogs[0].image, companionId: companionId)
                         .onAppear(){
                             self.tabBarVisibleBinding.toggle();
                         }
@@ -108,6 +109,7 @@ struct DialogModifiers: ViewModifier {
 struct GetConversations: ViewModifier{
     @Binding var conversations: [ConversationInfo];
     @EnvironmentObject var userInfo: UserInfo;
+    @Binding var unreadMessagesCount: Int;
     
     func body(content: Content) -> some View {
         content
@@ -115,14 +117,15 @@ struct GetConversations: ViewModifier{
                 SwiftVK(token: userInfo.token).messages.getConversations(offset: nil, count: nil, filter: nil, extended: nil, fields: "[id, ]", groupId: nil){
                     conversationsList in
                     conversations = conversationsList.items;
+                    unreadMessagesCount = conversationsList.unreadCount;
                 }
             }
     }
 }
 
 extension View {
-    func dialogOverlay(dialog: Conversation, tabBarVisibleBinding: Binding<Bool>) -> some View{
-        modifier(DialogOverlay(dialog: dialog, tabBarVisibleBinding: tabBarVisibleBinding))
+    func dialogOverlay(dialog: Conversation, tabBarVisibleBinding: Binding<Bool>, companionId: Int) -> some View{
+        modifier(DialogOverlay(dialog: dialog, companionId: companionId, tabBarVisibleBinding: tabBarVisibleBinding))
     }
     
     func dialogSwipeActions() -> some View{
@@ -137,7 +140,7 @@ extension View {
         modifier(DialogModifiers(searchString: searchString))
     }
     
-    func getConversations(_ conversationList: Binding<[ConversationInfo]>) -> some View{
-        modifier(GetConversations(conversations: conversationList));
+    func getConversations(_ conversationList: Binding<[ConversationInfo]>, _ unreadMessagesCount: Binding<Int>) -> some View{
+        modifier(GetConversations(conversations: conversationList, unreadMessagesCount: unreadMessagesCount));
     }
 }

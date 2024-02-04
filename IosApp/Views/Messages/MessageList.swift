@@ -30,7 +30,7 @@ struct MessageList: View {
                 ScrollView{
                     VStack(spacing: 4){
                         ForEach(0..<messageList.count, id: \.self){messageIndex in
-                            let message = messageList[messageIndex];
+                            let message = messageList.reversed()[messageIndex];
                             MessageCloud(
                                 messageText: message.text,
                                 time: "22:02",
@@ -58,7 +58,7 @@ struct MessageList: View {
                 }
                 .messageToolbar(name: name, image: image)
             }
-            .getMessageList(scrollReader: scrollReader, messageList: $messageList, companionId: 428156427)
+            .getMessageList(scrollReader: scrollReader, messageList: $messageList, companionId: companionId)
             .onReceive(NotificationCenter.default.publisher(
                 for: UIResponder.keyboardWillShowNotification
             )){ _ in

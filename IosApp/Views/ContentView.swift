@@ -17,6 +17,7 @@ struct ContentView: View {
     @State private var selectedTab: Tabs = .messages;
     @State var tabBarIsHidden: Bool = false;
     @EnvironmentObject var userInfo: UserInfo;
+    @State var unreadMessagesCounter: Int = 0;
     
     var body: some View {
         // TODO: Сделать кастомный таббар
@@ -27,11 +28,12 @@ struct ContentView: View {
                     Text("Друзья")
                 }
                 .tag(Tabs.friends)
-            DialogList(tabBarVisibleBinding: $tabBarIsHidden)
+            DialogList(tabBarVisibleBinding: $tabBarIsHidden, unreadMessagesCount: $unreadMessagesCounter)
                 .tabItem{
                     Image(systemName: "message")
                     Text("Сообщения")
                 }
+                .badge(unreadMessagesCounter)
                 .tag(Tabs.messages)
                 .toolbar(tabBarIsHidden ? .hidden : .visible, for: .tabBar)
             Settings()
@@ -56,6 +58,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(unreadMessagesCounter: 20)
     }
 }

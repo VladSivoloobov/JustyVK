@@ -13,6 +13,7 @@ struct DialogList: View {
     @Binding var tabBarVisibleBinding: Bool;
     @EnvironmentObject var userInfo: UserInfo;
     @State var conversations: [ConversationInfo] = [];
+    @Binding var unreadMessagesCount: Int;
     
     var body: some View {
         NavigationStack{
@@ -29,13 +30,13 @@ struct DialogList: View {
                         )
                         .dialogContextMenu()
                         .dialogSwipeActions()
-                        .dialogOverlay(dialog: conversation.conversation, tabBarVisibleBinding: $tabBarVisibleBinding)
+                        .dialogOverlay(dialog: conversation.conversation, tabBarVisibleBinding: $tabBarVisibleBinding, companionId: conversation.conversation.peer.id)
                     }
                 }
                 .listSectionSeparator(.hidden)
             }
             .dialogModifiers($searchString)
-            .getConversations($conversations)
+            .getConversations($conversations, $unreadMessagesCount)
         }
     }
 }
