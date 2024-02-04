@@ -20,14 +20,14 @@ public struct SwiftVK {
         private let url = "https://api.vk.com/method/users.get"
         public let token: String;
         
-        func get(userId: Int, fields: [String] = [""], completion: @escaping ([User]) -> ()){
+        func get(userId: Int?, fields: [String] = [""], completion: @escaping ([User]) -> ()){
             let url = "https://api.vk.com/method/users.get";
-            let params: Parameters = [
+            let params: Parameters = filterParams(params: [
                 "access_token": token,
-                "user_ids": userId,
+                "user_ids": userId ?? "",
                 "fields": fields.joined(separator: ","),
                 "v": "5.131",
-            ];
+            ]);
             
             fetchData(url: url, method: .post, parameters: params){
                 (messages: UsersResponse?) in
@@ -40,7 +40,6 @@ public struct SwiftVK {
     
     public struct SwiftVKMessages{
         public let token: String;
-        private let url = "https://api.vk.com/method/messages.getHistory"
         
         func getHistory(offset: Int?,
                         count: Int?,
@@ -51,6 +50,7 @@ public struct SwiftVK {
                         fields: String?,
                         groupId: Int?,
                         completion: @escaping ([VKMesage]) -> ()){
+            let url = "https://api.vk.com/method/messages.getHistory"
             let params: Parameters = [
                 "access_token": token,
                 "user_id": userId ?? "",
@@ -67,6 +67,25 @@ public struct SwiftVK {
                 (messages: MessagesResponse?) in
                 if let fetchedMessages = messages {
                     completion(fetchedMessages.response.items);
+                }
+            }
+        }
+        
+        func getConversations(offset: Int?, count: Int?, filter: String?, extended: Int?, fields: String?, groupId: Int?){
+            let url = "https://api.vk.com/method/messages.getConversations";
+            let params: Parameters = filterParams(params: [
+                "access_token": token,
+                "count": count ?? "",
+                "filter": filter ?? "",
+                "extended": extended ?? "",
+                "fields": fields ?? "",
+                "groupId": groupId ?? ""
+            ]);
+            
+            fetchData(url: url, method: .post, parameters: params){
+                (messages: MessagesResponse?) in
+                if let fetchedMessages = messages {
+                    // completion(fetchedMessages.response.items);
                 }
             }
         }

@@ -1,10 +1,3 @@
-//
-//  DialogPage.swift
-//  IosApp
-//
-//  Created by Vladislav on 31.05.2023.
-//
-
 import SwiftUI
 
 extension UINavigationController {
@@ -18,6 +11,9 @@ struct MessageList: View {
     @State var uiTabarController: UITabBarController?
     @State var name: String;
     @State var image: String;
+    @State var messageList: [VKMesage] = [];
+    @EnvironmentObject var userInfo: UserInfo;
+    @State var companionId: Int;
     
     func hideKeyboardWithAnimation(_ scrollReader: ScrollViewProxy){
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
@@ -33,12 +29,12 @@ struct MessageList: View {
             GeometryReader { reader in
                 ScrollView{
                     VStack(spacing: 4){
-                        ForEach(0..<messages.count, id: \.self){messageIndex in
-                            let message = messages[messageIndex];
+                        ForEach(0..<messageList.count, id: \.self){messageIndex in
+                            let message = messageList[messageIndex];
                             MessageCloud(
                                 messageText: message.text,
                                 time: "22:02",
-                                fromMe: message.fromMe
+                                fromMe: message.fromId == userInfo.id
                             )
                             .id(messageIndex)
                         }
@@ -80,6 +76,10 @@ struct MessageList: View {
             .onAppear{
                 // TODO: При взаимодействии с api изменить скролл
                 scrollReader.scrollTo(messages.count - 1)
+                SwiftVK(token: userInfo.token).messages.getHistory(offset: nil, count: nil, userId: companionId, peerId: nil, rev: nil, extended: nil, fields: nil, groupId: nil){
+                    messages in
+                    messageList = messages;
+                }
             }
             .onReceive(NotificationCenter.default.publisher(
                 for: UIResponder.keyboardWillShowNotification
@@ -93,13 +93,5 @@ struct MessageList: View {
             }
             .padding(.bottom, -20)
         }
-    }
-}
-
-struct DialogPage_Previews: PreviewProvider {
-    static var previews: some View {
-        MessageList(name: "Анна Гростимова", image: "Avatar")
-            .previewLayout(.fixed(width: 320, height: 600))
-            .padding(.vertical, 10)
     }
 }

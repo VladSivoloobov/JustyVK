@@ -110,14 +110,6 @@ struct DialogList: View {
                     }
                 }
             }
-            .onAppear(){
-                SwiftVK(token: userInfo.token).messages.getHistory(offset: nil, count: nil, userId: 428156427, peerId: nil, rev: nil, extended: nil, fields: nil, groupId: nil){
-                    messages in
-                    for message in messages{
-                        print(message.text);
-                    }
-                }
-            }
         }
     }
 }

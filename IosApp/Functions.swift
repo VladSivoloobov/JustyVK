@@ -13,3 +13,9 @@ func fetchData<T: Decodable>(url: String, method: HTTPMethod, parameters: Parame
         }
     }
 }
+
+func filterParams(params: Parameters) -> Parameters{
+    return params.filter{ param -> Bool in
+        return String(describing: param.value) != "";
+    }
+}

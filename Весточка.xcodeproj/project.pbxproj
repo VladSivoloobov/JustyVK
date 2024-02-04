@@ -39,6 +39,11 @@
 		867EC29E2A295AE80003645F /* UnreadMessagesCount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 867EC29D2A295AE80003645F /* UnreadMessagesCount.swift */; };
 		8686099C2A2B81F000611BC6 /* FriendRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8686099B2A2B81F000611BC6 /* FriendRow.swift */; };
 		869CBDE72A27FA57006171DD /* MessageCloud.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869CBDE62A27FA57006171DD /* MessageCloud.swift */; };
+		86A0B3EF2B6FC86200901F42 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3EE2B6FC86200901F42 /* Conversation.swift */; };
+		86A0B3F12B6FC86F00901F42 /* Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3F02B6FC86F00901F42 /* Conversations.swift */; };
+		86A0B3F32B6FC87A00901F42 /* ConversationsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3F22B6FC87A00901F42 /* ConversationsResponse.swift */; };
+		86A0B3F52B6FC89D00901F42 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3F42B6FC89D00901F42 /* Chat.swift */; };
+		86A0B3F82B6FC90400901F42 /* PinnedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3F72B6FC90400901F42 /* PinnedMessage.swift */; };
 		86DB1AF92B6EA95A006A1BCD /* MessagesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AF82B6EA95A006A1BCD /* MessagesResponse.swift */; };
 		86DB1AFB2B6EA967006A1BCD /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFA2B6EA967006A1BCD /* Messages.swift */; };
 		86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFC2B6EA975006A1BCD /* Message.swift */; };
@@ -87,6 +92,11 @@
 		867EC29D2A295AE80003645F /* UnreadMessagesCount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnreadMessagesCount.swift; sourceTree = "<group>"; };
 		8686099B2A2B81F000611BC6 /* FriendRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendRow.swift; sourceTree = "<group>"; };
 		869CBDE62A27FA57006171DD /* MessageCloud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCloud.swift; sourceTree = "<group>"; };
+		86A0B3EE2B6FC86200901F42 /* Conversation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Conversation.swift; path = ../Conversation.swift; sourceTree = "<group>"; };
+		86A0B3F02B6FC86F00901F42 /* Conversations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Conversations.swift; path = ../Conversations.swift; sourceTree = "<group>"; };
+		86A0B3F22B6FC87A00901F42 /* ConversationsResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConversationsResponse.swift; path = ../ConversationsResponse.swift; sourceTree = "<group>"; };
+		86A0B3F42B6FC89D00901F42 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
+		86A0B3F72B6FC90400901F42 /* PinnedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedMessage.swift; sourceTree = "<group>"; };
 		86B897B42A27DE7500D0D633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		86DB1AF82B6EA95A006A1BCD /* MessagesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesResponse.swift; sourceTree = "<group>"; };
 		86DB1AFA2B6EA967006A1BCD /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
@@ -168,6 +178,8 @@
 		8658A6482A32B63A00D3F4C5 /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				86A0B3F62B6FC8EE00901F42 /* Chat */,
+				86A0B3ED2B6FC85100901F42 /* Conversations */,
 				86DB1B002B6EAC4F006A1BCD /* Videos */,
 				86DB1AF72B6EA942006A1BCD /* Messages */,
 				8658A6572A32F0C800D3F4C5 /* Users */,
@@ -244,6 +256,26 @@
 				866666FF2A2A10CB0089A054 /* MessageInput.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		86A0B3ED2B6FC85100901F42 /* Conversations */ = {
+			isa = PBXGroup;
+			children = (
+				86A0B3F22B6FC87A00901F42 /* ConversationsResponse.swift */,
+				86A0B3F02B6FC86F00901F42 /* Conversations.swift */,
+				86A0B3EE2B6FC86200901F42 /* Conversation.swift */,
+			);
+			name = Conversations;
+			path = ../../../../../.Trash/Conversations;
+			sourceTree = "<group>";
+		};
+		86A0B3F62B6FC8EE00901F42 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				86A0B3F42B6FC89D00901F42 /* Chat.swift */,
+				86A0B3F72B6FC90400901F42 /* PinnedMessage.swift */,
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 		86B897B12A27D14200D0D633 /* Auth */ = {
@@ -436,25 +468,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86A0B3F12B6FC86F00901F42 /* Conversations.swift in Sources */,
 				86DB1AF92B6EA95A006A1BCD /* MessagesResponse.swift in Sources */,
 				8658A64B2A32B66000D3F4C5 /* Photo.swift in Sources */,
 				8608162F2A27589E00AF16C7 /* Dialogs.swift in Sources */,
 				86FB959A2A2113660069BFA1 /* ContentView.swift in Sources */,
 				86DB1AFF2B6EABC8006A1BCD /* Attachment.swift in Sources */,
+				86A0B3EF2B6FC86200901F42 /* Conversation.swift in Sources */,
 				8658A64F2A32B6B100D3F4C5 /* PhotosResponse.swift in Sources */,
 				8617DCCF2A3185010099E3C1 /* VKAuthWebView.swift in Sources */,
 				86FB1AD32A2E659300E9D912 /* TabBar.swift in Sources */,
 				866667002A2A10CB0089A054 /* MessageInput.swift in Sources */,
 				8658A6592A32F0F800D3F4C5 /* UserResponse.swift in Sources */,
 				86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */,
+				86A0B3F52B6FC89D00901F42 /* Chat.swift in Sources */,
 				869CBDE72A27FA57006171DD /* MessageCloud.swift in Sources */,
 				8658A6432A32498C00D3F4C5 /* SwiftVK.swift in Sources */,
 				8623F9702A30169C00270CD5 /* Extensions.swift in Sources */,
 				8656065A2A39914D004917AA /* Functions.swift in Sources */,
 				8624F3DC2A266C1F00FA20B1 /* DialogList.swift in Sources */,
+				86A0B3F32B6FC87A00901F42 /* ConversationsResponse.swift in Sources */,
 				8617DCD12A31857F0099E3C1 /* UserInfo.swift in Sources */,
 				8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */,
 				861BD67E2A2D1170002F5404 /* ProfileButtonsBar.swift in Sources */,
+				86A0B3F82B6FC90400901F42 /* PinnedMessage.swift in Sources */,
 				86DB1B022B6EAC5B006A1BCD /* Video.swift in Sources */,
 				8624F3E52A26748700FA20B1 /* UserOnlineStatus.swift in Sources */,
 				861BD67A2A2D06DC002F5404 /* UserProfile.swift in Sources */,

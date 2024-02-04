@@ -16,6 +16,7 @@ enum Tabs: String{
 struct ContentView: View {
     @State private var selectedTab: Tabs = .messages;
     @State var tabBarIsHidden: Bool = false;
+    @EnvironmentObject var userInfo: UserInfo;
     
     var body: some View {
         // TODO: Сделать кастомный таббар
@@ -41,6 +42,14 @@ struct ContentView: View {
                 .tag(Tabs.settings)
         }
         .zIndex(-1)
+        .onAppear(){
+            SwiftVK(token: userInfo.token).users.get(userId: nil){
+                users in
+                userInfo.firstName = users[0].firstName;
+                userInfo.lastName = users[0].lastName;
+                userInfo.id = users[0].id;
+            }
+        }
     }
 }
 
