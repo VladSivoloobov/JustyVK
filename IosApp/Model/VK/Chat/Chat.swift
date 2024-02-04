@@ -2,8 +2,8 @@ struct Chat: Decodable{
     var title: String;
     var membersCount: Int;
     var ownerId: Int;
-    var description: String;
-    var pinnedMessageCount: Int;
+    var description: String?;
+    var pinnedMessageCount: Int?;
     var pinnedMessage: PinnedMessage;
     var state: String;
     var photo: ChatPhoto;
@@ -12,8 +12,8 @@ struct Chat: Decodable{
     var acl: ChatAcl;
     var isDisappearing: Bool;
     var isService: Bool;
-    var typeMask: Int;
-    var shortPollReactions: Bool;
+    var typeMask: Int?;
+    var shortPollReactions: Bool?;
     
     enum CodingKeys: String, CodingKey{
         case title;

@@ -56,31 +56,9 @@ struct MessageList: View {
                 .safeAreaInset(edge: .bottom){
                     MessageInput()
                 }
-                .scrollIndicators(.hidden)
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar{
-                    ToolbarItem(placement: .navigationBarTrailing){
-                        Image(image)
-                            .resizable(resizingMode: .stretch)
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: 40, height: 40)
-                            .cornerRadius(.infinity)
-                            .padding(.trailing, 5)
-                    }
-                    ToolbarItem(placement: .principal){
-                        MessageNavbar(name: name)
-                    }
-                }
-                .toolbarBackground(.visible, for: .navigationBar)
+                .messageToolbar(name: name, image: image)
             }
-            .onAppear{
-                // TODO: При взаимодействии с api изменить скролл
-                scrollReader.scrollTo(messages.count - 1)
-                SwiftVK(token: userInfo.token).messages.getHistory(offset: nil, count: nil, userId: companionId, peerId: nil, rev: nil, extended: nil, fields: nil, groupId: nil){
-                    messages in
-                    messageList = messages;
-                }
-            }
+            .getMessageList(scrollReader: scrollReader, messageList: $messageList, companionId: 428156427)
             .onReceive(NotificationCenter.default.publisher(
                 for: UIResponder.keyboardWillShowNotification
             )){ _ in

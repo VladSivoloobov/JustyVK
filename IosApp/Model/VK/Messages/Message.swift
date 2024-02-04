@@ -1,7 +1,7 @@
 class VKMesage: Decodable{
-    var id: Int;
+    var id: Int?;
     var date: Int;
-    var peerId: Int;
+    var peerId: Int?;
     var fromId: Int;
     var text: String;
     var randomId: Int?;

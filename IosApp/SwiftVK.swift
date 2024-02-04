@@ -71,7 +71,7 @@ public struct SwiftVK {
             }
         }
         
-        func getConversations(offset: Int?, count: Int?, filter: String?, extended: Int?, fields: String?, groupId: Int?){
+        func getConversations(offset: Int?, count: Int?, filter: String?, extended: Int?, fields: String?, groupId: Int?, completion: @escaping (Conversations) -> ()){
             let url = "https://api.vk.com/method/messages.getConversations";
             let params: Parameters = filterParams(params: [
                 "access_token": token,
@@ -79,13 +79,14 @@ public struct SwiftVK {
                 "filter": filter ?? "",
                 "extended": extended ?? "",
                 "fields": fields ?? "",
-                "groupId": groupId ?? ""
+                "groupId": groupId ?? "",
+                "v": "5.131"
             ]);
             
             fetchData(url: url, method: .post, parameters: params){
-                (messages: MessagesResponse?) in
-                if let fetchedMessages = messages {
-                    // completion(fetchedMessages.response.items);
+                (conversations: ConversationsResponse?) in
+                if let fetchedConversations = conversations {
+                    completion(fetchedConversations.response);
                 }
             }
         }
