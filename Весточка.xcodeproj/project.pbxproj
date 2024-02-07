@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608162B2A2756CD00AF16C7 /* MessageList.swift */; };
-		8608162F2A27589E00AF16C7 /* Dialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608162E2A27589E00AF16C7 /* Dialogs.swift */; };
 		8617DCCF2A3185010099E3C1 /* VKAuthWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617DCCE2A3185010099E3C1 /* VKAuthWebView.swift */; };
 		8617DCD12A31857F0099E3C1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617DCD02A31857F0099E3C1 /* UserInfo.swift */; };
 		861BD67A2A2D06DC002F5404 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BD6792A2D06DC002F5404 /* UserProfile.swift */; };
@@ -24,6 +23,8 @@
 		8624F3EB2A26C36800FA20B1 /* ReadMessageStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3EA2A26C36800FA20B1 /* ReadMessageStatus.swift */; };
 		8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */; };
 		8633F3A92B6FEC9B00C5B0F0 /* MessageListModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3A82B6FEC9B00C5B0F0 /* MessageListModifiers.swift */; };
+		8633F3AB2B7037CA00C5B0F0 /* MessageToolbarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3AA2B7037CA00C5B0F0 /* MessageToolbarImage.swift */; };
+		8633F3AD2B70395300C5B0F0 /* ChatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3AC2B70395300C5B0F0 /* ChatType.swift */; };
 		8656065A2A39914D004917AA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865606592A39914D004917AA /* Functions.swift */; };
 		8658A6432A32498C00D3F4C5 /* SwiftVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658A6422A32498C00D3F4C5 /* SwiftVK.swift */; };
 		8658A6472A325D6600D3F4C5 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8658A6462A325D6600D3F4C5 /* SDWebImageSwiftUI */; };
@@ -51,7 +52,6 @@
 		86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFC2B6EA975006A1BCD /* Message.swift */; };
 		86DB1AFF2B6EABC8006A1BCD /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */; };
 		86DB1B022B6EAC5B006A1BCD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1B012B6EAC5B006A1BCD /* Video.swift */; };
-		86DB1B042B6EC48B006A1BCD /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1B032B6EC48B006A1BCD /* Response.swift */; };
 		86FB1AD12A2E653400E9D912 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB1AD02A2E653400E9D912 /* SplashScreen.swift */; };
 		86FB1AD32A2E659300E9D912 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB1AD22A2E659300E9D912 /* TabBar.swift */; };
 		86FB95982A2113660069BFA1 /* AppInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB95972A2113660069BFA1 /* AppInstance.swift */; };
@@ -64,7 +64,6 @@
 /* Begin PBXFileReference section */
 		09A4F6C351E9B03C73851E90 /* Pods-Весточка.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Весточка.release.xcconfig"; path = "Target Support Files/Pods-Весточка/Pods-Весточка.release.xcconfig"; sourceTree = "<group>"; };
 		8608162B2A2756CD00AF16C7 /* MessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
-		8608162E2A27589E00AF16C7 /* Dialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dialogs.swift; sourceTree = "<group>"; };
 		8617DCCE2A3185010099E3C1 /* VKAuthWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKAuthWebView.swift; sourceTree = "<group>"; };
 		8617DCD02A31857F0099E3C1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		861BD6792A2D06DC002F5404 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -80,6 +79,8 @@
 		8624F3EA2A26C36800FA20B1 /* ReadMessageStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMessageStatus.swift; sourceTree = "<group>"; };
 		8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogModifiers.swift; sourceTree = "<group>"; };
 		8633F3A82B6FEC9B00C5B0F0 /* MessageListModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageListModifiers.swift; sourceTree = "<group>"; };
+		8633F3AA2B7037CA00C5B0F0 /* MessageToolbarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageToolbarImage.swift; sourceTree = "<group>"; };
+		8633F3AC2B70395300C5B0F0 /* ChatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatType.swift; sourceTree = "<group>"; };
 		865606592A39914D004917AA /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		8658A6422A32498C00D3F4C5 /* SwiftVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftVK.swift; sourceTree = "<group>"; };
 		8658A64A2A32B66000D3F4C5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -107,7 +108,6 @@
 		86DB1AFC2B6EA975006A1BCD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		86DB1B012B6EAC5B006A1BCD /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		86DB1B032B6EC48B006A1BCD /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		86DBB5CA2A2FCCEF00AF3E8E /* Весточка.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Весточка.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FB1AD02A2E653400E9D912 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		86FB1AD22A2E659300E9D912 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
@@ -151,7 +151,6 @@
 			isa = PBXGroup;
 			children = (
 				8658A6482A32B63A00D3F4C5 /* VK */,
-				8608162E2A27589E00AF16C7 /* Dialogs.swift */,
 				8617DCD02A31857F0099E3C1 /* UserInfo.swift */,
 			);
 			path = Model;
@@ -191,7 +190,7 @@
 				8658A6502A32B6D500D3F4C5 /* Friends */,
 				8658A6492A32B64B00D3F4C5 /* Photos */,
 				86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */,
-				86DB1B032B6EC48B006A1BCD /* Response.swift */,
+				8633F3AC2B70395300C5B0F0 /* ChatType.swift */,
 			);
 			path = VK;
 			sourceTree = "<group>";
@@ -260,6 +259,7 @@
 				867EC29B2A2957500003645F /* MessageNavbar.swift */,
 				866666FF2A2A10CB0089A054 /* MessageInput.swift */,
 				8633F3A82B6FEC9B00C5B0F0 /* MessageListModifiers.swift */,
+				8633F3AA2B7037CA00C5B0F0 /* MessageToolbarImage.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -386,7 +386,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1420;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					86FB95932A2113660069BFA1 = {
 						CreatedOnToolsVersion = 14.2;
@@ -477,7 +477,6 @@
 				86A0B3F12B6FC86F00901F42 /* Conversations.swift in Sources */,
 				86DB1AF92B6EA95A006A1BCD /* MessagesResponse.swift in Sources */,
 				8658A64B2A32B66000D3F4C5 /* Photo.swift in Sources */,
-				8608162F2A27589E00AF16C7 /* Dialogs.swift in Sources */,
 				86FB959A2A2113660069BFA1 /* ContentView.swift in Sources */,
 				86DB1AFF2B6EABC8006A1BCD /* Attachment.swift in Sources */,
 				86A0B3EF2B6FC86200901F42 /* Conversation.swift in Sources */,
@@ -488,6 +487,7 @@
 				8658A6592A32F0F800D3F4C5 /* UserResponse.swift in Sources */,
 				86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */,
 				86A0B3F52B6FC89D00901F42 /* Chat.swift in Sources */,
+				8633F3AD2B70395300C5B0F0 /* ChatType.swift in Sources */,
 				869CBDE72A27FA57006171DD /* MessageCloud.swift in Sources */,
 				8658A6432A32498C00D3F4C5 /* SwiftVK.swift in Sources */,
 				8623F9702A30169C00270CD5 /* Extensions.swift in Sources */,
@@ -515,8 +515,8 @@
 				867EC29C2A2957500003645F /* MessageNavbar.swift in Sources */,
 				861BD6802A2D1E6E002F5404 /* HorizontalProfileAttachments.swift in Sources */,
 				86FB1AD12A2E653400E9D912 /* SplashScreen.swift in Sources */,
-				86DB1B042B6EC48B006A1BCD /* Response.swift in Sources */,
 				867EC29E2A295AE80003645F /* UnreadMessagesCount.swift in Sources */,
+				8633F3AB2B7037CA00C5B0F0 /* MessageToolbarImage.swift in Sources */,
 				8658A64D2A32B69100D3F4C5 /* Photos.swift in Sources */,
 				86FDC9F32A3184850009322D /* Login.swift in Sources */,
 				8658A65D2A32F11000D3F4C5 /* User.swift in Sources */,
@@ -565,6 +565,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -579,7 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -625,6 +626,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -633,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -655,14 +657,16 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IosApp/Preview Content\"";
 				DEVELOPMENT_TEAM = UZLQC3X283;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IosApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -688,14 +692,16 @@
 				DEVELOPMENT_ASSET_PATHS = "\"IosApp/Preview Content\"";
 				DEVELOPMENT_TEAM = UZLQC3X283;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = IosApp/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -1,4 +1,4 @@
-class VKMesage: Decodable{
+class Message: Decodable{
     var id: Int?;
     var date: Int;
     var peerId: Int?;
@@ -10,7 +10,7 @@ class VKMesage: Decodable{
     var attachments: [Attachment];
     var important: Bool?;
     var payload: String?;
-    var replyMessage: VKMesage?;
+    var replyMessage: Message?;
     
     enum CodingKeys: String, CodingKey {
         case id = "id";

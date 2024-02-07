@@ -49,7 +49,7 @@ public struct SwiftVK {
                         extended: Int?,
                         fields: String?,
                         groupId: Int?,
-                        completion: @escaping ([VKMesage]) -> ()){
+                        completion: @escaping ([Message]) -> ()){
             let url = "https://api.vk.com/method/messages.getHistory"
             let params: Parameters = [
                 "access_token": token,

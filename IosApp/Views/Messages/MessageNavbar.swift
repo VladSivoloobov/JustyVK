@@ -10,15 +10,23 @@ import SwiftUI
 struct MessageNavbar: View {
     @State private var bottomSheetOpened = false;
     var name: String;
+    var onlineStatusVisible: Bool;
+    
+    // TODO: Изменить на перечисление
     
     var body: some View {
         VStack{
             Text(name)
                 .fontWeight(.medium)
-                .padding(.bottom, -8)
-            Text("онлайн")
-                .font(.subheadline)
-                .foregroundColor(.blue)
+                .lineLimit(1)
+            
+            if(onlineStatusVisible){
+                Text("онлайн")
+                    .font(.subheadline)
+                    .foregroundColor(.blue)
+                    .padding(.bottom, 8)
+                    .padding(.top, -10)
+            }
         }
         .onTapGesture {
             bottomSheetOpened = true;
@@ -27,11 +35,5 @@ struct MessageNavbar: View {
             Text("Открыто")
         }
 
-    }
-}
-
-struct Navbar_Previews: PreviewProvider {
-    static var previews: some View {
-        MessageNavbar(name: "Арина Мануйлова")
     }
 }

@@ -51,14 +51,16 @@ struct DialogOverlay: ViewModifier{
     var dialog: Conversation;
     var companionId: Int;
     @Binding var tabBarVisibleBinding: Bool;
+    @Binding var userName: String?;
+    @Binding var avatar: String?;
+    var onlineStatusVisible: Bool;
     
     func body(content: Content) -> some View{
         content
             .overlay{
-            // TODO: Создать отдельный модификатор для этого
             NavigationLink(
                 destination: {
-                    MessageList(name: dialog.chatSettings?.title ?? "Тестовый Пользователь", image: dialogs[0].image, companionId: companionId)
+                    MessageList(name: userName ?? "Неизвестно", image: avatar ?? defaultImage, companionId: companionId, onlineStatusVisible: onlineStatusVisible)
                         .onAppear(){
                             self.tabBarVisibleBinding.toggle();
                         }
@@ -66,6 +68,9 @@ struct DialogOverlay: ViewModifier{
                             withAnimation(.spring()){
                                 self.tabBarVisibleBinding.toggle();
                             }
+                        }
+                        .onAppear(){
+                            
                         }
                 }, label: {
                     EmptyView()
@@ -114,7 +119,7 @@ struct GetConversations: ViewModifier{
     func body(content: Content) -> some View {
         content
             .onAppear(){
-                SwiftVK(token: userInfo.token).messages.getConversations(offset: nil, count: nil, filter: nil, extended: nil, fields: "[id, ]", groupId: nil){
+                SwiftVK(token: userInfo.token).messages.getConversations(offset: nil, count: 200, filter: nil, extended: nil, fields: "[id, ]", groupId: nil){
                     conversationsList in
                     conversations = conversationsList.items;
                     unreadMessagesCount = conversationsList.unreadCount;
@@ -124,8 +129,8 @@ struct GetConversations: ViewModifier{
 }
 
 extension View {
-    func dialogOverlay(dialog: Conversation, tabBarVisibleBinding: Binding<Bool>, companionId: Int) -> some View{
-        modifier(DialogOverlay(dialog: dialog, companionId: companionId, tabBarVisibleBinding: tabBarVisibleBinding))
+    func dialogOverlay(dialog: Conversation, tabBarVisibleBinding: Binding<Bool>, companionId: Int, userName: Binding<String?>, avatar: Binding<String?>, onlineStatusVisible: Bool) -> some View{
+        modifier(DialogOverlay(dialog: dialog, companionId: companionId, tabBarVisibleBinding: tabBarVisibleBinding, userName: userName, avatar: avatar, onlineStatusVisible: onlineStatusVisible))
     }
     
     func dialogSwipeActions() -> some View{

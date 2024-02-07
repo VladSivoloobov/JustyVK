@@ -1,6 +1,6 @@
 struct Messages: Decodable {
     var count: Int;
-    var items: [VKMesage];
+    var items: [Message];
     
     enum CodingKeys: String, CodingKey{
         case items = "items";

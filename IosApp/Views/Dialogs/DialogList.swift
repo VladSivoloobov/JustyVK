@@ -19,18 +19,12 @@ struct DialogList: View {
         NavigationStack{
             List{
                 Section{
-                    ForEach(conversations, id: \.self.lastMessage.fromId){ conversation in
+                    ForEach(conversations, id: \.self.conversation.peer.id){ conversation in
                         DialogRow(
-                            lastMessage: conversation.lastMessage.text,
-                            messageAutor: conversation.conversation.chatSettings?.title ?? "Пока без имени",
-                            isOnline: false,
-                            avatar: conversation.conversation.chatSettings?.photo.photo200 ?? "https://kartinki.pics/uploads/posts/2022-12/1670449450_5-kartinkin-net-p-kharder-sobaka-vkontakte-5.png",
-                            isReaded: true,
-                            unreadCount: 0
+                            conversation: conversation.conversation,
+                            lastMesage: conversation.lastMessage,
+                            tabBarVisibleBinding: $tabBarVisibleBinding
                         )
-                        .dialogContextMenu()
-                        .dialogSwipeActions()
-                        .dialogOverlay(dialog: conversation.conversation, tabBarVisibleBinding: $tabBarVisibleBinding, companionId: conversation.conversation.peer.id)
                     }
                 }
                 .listSectionSeparator(.hidden)

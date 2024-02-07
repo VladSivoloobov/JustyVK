@@ -1,8 +1,11 @@
 import SwiftUI
+import SDWebImage
+import SDWebImageSwiftUI
 
 struct MessageToolbar: ViewModifier{
     @State var name: String;
     @State var image: String;
+    var onlineStatusVisible: Bool;
     
     func body(content: Content) -> some View {
         content
@@ -10,15 +13,10 @@ struct MessageToolbar: ViewModifier{
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing){
-                    Image(image)
-                        .resizable(resizingMode: .stretch)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 40, height: 40)
-                        .cornerRadius(.infinity)
-                        .padding(.trailing, 5)
+                    MessageToolbarImage(image: image)
                 }
                 ToolbarItem(placement: .principal){
-                    MessageNavbar(name: name)
+                    MessageNavbar(name: name, onlineStatusVisible: onlineStatusVisible)
                 }
             }
             .toolbarBackground(.visible, for: .navigationBar)
@@ -27,7 +25,7 @@ struct MessageToolbar: ViewModifier{
 
 struct GetMessageList: ViewModifier {
     var scrollReader: ScrollViewProxy;
-    @Binding var messageList: [VKMesage];
+    @Binding var messageList: [Message];
     var companionId: Int;
     @EnvironmentObject var userInfo: UserInfo;
     
@@ -35,7 +33,6 @@ struct GetMessageList: ViewModifier {
         content
             .onAppear{
             // TODO: При взаимодействии с api изменить скролл
-                scrollReader.scrollTo(messages.count - 1)
                 SwiftVK(token: userInfo.token).messages.getHistory(offset: nil, count: nil, userId: companionId, peerId: nil, rev: nil, extended: nil, fields: nil, groupId: nil){
                         messages in
                         messageList = messages;
@@ -45,12 +42,12 @@ struct GetMessageList: ViewModifier {
 }
 
 extension View {
-    func messageToolbar(name: String, image: String) -> some View{
-        modifier(MessageToolbar(name: name, image: image));
+    func messageToolbar(name: String, image: String, onlineStatusVisible: Bool) -> some View{
+        modifier(MessageToolbar(name: name, image: image, onlineStatusVisible: onlineStatusVisible));
     }
     
     func getMessageList(scrollReader: ScrollViewProxy,
-                        messageList: Binding<[VKMesage]>,
+                        messageList: Binding<[Message]>,
                         companionId: Int) -> some View{
         modifier(GetMessageList(scrollReader: scrollReader, messageList: messageList, companionId: companionId));
     }

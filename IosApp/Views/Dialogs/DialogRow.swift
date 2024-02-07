@@ -10,32 +10,48 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct DialogRow: View {
-    @State var lastMessage: String;
-    @State var messageAutor: String;
-    @State var messageAvatar: Image?;
-    @State var isOnline: Bool;
-    @State var avatar: String;
-    @State var isReaded: Bool = false;
-    @State var time: String = "10:24";
-    @State var unreadCount = 0;
+    @State var conversation: Conversation;
+    @State var lastMesage: ConversationInfo.ConversationLastMessage;
+    @State var userName: String?;
+    @State var avatar: String?;
+    var tabBarIsVisible: Binding<Bool>;
+    
+    var userId: Int;
+    var chatType: String;
+    // TODO: Заменить на настоящее время
+    var time: String = "22:02";
+    
+    init(conversation: Conversation, lastMesage: ConversationInfo.ConversationLastMessage, tabBarVisibleBinding: Binding<Bool>) {
+        self.conversation = conversation
+        self.lastMesage = lastMesage
+        self.userName = conversation.chatSettings?.title
+        self.userId = conversation.peer.id
+        self.chatType = conversation.peer.type
+        self.avatar = conversation.chatSettings?.photo.photo200 ?? defaultImage;
+        self.tabBarIsVisible = tabBarVisibleBinding;
+        
+    }
+    
+    @EnvironmentObject var userInfo: UserInfo;
     
     var body: some View {
         HStack(alignment: .top){
-            WebImage(url: URL(string: avatar))
+            WebImage(url: URL(string: avatar ?? defaultImage))
                 .resizable(resizingMode: .stretch)
                 .aspectRatio(contentMode: .fill)
                 .frame(width: 60, height: 60)
                 .cornerRadius(.infinity)
                 .padding(.trailing, 5)
                 .overlay(
-                    UserOnlineStatus(isOnline: isOnline)
+                    //TODO: Здесь изменить на настоящий статус
+                    UserOnlineStatus(isOnline: false)
                         .frame(width: 55, height: 55, alignment: .bottomTrailing)
                         .offset(x: -3, y: -2)
                 )
             
             VStack(alignment: .leading, spacing: 8){
                 HStack{
-                    Text(messageAutor)
+                    Text(userName ?? "Неизвестно")
                         .fontWeight(.medium)
                     Spacer()
                     Text(time)
@@ -44,28 +60,37 @@ struct DialogRow: View {
                         .fontWeight(.medium)
                 }
                 HStack(){
-                    Text(lastMessage)
+                    Text(lastMesage.text)
                         .foregroundColor(.gray)
                         .font(.system(size: 15))
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(1...2)
                         .frame(maxHeight: 55, alignment: .top)
                     Spacer()
-                    if !isReaded{
-                        UserReadMessageStatus()
-                    }
+                    //TODO: Заменить на настоящую переменную, это временная заглушка
+//                    if false{
+//                        UserReadMessageStatus()
+//                    }
                 }
                 .offset(y: -5)
             }
         }
         .padding(.bottom, -7)
         .frame(maxHeight: 55, alignment: .center)
-    }
-}
-
-struct Message_Previews: PreviewProvider {
-    static var previews: some View {
-        DialogRow(lastMessage: "Привет", messageAutor: "Анна Гростимова", isOnline: true, avatar: "Avatar")
-            .previewLayout(.fixed(width: 350, height: 90))
+        .onAppear(){
+            if(conversation.chatSettings?.title == nil && chatType == "user"){
+                SwiftVK(token: userInfo.token).users.get(userId: userId, fields: [
+                    "photo_100"
+                ]){
+                    users in
+                    userName = users[0].firstName + " " + users[0].lastName
+                    avatar = users[0].photo100 ?? defaultImage;
+                    print(users[0])
+                }
+            }
+        }
+        .dialogContextMenu()
+        .dialogSwipeActions()
+        .dialogOverlay(dialog: conversation, tabBarVisibleBinding: tabBarIsVisible, companionId: userId, userName: $userName, avatar: $avatar, onlineStatusVisible: chatType == "user")
     }
 }

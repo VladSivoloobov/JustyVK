@@ -4,7 +4,7 @@ struct Chat: Decodable{
     var ownerId: Int;
     var description: String?;
     var pinnedMessageCount: Int?;
-    var pinnedMessage: PinnedMessage;
+    var pinnedMessage: PinnedMessage?;
     var state: String;
     var photo: ChatPhoto;
     var activeIds: [Int];

@@ -11,24 +11,17 @@ struct MessageList: View {
     @State var uiTabarController: UITabBarController?
     @State var name: String;
     @State var image: String;
-    @State var messageList: [VKMesage] = [];
+    @State var messageList: [Message] = [];
     @EnvironmentObject var userInfo: UserInfo;
     @State var companionId: Int;
-    
-    func hideKeyboardWithAnimation(_ scrollReader: ScrollViewProxy){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-            withAnimation(.easeIn(duration: 0.5)) {
-                scrollReader.scrollTo(messages.count - 1, anchor: .bottom)
-            }
-        }
-    }
+    var onlineStatusVisible: Bool;
     
     // TODO: Найти способ нормальной прокрутки scrollView при появлении клавиатуры
     var body: some View {
         ScrollViewReader{ scrollReader in
             GeometryReader { reader in
                 ScrollView{
-                    VStack(spacing: 4){
+                    LazyVStack(spacing: 4){
                         ForEach(0..<messageList.count, id: \.self){messageIndex in
                             let message = messageList.reversed()[messageIndex];
                             MessageCloud(
@@ -42,33 +35,14 @@ struct MessageList: View {
                     .frame(minHeight: reader.size.height - 20, alignment: .bottom)
                     .padding(.top, 10)
                     .padding(.bottom, 2)
-                    .onTapGesture(perform: UIApplication.shared.endEditing)
-                    .gesture(
-                        DragGesture()
-                            .onChanged { _ in
-                                UIApplication.shared.endEditing()
-                            }
-                            .onEnded { _ in
-                                UIApplication.shared.endEditing()
-                            }
-                    )
                 }
+                .defaultScrollAnchor(.bottom)
                 .safeAreaInset(edge: .bottom){
                     MessageInput()
                 }
-                .messageToolbar(name: name, image: image)
+                .messageToolbar(name: name, image: image, onlineStatusVisible: onlineStatusVisible)
             }
             .getMessageList(scrollReader: scrollReader, messageList: $messageList, companionId: companionId)
-            .onReceive(NotificationCenter.default.publisher(
-                for: UIResponder.keyboardWillShowNotification
-            )){ _ in
-                hideKeyboardWithAnimation(scrollReader);
-            }
-            .onReceive(NotificationCenter.default.publisher(
-                for: UIResponder.keyboardWillHideNotification
-            )){ _ in
-                hideKeyboardWithAnimation(scrollReader);
-            }
             .padding(.bottom, -20)
         }
     }
