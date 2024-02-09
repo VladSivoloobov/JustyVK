@@ -14,7 +14,8 @@ struct MessageList: View {
     @State var messageList: [Message] = [];
     @EnvironmentObject var userInfo: UserInfo;
     @State var companionId: Int;
-    var onlineStatusVisible: Bool;
+    var onlineStatusVisible: String?;
+    var isOnline: Bool;
     
     // TODO: Найти способ нормальной прокрутки scrollView при появлении клавиатуры
     var body: some View {
@@ -40,7 +41,7 @@ struct MessageList: View {
                 .safeAreaInset(edge: .bottom){
                     MessageInput()
                 }
-                .messageToolbar(name: name, image: image, onlineStatusVisible: onlineStatusVisible)
+                .messageToolbar(name: name, image: image, onlineStatusVisible: onlineStatusVisible, isOnline: isOnline)
             }
             .getMessageList(scrollReader: scrollReader, messageList: $messageList, companionId: companionId)
             .padding(.bottom, -20)

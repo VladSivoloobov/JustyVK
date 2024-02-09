@@ -14,6 +14,8 @@ struct DialogRow: View {
     @State var lastMesage: ConversationInfo.ConversationLastMessage;
     @State var userName: String?;
     @State var avatar: String?;
+    @State var isOnline: Bool?;
+    @State var isOnlineString: String?;
     var tabBarIsVisible: Binding<Bool>;
     
     var userId: Int;
@@ -29,7 +31,6 @@ struct DialogRow: View {
         self.chatType = conversation.peer.type
         self.avatar = conversation.chatSettings?.photo.photo200 ?? defaultImage;
         self.tabBarIsVisible = tabBarVisibleBinding;
-        
     }
     
     @EnvironmentObject var userInfo: UserInfo;
@@ -44,9 +45,9 @@ struct DialogRow: View {
                 .padding(.trailing, 5)
                 .overlay(
                     //TODO: Здесь изменить на настоящий статус
-                    UserOnlineStatus(isOnline: false)
+                    UserOnlineStatus(isOnline: $isOnline, width: 11)
                         .frame(width: 55, height: 55, alignment: .bottomTrailing)
-                        .offset(x: -3, y: -2)
+                        .offset(x: -4, y: -1)
                 )
             
             VStack(alignment: .leading, spacing: 8){
@@ -80,17 +81,24 @@ struct DialogRow: View {
         .onAppear(){
             if(conversation.chatSettings?.title == nil && chatType == "user"){
                 SwiftVK(token: userInfo.token).users.get(userId: userId, fields: [
-                    "photo_100"
+                    "photo_100",
+                    "online",
+                    "sex",
+                    "last_seen"
                 ]){
                     users in
                     userName = users[0].firstName + " " + users[0].lastName
                     avatar = users[0].photo100 ?? defaultImage;
-                    print(users[0])
+                    
+                    isOnline = users[0].online == 1;
+                    isOnlineString = SwiftVK.createLastSeenString(lastSeenTime: users[0].lastSeen?.time, isOnline: users[0].online, sex: users[0].sex)
+                    print(isOnlineString!)
+                    
                 }
             }
         }
         .dialogContextMenu()
         .dialogSwipeActions()
-        .dialogOverlay(dialog: conversation, tabBarVisibleBinding: tabBarIsVisible, companionId: userId, userName: $userName, avatar: $avatar, onlineStatusVisible: chatType == "user")
+        .dialogOverlay(dialog: conversation, tabBarVisibleBinding: tabBarIsVisible, companionId: userId, userName: $userName, avatar: $avatar, onlineStatusVisible: isOnlineString, isOnline: isOnline ?? false)
     }
 }

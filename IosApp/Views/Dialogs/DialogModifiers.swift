@@ -53,14 +53,15 @@ struct DialogOverlay: ViewModifier{
     @Binding var tabBarVisibleBinding: Bool;
     @Binding var userName: String?;
     @Binding var avatar: String?;
-    var onlineStatusVisible: Bool;
+    var onlineStatusVisible: String?;
+    var isOnline: Bool;
     
     func body(content: Content) -> some View{
         content
             .overlay{
             NavigationLink(
                 destination: {
-                    MessageList(name: userName ?? "Неизвестно", image: avatar ?? defaultImage, companionId: companionId, onlineStatusVisible: onlineStatusVisible)
+                    MessageList(name: userName ?? "Неизвестно", image: avatar ?? defaultImage, companionId: companionId, onlineStatusVisible: onlineStatusVisible, isOnline: isOnline)
                         .onAppear(){
                             self.tabBarVisibleBinding.toggle();
                         }
@@ -95,7 +96,14 @@ struct DialogModifiers: ViewModifier {
             .toolbarBackground(.visible, for: .tabBar)
             .navigationTitle("Сообщения")
             .toolbar{
-                ToolbarItemGroup(placement: .navigationBarTrailing){
+                ToolbarItemGroup(placement: .topBarTrailing){
+                    Button{
+                        
+                    } label: {
+                        Text("Изм.")
+                    }
+                }
+                ToolbarItemGroup(placement: .topBarLeading){
                     Button{
                         // TODO: Здесь нужно сделать работающей кнопку архива, в нём будет список чатов, которые пользователь скрыл
                     } label: {
@@ -129,8 +137,8 @@ struct GetConversations: ViewModifier{
 }
 
 extension View {
-    func dialogOverlay(dialog: Conversation, tabBarVisibleBinding: Binding<Bool>, companionId: Int, userName: Binding<String?>, avatar: Binding<String?>, onlineStatusVisible: Bool) -> some View{
-        modifier(DialogOverlay(dialog: dialog, companionId: companionId, tabBarVisibleBinding: tabBarVisibleBinding, userName: userName, avatar: avatar, onlineStatusVisible: onlineStatusVisible))
+    func dialogOverlay(dialog: Conversation, tabBarVisibleBinding: Binding<Bool>, companionId: Int, userName: Binding<String?>, avatar: Binding<String?>, onlineStatusVisible: String?, isOnline: Bool) -> some View{
+        modifier(DialogOverlay(dialog: dialog, companionId: companionId, tabBarVisibleBinding: tabBarVisibleBinding, userName: userName, avatar: avatar, onlineStatusVisible: onlineStatusVisible, isOnline: isOnline))
     }
     
     func dialogSwipeActions() -> some View{

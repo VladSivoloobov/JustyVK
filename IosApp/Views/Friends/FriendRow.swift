@@ -16,10 +16,11 @@ struct FriendRow: View {
     @State var lastSeenPlatform: Int;
     @State var sex: Int;
     @State private var lastSeenString = "";
-    @State var isOnline: Int;
+    @State var isOnline: Int?;
     @EnvironmentObject var userInfo: UserInfo;
     @State var user: User;
     @Binding var tabBarVisibleBinding: Bool;
+    @State var isOnlineStatus: Bool?;
     
     var body: some View {
         HStack(alignment: .center){
@@ -31,7 +32,7 @@ struct FriendRow: View {
                 .padding(.trailing, 5)
                 .overlay(alignment: .bottomTrailing){
                     if(isOnline == 1){
-                        UserOnlineStatus(isOnline: isOnline == 1 ? true : false)
+                        UserOnlineStatus(isOnline: $isOnlineStatus)
                             .offset(x: -3)
                     }
                 }
@@ -74,32 +75,8 @@ struct FriendRow: View {
             .opacity(0)
         }
         .onAppear{
-            if(isOnline == 1){
-                lastSeenString = "в сети";
-                return;
-            }
-            
-            switch(sex){
-            case 1:
-                lastSeenString = "была "
-                break;
-            case 2:
-                lastSeenString = "был "
-                break;
-            default:
-                lastSeenString = "был(а) "
-                break;
-            }
-            
-            if(lastSeenTime == -404){
-                lastSeenString += "недавно";
-                return;
-            }
-            
-            let calendar = Calendar(identifier: .gregorian);
-            let date = Date(timeIntervalSince1970: TimeInterval(lastSeenTime));
-            let daysDifference = calendar.numberOfDaysBetween(date);
-            lastSeenString += calendar.getLastOnlineDateString(difference: daysDifference, date: date)
+            isOnlineStatus = isOnline == 1;
+            lastSeenString = SwiftVK.createLastSeenString(lastSeenTime: lastSeenTime, isOnline: isOnline, sex: sex);
         }
     }
 }

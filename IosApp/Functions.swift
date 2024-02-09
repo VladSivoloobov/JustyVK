@@ -1,4 +1,5 @@
 import Alamofire
+import SwiftUI
 
 func fetchData<T: Decodable>(url: String, method: HTTPMethod, parameters: Parameters, completion: @escaping (T?) -> Void) {
     AF.request(url, method: method, parameters: parameters).response { response in

@@ -16,6 +16,40 @@ public struct SwiftVK {
         self.photos = SwiftVKPhotos(token: token)
     }
     
+    public static func createLastSeenString(lastSeenTime: Int?, isOnline: Int?, sex: Int?) -> String{
+        if(lastSeenTime == nil || isOnline == nil || sex == nil){
+            return "Неизвестно";
+        }
+        var lastSeenString = "";
+        if(isOnline == 1){
+            lastSeenString = "в сети";
+            return lastSeenString;
+        }
+        
+        switch(sex){
+        case 1:
+            lastSeenString = "была "
+            break;
+        case 2:
+            lastSeenString = "был "
+            break;
+        default:
+            lastSeenString = "был(а) "
+            break;
+        }
+        
+        if(lastSeenTime == -404){
+            lastSeenString += "недавно";
+            return lastSeenString;
+        }
+        
+        let calendar = Calendar(identifier: .gregorian);
+        let date = Date(timeIntervalSince1970: TimeInterval(lastSeenTime!));
+        let daysDifference = calendar.numberOfDaysBetween(date);
+        lastSeenString += calendar.getLastOnlineDateString(difference: daysDifference, date: date);
+        return lastSeenString;
+    }
+    
     public struct SwiftVKUsers{
         private let url = "https://api.vk.com/method/users.get"
         public let token: String;
@@ -30,7 +64,7 @@ public struct SwiftVK {
             ]);
             
             fetchData(url: url, method: .post, parameters: params){
-                (messages: UsersResponse?) in
+                (messages: Response<[User]>?) in
                 if let fetchedMessages = messages {
                     completion(fetchedMessages.response);
                 }
@@ -64,7 +98,7 @@ public struct SwiftVK {
             ]
             
             fetchData(url: url, method: .post, parameters: params){
-                (messages: MessagesResponse?) in
+                (messages: Response<Messages>?) in
                 if let fetchedMessages = messages {
                     completion(fetchedMessages.response.items);
                 }
@@ -84,9 +118,24 @@ public struct SwiftVK {
             ]);
             
             fetchData(url: url, method: .post, parameters: params){
-                (conversations: ConversationsResponse?) in
+                (conversations: Response<Conversations>?) in
                 if let fetchedConversations = conversations {
                     completion(fetchedConversations.response);
+                }
+            }
+        }
+        
+        func getLastActivity(userId: Int, completion: @escaping (LastActivity?) -> ()){
+            let url = "https://api.vk.com/method/messages.getLastActivity";
+            let params: Parameters = [
+                "access_token": token,
+                "user_id": userId
+            ];
+            
+            fetchData(url: url, method: .post, parameters: params){
+                (lastActivity: Response<LastActivity>?) in
+                if let lastActivityFetched = lastActivity{
+                    completion(lastActivityFetched.response);
                 }
             }
         }
@@ -115,7 +164,7 @@ public struct SwiftVK {
             ];
             
             fetchData(url: url, method: .post, parameters: params) {
-                (photos: PhotosResponse?) in
+                (photos: Response<Photos>?) in
                 if let fetchedPhotos = photos{
                     completion(fetchedPhotos.response.items)
                 }
@@ -135,7 +184,7 @@ public struct SwiftVK {
             ];
             
             fetchData(url: url, method: .post, parameters: params) {
-                (friends: FriendsResponse?) in
+                (friends: Response<Friends>?) in
                 if let fetchedFriends = friends {
                     completion(fetchedFriends.response.items);
                 }

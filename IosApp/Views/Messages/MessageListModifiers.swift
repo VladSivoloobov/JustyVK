@@ -5,7 +5,8 @@ import SDWebImageSwiftUI
 struct MessageToolbar: ViewModifier{
     @State var name: String;
     @State var image: String;
-    var onlineStatusVisible: Bool;
+    var onlineStatusVisible: String?;
+    var isOnlineToggler: Bool;
     
     func body(content: Content) -> some View {
         content
@@ -16,7 +17,7 @@ struct MessageToolbar: ViewModifier{
                     MessageToolbarImage(image: image)
                 }
                 ToolbarItem(placement: .principal){
-                    MessageNavbar(name: name, onlineStatusVisible: onlineStatusVisible)
+                    MessageNavbar(isOnline: isOnlineToggler, name: name, onlineStatusString: onlineStatusVisible)
                 }
             }
             .toolbarBackground(.visible, for: .navigationBar)
@@ -42,8 +43,8 @@ struct GetMessageList: ViewModifier {
 }
 
 extension View {
-    func messageToolbar(name: String, image: String, onlineStatusVisible: Bool) -> some View{
-        modifier(MessageToolbar(name: name, image: image, onlineStatusVisible: onlineStatusVisible));
+    func messageToolbar(name: String, image: String, onlineStatusVisible: String?, isOnline: Bool) -> some View{
+        modifier(MessageToolbar(name: name, image: image, onlineStatusVisible: onlineStatusVisible, isOnlineToggler: isOnline));
     }
     
     func getMessageList(scrollReader: ScrollViewProxy,

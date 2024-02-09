@@ -9,8 +9,9 @@ import SwiftUI
 
 struct MessageNavbar: View {
     @State private var bottomSheetOpened = false;
+    var isOnline: Bool;
     var name: String;
-    var onlineStatusVisible: Bool;
+    var onlineStatusString: String?;
     
     // TODO: Изменить на перечисление
     
@@ -20,10 +21,10 @@ struct MessageNavbar: View {
                 .fontWeight(.medium)
                 .lineLimit(1)
             
-            if(onlineStatusVisible){
-                Text("онлайн")
+            if(onlineStatusString != nil){
+                Text(onlineStatusString!)
                     .font(.subheadline)
-                    .foregroundColor(.blue)
+                    .foregroundColor(isOnline ? .blue : .gray)
                     .padding(.bottom, 8)
                     .padding(.top, -10)
             }
