@@ -92,8 +92,16 @@ struct DialogRow: View {
                     
                     isOnline = users[0].online == 1;
                     isOnlineString = SwiftVK.createLastSeenString(lastSeenTime: users[0].lastSeen?.time, isOnline: users[0].online, sex: users[0].sex)
-                    print(isOnlineString!)
                     
+                }
+            }
+            else if(userId < 0){
+                print(String(userId));
+                SwiftVK(token: userInfo.token).groups.getById(groupsIds: String(abs(userId)), groupId: nil, fields: nil){
+                    groups in
+                    userName = groups[0].name;
+                    avatar = groups[0].photo200;
+                    isOnline = false;
                 }
             }
         }

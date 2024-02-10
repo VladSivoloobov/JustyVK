@@ -7,6 +7,7 @@ public struct SwiftVK {
     public let users: SwiftVKUsers;
     public let messages: SwiftVKMessages;
     public let photos: SwiftVKPhotos;
+    public let groups: SwiftVKGroups;
     
     public init(token: String) {
         self.token = token
@@ -14,6 +15,7 @@ public struct SwiftVK {
         self.users = SwiftVKUsers(token: token)
         self.messages = SwiftVKMessages(token: token)
         self.photos = SwiftVKPhotos(token: token)
+        self.groups = SwiftVKGroups(token: token);
     }
     
     public static func createLastSeenString(lastSeenTime: Int?, isOnline: Int?, sex: Int?) -> String{
@@ -167,6 +169,28 @@ public struct SwiftVK {
                 (photos: Response<Photos>?) in
                 if let fetchedPhotos = photos{
                     completion(fetchedPhotos.response.items)
+                }
+            }
+        }
+    }
+    
+    public struct SwiftVKGroups{
+        public let token: String;
+        
+        func getById(groupsIds: String?, groupId: String?, fields: String?, completion: @escaping ([VKGroup]) -> ()){
+            let url = "https://api.vk.com/method/groups.getById"
+            let params: Parameters = filterParams(params: [
+                "access_token": token,
+                "group_ids": groupsIds ?? "",
+                "group_id": groupId ?? "",
+                "fields": fields ?? "",
+                "v": "5.131"
+            ]);
+            
+            fetchData(url: url, method: .post, parameters: params){
+            (groups: Response<[VKGroup]>?) in
+                if let fetchedGroups = groups {
+                    completion(fetchedGroups.response);
                 }
             }
         }

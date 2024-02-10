@@ -5,6 +5,7 @@ func fetchData<T: Decodable>(url: String, method: HTTPMethod, parameters: Parame
     AF.request(url, method: method, parameters: parameters).response { response in
         do {
             if let data = response.data {
+                print(String(data: data, encoding: .utf8));
                 let decodedData = try JSONDecoder().decode(T.self, from: data)
                 completion(decodedData)
             }

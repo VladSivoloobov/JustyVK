@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608162B2A2756CD00AF16C7 /* MessageList.swift */; };
+		86088CCF2B7774750010D6F0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86088CCE2B7774750010D6F0 /* Group.swift */; };
+		86088CD12B7774AE0010D6F0 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86088CD02B7774AE0010D6F0 /* Groups.swift */; };
 		8617DCCF2A3185010099E3C1 /* VKAuthWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617DCCE2A3185010099E3C1 /* VKAuthWebView.swift */; };
 		8617DCD12A31857F0099E3C1 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8617DCD02A31857F0099E3C1 /* UserInfo.swift */; };
 		861BD67A2A2D06DC002F5404 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BD6792A2D06DC002F5404 /* UserProfile.swift */; };
@@ -61,6 +63,8 @@
 /* Begin PBXFileReference section */
 		09A4F6C351E9B03C73851E90 /* Pods-Весточка.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Весточка.release.xcconfig"; path = "Target Support Files/Pods-Весточка/Pods-Весточка.release.xcconfig"; sourceTree = "<group>"; };
 		8608162B2A2756CD00AF16C7 /* MessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
+		86088CCE2B7774750010D6F0 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		86088CD02B7774AE0010D6F0 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		8617DCCE2A3185010099E3C1 /* VKAuthWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VKAuthWebView.swift; sourceTree = "<group>"; };
 		8617DCD02A31857F0099E3C1 /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		861BD6792A2D06DC002F5404 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
@@ -125,6 +129,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		86088CCD2B77745A0010D6F0 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				86088CCE2B7774750010D6F0 /* Group.swift */,
+				86088CD02B7774AE0010D6F0 /* Groups.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
 		860FC3A22A26181A00922426 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +189,7 @@
 		8658A6482A32B63A00D3F4C5 /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				86088CCD2B77745A0010D6F0 /* Groups */,
 				86A0B3F62B6FC8EE00901F42 /* Chat */,
 				86A0B3ED2B6FC85100901F42 /* Conversations */,
 				86DB1B002B6EAC4F006A1BCD /* Videos */,
@@ -479,6 +493,7 @@
 				869CBDE72A27FA57006171DD /* MessageCloud.swift in Sources */,
 				8658A6432A32498C00D3F4C5 /* SwiftVK.swift in Sources */,
 				8623F9702A30169C00270CD5 /* Extensions.swift in Sources */,
+				86088CCF2B7774750010D6F0 /* Group.swift in Sources */,
 				8656065A2A39914D004917AA /* Functions.swift in Sources */,
 				8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */,
 				8624F3DC2A266C1F00FA20B1 /* DialogList.swift in Sources */,
@@ -487,6 +502,7 @@
 				8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */,
 				8625D8302B753F3D007361EC /* Response.swift in Sources */,
 				861BD67E2A2D1170002F5404 /* ProfileButtonsBar.swift in Sources */,
+				86088CD12B7774AE0010D6F0 /* Groups.swift in Sources */,
 				86A0B3F82B6FC90400901F42 /* PinnedMessage.swift in Sources */,
 				86DB1B022B6EAC5B006A1BCD /* Video.swift in Sources */,
 				8624F3E52A26748700FA20B1 /* UserOnlineStatus.swift in Sources */,
