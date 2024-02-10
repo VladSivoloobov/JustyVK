@@ -17,6 +17,7 @@ struct DialogRow: View {
     @State var isOnline: Bool?;
     @State var isOnlineString: String?;
     var tabBarIsVisible: Binding<Bool>;
+    var attachmentTextColor = Color.gray;
     
     var userId: Int;
     var chatType: String;
@@ -31,9 +32,33 @@ struct DialogRow: View {
         self.chatType = conversation.peer.type
         self.avatar = conversation.chatSettings?.photo.photo200 ?? defaultImage;
         self.tabBarIsVisible = tabBarVisibleBinding;
+        if(!lastMesage.attachments.isEmpty && lastMesage.text.isEmpty){
+            attachmentTextColor = Color.white;
+        }
     }
     
     @EnvironmentObject var userInfo: UserInfo;
+    
+    func lastMesagePreview(lastMessage: ConversationInfo.ConversationLastMessage) -> String{
+        if(!lastMessage.text.isEmpty){
+            return lastMessage.text;
+        }
+        
+        switch(lastMessage.attachments.last?.type){
+        case "sticker":
+            return "Cтикер";
+        case "photo":
+            return "Фото";
+        case "video":
+            return "Видео";
+        case "audio":
+            return "Аудиозапись";
+        case "link":
+            return "Ссылка";
+        default:
+            return "Вложение";
+        }
+    }
     
     var body: some View {
         HStack(alignment: .top){
@@ -61,8 +86,8 @@ struct DialogRow: View {
                         .fontWeight(.medium)
                 }
                 HStack(){
-                    Text(lastMesage.text)
-                        .foregroundColor(.gray)
+                    Text(lastMesagePreview(lastMessage: lastMesage))
+                        .foregroundColor(attachmentTextColor)
                         .font(.system(size: 15))
                         .fixedSize(horizontal: false, vertical: true)
                         .lineLimit(1...2)

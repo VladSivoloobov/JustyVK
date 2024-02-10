@@ -22,13 +22,13 @@ struct MessageList: View {
         ScrollViewReader{ scrollReader in
             GeometryReader { reader in
                 ScrollView{
-                    LazyVStack(spacing: 4){
+                    VStack(spacing: 4){
                         ForEach(0..<messageList.count, id: \.self){messageIndex in
                             let message = messageList.reversed()[messageIndex];
                             MessageCloud(
-                                messageText: message.text,
-                                time: "22:02",
-                                fromMe: message.fromId == userInfo.id
+                                message: message,
+                                fromMe: message.fromId == userInfo.id,
+                                time: "22:02"
                             )
                             .id(messageIndex)
                         }
