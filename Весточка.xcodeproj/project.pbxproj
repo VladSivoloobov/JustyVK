@@ -51,6 +51,8 @@
 		86A0B3F52B6FC89D00901F42 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3F42B6FC89D00901F42 /* Chat.swift */; };
 		86A0B3F82B6FC90400901F42 /* PinnedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3F72B6FC90400901F42 /* PinnedMessage.swift */; };
 		86D76FE32B7E6F6100D46B1C /* StickerSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */; };
+		86D76FE62B7E86E800D46B1C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE52B7E86E800D46B1C /* Background.swift */; };
+		86D76FEA2B7ECFAA00D46B1C /* MessageCloudContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */; };
 		86DB1AFB2B6EA967006A1BCD /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFA2B6EA967006A1BCD /* Messages.swift */; };
 		86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFC2B6EA975006A1BCD /* Message.swift */; };
 		86DB1AFF2B6EABC8006A1BCD /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */; };
@@ -117,6 +119,8 @@
 		86A0B3F72B6FC90400901F42 /* PinnedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedMessage.swift; sourceTree = "<group>"; };
 		86B897B42A27DE7500D0D633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerSizes.swift; sourceTree = "<group>"; };
+		86D76FE52B7E86E800D46B1C /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCloudContent.swift; sourceTree = "<group>"; };
 		86DB1AFA2B6EA967006A1BCD /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		86DB1AFC2B6EA975006A1BCD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
@@ -175,6 +179,7 @@
 				869CBDE62A27FA57006171DD /* MessageCloud.swift */,
 				86088CD62B778F8C0010D6F0 /* MessageCloudContextMenu.swift */,
 				86088CD82B7790AB0010D6F0 /* MessageCloudStyles.swift */,
+				86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */,
 			);
 			path = MessageCloud;
 			sourceTree = "<group>";
@@ -302,6 +307,7 @@
 		869CBDE82A27FA61006171DD /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				86D76FE42B7E86D600D46B1C /* Background */,
 				86E279B52B78EE7000819A72 /* MessageSticker */,
 				86E279AC2B77960500819A72 /* MessageList */,
 				86088CD52B778F520010D6F0 /* MessageCloud */,
@@ -338,6 +344,14 @@
 				86FDC9F22A3184850009322D /* Login.swift */,
 			);
 			path = Auth;
+			sourceTree = "<group>";
+		};
+		86D76FE42B7E86D600D46B1C /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				86D76FE52B7E86E800D46B1C /* Background.swift */,
+			);
+			path = Background;
 			sourceTree = "<group>";
 		};
 		86DB1AF72B6EA942006A1BCD /* Messages */ = {
@@ -572,6 +586,7 @@
 				8656065A2A39914D004917AA /* Functions.swift in Sources */,
 				86E279BC2B78F15000819A72 /* WebInteractions.swift in Sources */,
 				8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */,
+				86D76FE62B7E86E800D46B1C /* Background.swift in Sources */,
 				86E279B42B782D5E00819A72 /* LottieView.swift in Sources */,
 				86D76FE32B7E6F6100D46B1C /* StickerSizes.swift in Sources */,
 				8624F3DC2A266C1F00FA20B1 /* DialogList.swift in Sources */,
@@ -611,6 +626,7 @@
 				861BD67C2A2D0FC0002F5404 /* ProfileButtonLabel.swift in Sources */,
 				8686099C2A2B81F000611BC6 /* FriendRow.swift in Sources */,
 				86FB95982A2113660069BFA1 /* AppInstance.swift in Sources */,
+				86D76FEA2B7ECFAA00D46B1C /* MessageCloudContent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
