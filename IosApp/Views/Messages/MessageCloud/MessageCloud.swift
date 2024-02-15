@@ -8,6 +8,7 @@ struct MessageCloud: View {
     var time: String = "22:02";
     var isSticker: Bool;
     var lastSticker: Sticker?;
+    var isAnimatedSticker: Bool = false;
     
     init(message: Message, fromMe: Bool, time: String) {
         self.message = message;
@@ -15,6 +16,9 @@ struct MessageCloud: View {
         self.time = time;
         if(message.attachments.count > 0){
             self.isSticker = message.attachments[0].sticker != nil;
+            if(self.isSticker){
+                self.isAnimatedSticker = message.attachments[0].sticker?.animationUrl != nil;
+            }
             self.lastSticker = message.attachments[0].sticker;
         }
         else{
@@ -30,9 +34,12 @@ struct MessageCloud: View {
                         VStack{
                             if(message.attachments.count > 0){
                                 if(isSticker){
-                                    WebImage(url: URL(string: lastSticker?.images.last?.url ?? ""))
-                                        .resizable()
-                                        .frame(minWidth: 0, idealWidth: 150, maxWidth: 200, minHeight: 0, idealHeight: 200, maxHeight: 300, alignment: .leading)
+                                    if(!isAnimatedSticker){
+                                        MessageSticker(url: lastSticker?.images.last?.url);
+                                    }
+                                    else{
+                                        AnimatedMessageSticker(sticker: lastSticker!)
+                                    }
                                 }
                             }
                             if(!isSticker){

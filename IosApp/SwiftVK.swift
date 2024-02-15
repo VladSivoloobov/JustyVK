@@ -65,7 +65,7 @@ public struct SwiftVK {
                 "v": "5.131",
             ]);
             
-            fetchData(url: url, method: .post, parameters: params){
+            WebInteractions.fetchData(url: url, method: .post, parameters: params){
                 (messages: Response<[User]>?) in
                 if let fetchedMessages = messages {
                     completion(fetchedMessages.response);
@@ -99,7 +99,7 @@ public struct SwiftVK {
                 "v": "5.131"
             ]
             
-            fetchData(url: url, method: .post, parameters: params){
+            WebInteractions.fetchData(url: url, method: .post, parameters: params){
                 (messages: Response<Messages>?) in
                 if let fetchedMessages = messages {
                     completion(fetchedMessages.response.items);
@@ -119,7 +119,7 @@ public struct SwiftVK {
                 "v": "5.131"
             ]);
             
-            fetchData(url: url, method: .post, parameters: params){
+            WebInteractions.fetchData(url: url, method: .post, parameters: params){
                 (conversations: Response<Conversations>?) in
                 if let fetchedConversations = conversations {
                     completion(fetchedConversations.response);
@@ -134,7 +134,7 @@ public struct SwiftVK {
                 "user_id": userId
             ];
             
-            fetchData(url: url, method: .post, parameters: params){
+            WebInteractions.fetchData(url: url, method: .post, parameters: params){
                 (lastActivity: Response<LastActivity>?) in
                 if let lastActivityFetched = lastActivity{
                     completion(lastActivityFetched.response);
@@ -165,7 +165,7 @@ public struct SwiftVK {
                 "v": "5.131",
             ];
             
-            fetchData(url: url, method: .post, parameters: params) {
+            WebInteractions.fetchData(url: url, method: .post, parameters: params) {
                 (photos: Response<Photos>?) in
                 if let fetchedPhotos = photos{
                     completion(fetchedPhotos.response.items)
@@ -187,7 +187,7 @@ public struct SwiftVK {
                 "v": "5.131"
             ]);
             
-            fetchData(url: url, method: .post, parameters: params){
+            WebInteractions.fetchData(url: url, method: .post, parameters: params){
             (groups: Response<[VKGroup]>?) in
                 if let fetchedGroups = groups {
                     completion(fetchedGroups.response);
@@ -207,7 +207,7 @@ public struct SwiftVK {
                 "v": "5.131",
             ];
             
-            fetchData(url: url, method: .post, parameters: params) {
+            WebInteractions.fetchData(url: url, method: .post, parameters: params) {
                 (friends: Response<Friends>?) in
                 if let fetchedFriends = friends {
                     completion(fetchedFriends.response.items);

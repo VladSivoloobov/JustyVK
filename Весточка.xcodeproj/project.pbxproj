@@ -50,11 +50,18 @@
 		86A0B3F12B6FC86F00901F42 /* Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3F02B6FC86F00901F42 /* Conversations.swift */; };
 		86A0B3F52B6FC89D00901F42 /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3F42B6FC89D00901F42 /* Chat.swift */; };
 		86A0B3F82B6FC90400901F42 /* PinnedMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A0B3F72B6FC90400901F42 /* PinnedMessage.swift */; };
+		86D76FE32B7E6F6100D46B1C /* StickerSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */; };
 		86DB1AFB2B6EA967006A1BCD /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFA2B6EA967006A1BCD /* Messages.swift */; };
 		86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFC2B6EA975006A1BCD /* Message.swift */; };
 		86DB1AFF2B6EABC8006A1BCD /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */; };
 		86DB1B022B6EAC5B006A1BCD /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1B012B6EAC5B006A1BCD /* Video.swift */; };
 		86E279AE2B77963100819A72 /* GetMessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E279AD2B77963100819A72 /* GetMessageList.swift */; };
+		86E279B12B782BB000819A72 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 86E279B02B782BB000819A72 /* Lottie */; };
+		86E279B42B782D5E00819A72 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E279B32B782D5E00819A72 /* LottieView.swift */; };
+		86E279B82B78EEC000819A72 /* MessageSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E279B72B78EEC000819A72 /* MessageSticker.swift */; };
+		86E279BA2B78EED400819A72 /* AnimatedMessageSticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E279B92B78EED400819A72 /* AnimatedMessageSticker.swift */; };
+		86E279BC2B78F15000819A72 /* WebInteractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E279BB2B78F15000819A72 /* WebInteractions.swift */; };
+		86E279BE2B791B3100819A72 /* FileSystemInteractions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E279BD2B791B3100819A72 /* FileSystemInteractions.swift */; };
 		86FB1AD12A2E653400E9D912 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB1AD02A2E653400E9D912 /* SplashScreen.swift */; };
 		86FB1AD32A2E659300E9D912 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB1AD22A2E659300E9D912 /* TabBar.swift */; };
 		86FB95982A2113660069BFA1 /* AppInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FB95972A2113660069BFA1 /* AppInstance.swift */; };
@@ -109,12 +116,18 @@
 		86A0B3F42B6FC89D00901F42 /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		86A0B3F72B6FC90400901F42 /* PinnedMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinnedMessage.swift; sourceTree = "<group>"; };
 		86B897B42A27DE7500D0D633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerSizes.swift; sourceTree = "<group>"; };
 		86DB1AFA2B6EA967006A1BCD /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		86DB1AFC2B6EA975006A1BCD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		86DB1B012B6EAC5B006A1BCD /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		86DBB5CA2A2FCCEF00AF3E8E /* Весточка.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Весточка.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E279AD2B77963100819A72 /* GetMessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageList.swift; sourceTree = "<group>"; };
+		86E279B32B782D5E00819A72 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		86E279B72B78EEC000819A72 /* MessageSticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSticker.swift; sourceTree = "<group>"; };
+		86E279B92B78EED400819A72 /* AnimatedMessageSticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedMessageSticker.swift; sourceTree = "<group>"; };
+		86E279BB2B78F15000819A72 /* WebInteractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebInteractions.swift; sourceTree = "<group>"; };
+		86E279BD2B791B3100819A72 /* FileSystemInteractions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileSystemInteractions.swift; sourceTree = "<group>"; };
 		86FB1AD02A2E653400E9D912 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		86FB1AD22A2E659300E9D912 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		86FB95972A2113660069BFA1 /* AppInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInstance.swift; sourceTree = "<group>"; };
@@ -131,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8658A6472A325D6600D3F4C5 /* SDWebImageSwiftUI in Frameworks */,
+				86E279B12B782BB000819A72 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +182,7 @@
 		860FC3A22A26181A00922426 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				86E279B22B782D4400819A72 /* LottieView */,
 				86FB95992A2113660069BFA1 /* ContentView.swift */,
 				86FB1AD02A2E653400E9D912 /* SplashScreen.swift */,
 				866DF0922A2C073800EFE771 /* UI */,
@@ -287,6 +302,7 @@
 		869CBDE82A27FA61006171DD /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				86E279B52B78EE7000819A72 /* MessageSticker */,
 				86E279AC2B77960500819A72 /* MessageList */,
 				86088CD52B778F520010D6F0 /* MessageCloud */,
 				867EC29B2A2957500003645F /* MessageNavbar.swift */,
@@ -352,6 +368,24 @@
 			path = MessageList;
 			sourceTree = "<group>";
 		};
+		86E279B22B782D4400819A72 /* LottieView */ = {
+			isa = PBXGroup;
+			children = (
+				86E279B32B782D5E00819A72 /* LottieView.swift */,
+			);
+			path = LottieView;
+			sourceTree = "<group>";
+		};
+		86E279B52B78EE7000819A72 /* MessageSticker */ = {
+			isa = PBXGroup;
+			children = (
+				86E279B72B78EEC000819A72 /* MessageSticker.swift */,
+				86E279B92B78EED400819A72 /* AnimatedMessageSticker.swift */,
+				86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */,
+			);
+			path = MessageSticker;
+			sourceTree = "<group>";
+		};
 		86FB958B2A2113660069BFA1 = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +405,8 @@
 				8623F96F2A30169C00270CD5 /* Extensions.swift */,
 				86FB95972A2113660069BFA1 /* AppInstance.swift */,
 				865606592A39914D004917AA /* Functions.swift */,
+				86E279BB2B78F15000819A72 /* WebInteractions.swift */,
+				86E279BD2B791B3100819A72 /* FileSystemInteractions.swift */,
 				860FC3A32A26188B00922426 /* Model */,
 				860FC3A22A26181A00922426 /* Views */,
 			);
@@ -414,6 +450,7 @@
 			name = "Весточка";
 			packageProductDependencies = (
 				8658A6462A325D6600D3F4C5 /* SDWebImageSwiftUI */,
+				86E279B02B782BB000819A72 /* Lottie */,
 			);
 			productName = IosApp;
 			productReference = 86DBB5CA2A2FCCEF00AF3E8E /* Весточка.app */;
@@ -446,6 +483,7 @@
 			packageReferences = (
 				8658A6442A325D4B00D3F4C5 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				8658A6452A325D6600D3F4C5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+				86E279AF2B782BB000819A72 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 86FB958B2A2113660069BFA1;
 			projectDirPath = "";
@@ -532,13 +570,18 @@
 				8623F9702A30169C00270CD5 /* Extensions.swift in Sources */,
 				86088CCF2B7774750010D6F0 /* Group.swift in Sources */,
 				8656065A2A39914D004917AA /* Functions.swift in Sources */,
+				86E279BC2B78F15000819A72 /* WebInteractions.swift in Sources */,
 				8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */,
+				86E279B42B782D5E00819A72 /* LottieView.swift in Sources */,
+				86D76FE32B7E6F6100D46B1C /* StickerSizes.swift in Sources */,
 				8624F3DC2A266C1F00FA20B1 /* DialogList.swift in Sources */,
 				8633F3A92B6FEC9B00C5B0F0 /* MessageToolbar.swift in Sources */,
 				86088CD42B7783A40010D6F0 /* Sticker.swift in Sources */,
 				8617DCD12A31857F0099E3C1 /* UserInfo.swift in Sources */,
 				8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */,
+				86E279BE2B791B3100819A72 /* FileSystemInteractions.swift in Sources */,
 				86088CD72B778F8C0010D6F0 /* MessageCloudContextMenu.swift in Sources */,
+				86E279BA2B78EED400819A72 /* AnimatedMessageSticker.swift in Sources */,
 				8625D8302B753F3D007361EC /* Response.swift in Sources */,
 				861BD67E2A2D1170002F5404 /* ProfileButtonsBar.swift in Sources */,
 				86088CD12B7774AE0010D6F0 /* Groups.swift in Sources */,
@@ -549,6 +592,7 @@
 				86DB1AFB2B6EA967006A1BCD /* Messages.swift in Sources */,
 				8624F3DE2A266CE900FA20B1 /* Settings.swift in Sources */,
 				865A3E812A2D7C6400F6303F /* UserProfileInfoRow.swift in Sources */,
+				86E279B82B78EEC000819A72 /* MessageSticker.swift in Sources */,
 				8658A6542A32B70200D3F4C5 /* Friends.swift in Sources */,
 				8624F3E22A266E7F00FA20B1 /* DialogRow.swift in Sources */,
 				8658A6562A32B71D00D3F4C5 /* Friend.swift in Sources */,
@@ -799,6 +843,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		86E279AF2B782BB000819A72 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -806,6 +858,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8658A6452A325D6600D3F4C5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
 			productName = SDWebImageSwiftUI;
+		};
+		86E279B02B782BB000819A72 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 86E279AF2B782BB000819A72 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
