@@ -307,6 +307,7 @@
 		869CBDE82A27FA61006171DD /* Messages */ = {
 			isa = PBXGroup;
 			children = (
+				86D76FEB2B7EDDEE00D46B1C /* Attachments */,
 				86D76FE42B7E86D600D46B1C /* Background */,
 				86E279B52B78EE7000819A72 /* MessageSticker */,
 				86E279AC2B77960500819A72 /* MessageList */,
@@ -352,6 +353,13 @@
 				86D76FE52B7E86E800D46B1C /* Background.swift */,
 			);
 			path = Background;
+			sourceTree = "<group>";
+		};
+		86D76FEB2B7EDDEE00D46B1C /* Attachments */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Attachments;
 			sourceTree = "<group>";
 		};
 		86DB1AF72B6EA942006A1BCD /* Messages */ = {
