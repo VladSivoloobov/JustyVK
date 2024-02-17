@@ -4,11 +4,12 @@ struct MessageCloudStyles: ViewModifier {
     var fromMe: Bool;
     var isSticker: Bool;
     var isAttachment: Bool;
+    var attachmentsCount: Int = 0;
     
     func body(content: Content) -> some View {
         content
-            .padding(.horizontal, 2)
-            .padding(.vertical, 2)
+            .padding(.horizontal, isAttachment && attachmentsCount > 1 ? 2 : 0)
+            .padding(.vertical, isAttachment && attachmentsCount > 1 ? 2 : 0)
             .background(messageCloudBackground(fromMe: fromMe, isSticker: isSticker))
             .cornerRadius(15)
             .compositingGroup()
@@ -26,7 +27,7 @@ struct MessageCloudStyles: ViewModifier {
 }
 
 extension View {
-    func messageCloudStyles(fromMe: Bool, isSticker: Bool, isAttachment: Bool = false) -> some View{
-        modifier(MessageCloudStyles(fromMe: fromMe, isSticker: isSticker, isAttachment: isAttachment))
+    func messageCloudStyles(fromMe: Bool, isSticker: Bool, isAttachment: Bool = false, attachmentsCount: Int) -> some View{
+        modifier(MessageCloudStyles(fromMe: fromMe, isSticker: isSticker, isAttachment: isAttachment, attachmentsCount: attachmentsCount))
     }
 }

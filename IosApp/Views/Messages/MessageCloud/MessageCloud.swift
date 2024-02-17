@@ -33,13 +33,13 @@ struct MessageCloud: View {
                     VStack(alignment: .trailing, spacing: 0){
                         MessageCloudContent(isSticker: isSticker, isAnimatedSticker: isAnimatedSticker, message: message, lastSticker: lastSticker, time: time)
                     }
-                    .messageCloudStyles(fromMe: fromMe, isSticker: isSticker)
+                    .messageCloudStyles(fromMe: fromMe, isSticker: isSticker, attachmentsCount: 0)
                     .messageCloudContextMenu()
                 } else{
                     HStack(alignment: .bottom){
                         MessageCloudContent(isSticker: isSticker, isAnimatedSticker: isAnimatedSticker, message: message, lastSticker: lastSticker, time: time)
                     }
-                    .messageCloudStyles(fromMe: fromMe, isSticker: isSticker, isAttachment: !message.attachments.isEmpty)
+                    .messageCloudStyles(fromMe: fromMe, isSticker: isSticker, isAttachment: !message.attachments.isEmpty, attachmentsCount: message.attachments.count)
                     .messageCloudContextMenu()
                 }
                 
