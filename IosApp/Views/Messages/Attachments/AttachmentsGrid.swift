@@ -21,12 +21,13 @@ struct AttachmentsGrid: View {
                         let attachment = attachmentRow[attachmentItem];
                         if(attachment.type == "photo"){
                             AttachmentImage(attachment: attachment)
+                                .frame(minWidth: nil, idealWidth: nil, maxWidth: nil, minHeight: nil, idealHeight: nil, maxHeight: 500, alignment: .center)
                         }
                     }
                 }
             }
         }
-        .clipped()
+        .frame(minWidth: nil, idealWidth: nil, maxWidth: 296, minHeight: nil, idealHeight: nil, maxHeight: nil, alignment: .center)
         .cornerRadius(15)
     }
 }
