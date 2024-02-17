@@ -9,58 +9,38 @@ struct MessageCloudContent: View {
     var lastSticker: Sticker?;
     var time: String;
     
-    func createSubarraysArray<T>(arr: [T], byNumber: Int) -> [[T]]{
-        var array: [[T]] = [];
-        
-        for i in stride(from: 0, to: arr.count, by: byNumber + 1){
-            if(i + byNumber >= arr.count - 1){
-                array.append(Array(arr[i...arr.count - 1]));
-                break;
-            }
-            array.append(Array(arr[i...i + byNumber]));
-        }
-        
-        return array;
-    }
-    
     var body: some View {
         Group{
-            VStack{
+            VStack(alignment: .leading){
                 if(isSticker){
                     if(!isAnimatedSticker){
                         MessageSticker(url: lastSticker?.images.last?.url);
                     }
                     else{
-                        AnimatedMessageSticker(sticker: lastSticker!)
+                        AnimatedMessageSticker(sticker: lastSticker!);
                     }
                 } else{
                     if(!message.attachments.isEmpty){
-                        let messageRows = createSubarraysArray(arr: message.attachments, byNumber: 1);
-                        Grid{
-                            ForEach(0..<messageRows.count, id: \.self){ i in
-                                let attachmentRow = messageRows[i];
-                                GridRow{
-                                    ForEach(0..<attachmentRow.count, id: \.self){ attachmentItem in
-                                        let attachment = attachmentRow[attachmentItem];
-                                        if(attachment.type == "photo"){
-                                            WebImage(url: URL(string: attachment.photo!.sizes.last!.url))
-                                                .resizable()
-                                                .scaledToFill()
-                                        }
-                                    }
-                                }
-                            }
-                        }
+                        ZStack(alignment: .bottomTrailing){
+                            AttachmentsGrid(message: message);
+                            MessageTime(time: time)
+                                .padding(.horizontal, 6)
+                                .padding(.vertical, 4)
+                                .background(Color(red: 0, green: 0, blue: 0).opacity(0.7))
+                                .cornerRadius(10)
+                                .offset(x: -5, y: -5)
+                        };
                     }
-                    Text(message.text)
-                        .font(.system(size: 17))
-                        .foregroundColor(.white)
-                        .fixedSize(horizontal: false, vertical: true)
+                    if(!message.text.isEmpty){
+                        MessageText(message: message, time: time);
+                    }
                 }
             }
-            Text(time)
-                .font(Font.system(size: 10))
-                .foregroundColor(.white)
+            if(isSticker || message.attachments.isEmpty){
+                MessageTime(time: time)
+                    .padding(.trailing, 6)
+                    .padding(.bottom, 4)
+            }
         }
     }
 }

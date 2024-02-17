@@ -32,6 +32,9 @@
 		8633F3A92B6FEC9B00C5B0F0 /* MessageToolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3A82B6FEC9B00C5B0F0 /* MessageToolbar.swift */; };
 		8633F3AB2B7037CA00C5B0F0 /* MessageToolbarImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3AA2B7037CA00C5B0F0 /* MessageToolbarImage.swift */; };
 		8633F3AD2B70395300C5B0F0 /* ChatType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3AC2B70395300C5B0F0 /* ChatType.swift */; };
+		863D0EAB2B802B8000247CB7 /* MessageText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D0EAA2B802B8000247CB7 /* MessageText.swift */; };
+		863D0EAD2B802DA200247CB7 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D0EAC2B802DA200247CB7 /* ViewExtensions.swift */; };
+		863D0EAF2B80306A00247CB7 /* MessageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D0EAE2B80306A00247CB7 /* MessageTime.swift */; };
 		8656065A2A39914D004917AA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865606592A39914D004917AA /* Functions.swift */; };
 		8658A6432A32498C00D3F4C5 /* SwiftVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658A6422A32498C00D3F4C5 /* SwiftVK.swift */; };
 		8658A6472A325D6600D3F4C5 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8658A6462A325D6600D3F4C5 /* SDWebImageSwiftUI */; };
@@ -53,6 +56,7 @@
 		86D76FE32B7E6F6100D46B1C /* StickerSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */; };
 		86D76FE62B7E86E800D46B1C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE52B7E86E800D46B1C /* Background.swift */; };
 		86D76FEA2B7ECFAA00D46B1C /* MessageCloudContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */; };
+		86D76FED2B7F650000D46B1C /* AttachmentsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FEC2B7F650000D46B1C /* AttachmentsGrid.swift */; };
 		86DB1AFB2B6EA967006A1BCD /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFA2B6EA967006A1BCD /* Messages.swift */; };
 		86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFC2B6EA975006A1BCD /* Message.swift */; };
 		86DB1AFF2B6EABC8006A1BCD /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */; };
@@ -100,6 +104,9 @@
 		8633F3A82B6FEC9B00C5B0F0 /* MessageToolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageToolbar.swift; sourceTree = "<group>"; };
 		8633F3AA2B7037CA00C5B0F0 /* MessageToolbarImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageToolbarImage.swift; sourceTree = "<group>"; };
 		8633F3AC2B70395300C5B0F0 /* ChatType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatType.swift; sourceTree = "<group>"; };
+		863D0EAA2B802B8000247CB7 /* MessageText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageText.swift; sourceTree = "<group>"; };
+		863D0EAC2B802DA200247CB7 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		863D0EAE2B80306A00247CB7 /* MessageTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTime.swift; sourceTree = "<group>"; };
 		865606592A39914D004917AA /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		8658A6422A32498C00D3F4C5 /* SwiftVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftVK.swift; sourceTree = "<group>"; };
 		8658A64A2A32B66000D3F4C5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
@@ -121,6 +128,7 @@
 		86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerSizes.swift; sourceTree = "<group>"; };
 		86D76FE52B7E86E800D46B1C /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCloudContent.swift; sourceTree = "<group>"; };
+		86D76FEC2B7F650000D46B1C /* AttachmentsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsGrid.swift; sourceTree = "<group>"; };
 		86DB1AFA2B6EA967006A1BCD /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		86DB1AFC2B6EA975006A1BCD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
@@ -180,6 +188,8 @@
 				86088CD62B778F8C0010D6F0 /* MessageCloudContextMenu.swift */,
 				86088CD82B7790AB0010D6F0 /* MessageCloudStyles.swift */,
 				86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */,
+				863D0EAA2B802B8000247CB7 /* MessageText.swift */,
+				863D0EAE2B80306A00247CB7 /* MessageTime.swift */,
 			);
 			path = MessageCloud;
 			sourceTree = "<group>";
@@ -197,6 +207,7 @@
 				8686099A2A2B812600611BC6 /* Friends */,
 				8624F3E32A266E8800FA20B1 /* Dialogs */,
 				866DF0912A2C05CC00EFE771 /* Settings */,
+				863D0EAC2B802DA200247CB7 /* ViewExtensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -358,6 +369,7 @@
 		86D76FEB2B7EDDEE00D46B1C /* Attachments */ = {
 			isa = PBXGroup;
 			children = (
+				86D76FEC2B7F650000D46B1C /* AttachmentsGrid.swift */,
 			);
 			path = Attachments;
 			sourceTree = "<group>";
@@ -575,6 +587,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				863D0EAF2B80306A00247CB7 /* MessageTime.swift in Sources */,
 				86A0B3F12B6FC86F00901F42 /* Conversations.swift in Sources */,
 				8658A64B2A32B66000D3F4C5 /* Photo.swift in Sources */,
 				86FB959A2A2113660069BFA1 /* ContentView.swift in Sources */,
@@ -597,6 +610,7 @@
 				86D76FE62B7E86E800D46B1C /* Background.swift in Sources */,
 				86E279B42B782D5E00819A72 /* LottieView.swift in Sources */,
 				86D76FE32B7E6F6100D46B1C /* StickerSizes.swift in Sources */,
+				863D0EAD2B802DA200247CB7 /* ViewExtensions.swift in Sources */,
 				8624F3DC2A266C1F00FA20B1 /* DialogList.swift in Sources */,
 				8633F3A92B6FEC9B00C5B0F0 /* MessageToolbar.swift in Sources */,
 				86088CD42B7783A40010D6F0 /* Sticker.swift in Sources */,
@@ -625,9 +639,11 @@
 				861BD6802A2D1E6E002F5404 /* HorizontalProfileAttachments.swift in Sources */,
 				86FB1AD12A2E653400E9D912 /* SplashScreen.swift in Sources */,
 				86088CD92B7790AB0010D6F0 /* MessageCloudStyles.swift in Sources */,
+				86D76FED2B7F650000D46B1C /* AttachmentsGrid.swift in Sources */,
 				867EC29E2A295AE80003645F /* UnreadMessagesCount.swift in Sources */,
 				8633F3AB2B7037CA00C5B0F0 /* MessageToolbarImage.swift in Sources */,
 				8658A64D2A32B69100D3F4C5 /* Photos.swift in Sources */,
+				863D0EAB2B802B8000247CB7 /* MessageText.swift in Sources */,
 				86FDC9F32A3184850009322D /* Login.swift in Sources */,
 				8658A65D2A32F11000D3F4C5 /* User.swift in Sources */,
 				8625D8352B754121007361EC /* LastActivity.swift in Sources */,

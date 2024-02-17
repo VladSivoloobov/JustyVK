@@ -30,7 +30,7 @@ struct MessageCloud: View {
         Group{
             Group{
                 if(isSticker || isAnimatedSticker){
-                    VStack(alignment: .trailing){
+                    VStack(alignment: .trailing, spacing: 0){
                         MessageCloudContent(isSticker: isSticker, isAnimatedSticker: isAnimatedSticker, message: message, lastSticker: lastSticker, time: time)
                     }
                     .messageCloudStyles(fromMe: fromMe, isSticker: isSticker)
@@ -39,7 +39,7 @@ struct MessageCloud: View {
                     HStack(alignment: .bottom){
                         MessageCloudContent(isSticker: isSticker, isAnimatedSticker: isAnimatedSticker, message: message, lastSticker: lastSticker, time: time)
                     }
-                    .messageCloudStyles(fromMe: fromMe, isSticker: isSticker)
+                    .messageCloudStyles(fromMe: fromMe, isSticker: isSticker, isAttachment: !message.attachments.isEmpty)
                     .messageCloudContextMenu()
                 }
                 

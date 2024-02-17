@@ -3,11 +3,12 @@ import SwiftUI
 struct MessageCloudStyles: ViewModifier {
     var fromMe: Bool;
     var isSticker: Bool;
+    var isAttachment: Bool;
     
     func body(content: Content) -> some View {
         content
-            .padding(.horizontal, 10)
-            .padding(.vertical, 6)
+            .padding(.horizontal, 2)
+            .padding(.vertical, 2)
             .background(messageCloudBackground(fromMe: fromMe, isSticker: isSticker))
             .cornerRadius(15)
             .compositingGroup()
@@ -25,7 +26,7 @@ struct MessageCloudStyles: ViewModifier {
 }
 
 extension View {
-    func messageCloudStyles(fromMe: Bool, isSticker: Bool) -> some View{
-        modifier(MessageCloudStyles(fromMe: fromMe, isSticker: isSticker))
+    func messageCloudStyles(fromMe: Bool, isSticker: Bool, isAttachment: Bool = false) -> some View{
+        modifier(MessageCloudStyles(fromMe: fromMe, isSticker: isSticker, isAttachment: isAttachment))
     }
 }
