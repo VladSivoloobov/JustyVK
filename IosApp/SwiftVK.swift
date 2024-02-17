@@ -18,6 +18,20 @@ public struct SwiftVK {
         self.groups = SwiftVKGroups(token: token);
     }
     
+    public static func createAttachmentMatrix<T>(arr: [T], byNumber: Int) -> [[T]]{
+        var array: [[T]] = [];
+        
+        for i in stride(from: 0, to: arr.count, by: byNumber + 1){
+            if(i + byNumber >= arr.count - 1){
+                array.append(Array(arr[i...arr.count - 1]));
+                break;
+            }
+            array.append(Array(arr[i...i + byNumber]));
+        }
+        
+        return array;
+    }
+    
     public static func createLastSeenString(lastSeenTime: Int?, isOnline: Int?, sex: Int?) -> String{
         if(lastSeenTime == nil || isOnline == nil || sex == nil){
             return "Неизвестно";

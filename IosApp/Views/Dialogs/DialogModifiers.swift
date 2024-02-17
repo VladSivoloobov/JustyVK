@@ -96,13 +96,6 @@ struct DialogModifiers: ViewModifier {
             .toolbarBackground(.visible, for: .tabBar)
             .navigationTitle("Сообщения")
             .toolbar{
-                ToolbarItemGroup(placement: .topBarTrailing){
-                    Button{
-                        
-                    } label: {
-                        Text("Изм.")
-                    }
-                }
                 ToolbarItemGroup(placement: .topBarLeading){
                     Button{
                         // TODO: Здесь нужно сделать работающей кнопку архива, в нём будет список чатов, которые пользователь скрыл

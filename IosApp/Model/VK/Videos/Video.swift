@@ -17,7 +17,7 @@ struct Video: Decodable{
     var platform: String?;
     var canAdd: Int;
     var isPrivate: Int?;
-    var accessKey: String;
+    var accessKey: String?;
     var processing: Int?;
     var canAttachLink: Int?;
     var width: Int?;

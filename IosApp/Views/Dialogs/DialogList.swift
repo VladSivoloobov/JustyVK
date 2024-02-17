@@ -14,6 +14,7 @@ struct DialogList: View {
     @EnvironmentObject var userInfo: UserInfo;
     @State var conversations: [ConversationInfo] = [];
     @Binding var unreadMessagesCount: Int;
+    @Environment(\.editMode) private var editMode
     
     var body: some View {
         NavigationStack{
@@ -31,6 +32,9 @@ struct DialogList: View {
             }
             .dialogModifiers($searchString)
             .getConversations($conversations, $unreadMessagesCount)
+            .toolbar{
+                EditButton()
+            }
         }
     }
 }
