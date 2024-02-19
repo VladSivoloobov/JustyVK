@@ -57,17 +57,12 @@ extension SwiftVK.SwiftVKMessages{
         private func polling(longPollServer: LongPoll){
             getLongPollEvent(server: longPollServer.server, key: longPollServer.key, ts: String(longPollServer.ts)){
                 longPollEvent in
-                
-                print(longPollEvent.updates);
-                
+                                
                 let newLongPollServer = LongPoll(server: longPollServer.server, key: longPollServer.key, ts: longPollEvent.ts);
                 
                 for update in longPollEvent.updates{
-                    switch(update[0]){
-                    case .integer(let value):
-                        checkUpdateEvent(updateCode: value, longPollEvent: longPollEvent);
-                    default:
-                        break;
+                    if case .integer(let value) = update[0]{
+                        checkUpdateEvent(updateCode: value, longPollEvent: longPollEvent)
                     }
                     
                 }
