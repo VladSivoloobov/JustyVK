@@ -1,4 +1,4 @@
-struct LongPollEvent: Codable {
+struct LongPollResponse: Codable {
     let ts: Int
     let updates: [[LongPollUpdate]]
 }

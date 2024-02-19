@@ -37,8 +37,8 @@
 		863D0EAF2B80306A00247CB7 /* MessageTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D0EAE2B80306A00247CB7 /* MessageTime.swift */; };
 		863D0EB12B80E4F800247CB7 /* AttachmentImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863D0EB02B80E4F800247CB7 /* AttachmentImage.swift */; };
 		8649DCDA2B8182AB00353F05 /* LongPoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649DCD92B8182AB00353F05 /* LongPoll.swift */; };
-		8649DCDC2B81882E00353F05 /* LongPollEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649DCDB2B81882E00353F05 /* LongPollEvent.swift */; };
-		8656065A2A39914D004917AA /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865606592A39914D004917AA /* Functions.swift */; };
+		8649DCDC2B81882E00353F05 /* LongPollResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8649DCDB2B81882E00353F05 /* LongPollResponse.swift */; };
+		8656065A2A39914D004917AA /* global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 865606592A39914D004917AA /* global.swift */; };
 		8658A6432A32498C00D3F4C5 /* SwiftVK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658A6422A32498C00D3F4C5 /* SwiftVK.swift */; };
 		8658A6472A325D6600D3F4C5 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 8658A6462A325D6600D3F4C5 /* SDWebImageSwiftUI */; };
 		8658A64B2A32B66000D3F4C5 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8658A64A2A32B66000D3F4C5 /* Photo.swift */; };
@@ -64,6 +64,8 @@
 		86D4E9EC2B82F440008A08A2 /* LongPollUpdates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D4E9EB2B82F440008A08A2 /* LongPollUpdates.swift */; };
 		86D4E9F02B8300A7008A08A2 /* SwiftVKLongPoll.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D4E9EF2B8300A6008A08A2 /* SwiftVKLongPoll.swift */; };
 		86D4E9F22B838012008A08A2 /* LongPollEventListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D4E9F12B838012008A08A2 /* LongPollEventListener.swift */; };
+		86D4E9F72B8398C6008A08A2 /* NewMessageEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D4E9F62B8398C6008A08A2 /* NewMessageEvent.swift */; };
+		86D4E9F92B8399FC008A08A2 /* LongPollEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D4E9F82B8399FC008A08A2 /* LongPollEvent.swift */; };
 		86D76FE32B7E6F6100D46B1C /* StickerSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */; };
 		86D76FE62B7E86E800D46B1C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE52B7E86E800D46B1C /* Background.swift */; };
 		86D76FEA2B7ECFAA00D46B1C /* MessageCloudContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */; };
@@ -120,8 +122,8 @@
 		863D0EAE2B80306A00247CB7 /* MessageTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageTime.swift; sourceTree = "<group>"; };
 		863D0EB02B80E4F800247CB7 /* AttachmentImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentImage.swift; sourceTree = "<group>"; };
 		8649DCD92B8182AB00353F05 /* LongPoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPoll.swift; sourceTree = "<group>"; };
-		8649DCDB2B81882E00353F05 /* LongPollEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPollEvent.swift; sourceTree = "<group>"; };
-		865606592A39914D004917AA /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		8649DCDB2B81882E00353F05 /* LongPollResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPollResponse.swift; sourceTree = "<group>"; };
+		865606592A39914D004917AA /* global.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = global.swift; sourceTree = "<group>"; };
 		8658A6422A32498C00D3F4C5 /* SwiftVK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftVK.swift; sourceTree = "<group>"; };
 		8658A64A2A32B66000D3F4C5 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		8658A64C2A32B69100D3F4C5 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
@@ -147,6 +149,8 @@
 		86D4E9EB2B82F440008A08A2 /* LongPollUpdates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPollUpdates.swift; sourceTree = "<group>"; };
 		86D4E9EF2B8300A6008A08A2 /* SwiftVKLongPoll.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftVKLongPoll.swift; sourceTree = "<group>"; };
 		86D4E9F12B838012008A08A2 /* LongPollEventListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPollEventListener.swift; sourceTree = "<group>"; };
+		86D4E9F62B8398C6008A08A2 /* NewMessageEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageEvent.swift; sourceTree = "<group>"; };
+		86D4E9F82B8399FC008A08A2 /* LongPollEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPollEvent.swift; sourceTree = "<group>"; };
 		86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerSizes.swift; sourceTree = "<group>"; };
 		86D76FE52B7E86E800D46B1C /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCloudContent.swift; sourceTree = "<group>"; };
@@ -269,6 +273,7 @@
 		8658A6482A32B63A00D3F4C5 /* VK */ = {
 			isa = PBXGroup;
 			children = (
+				86D4E9F52B8398B3008A08A2 /* Events */,
 				86088CD22B7783510010D6F0 /* Attachments */,
 				86088CCD2B77745A0010D6F0 /* Groups */,
 				86A0B3F62B6FC8EE00901F42 /* Chat */,
@@ -397,7 +402,7 @@
 			isa = PBXGroup;
 			children = (
 				8649DCD92B8182AB00353F05 /* LongPoll.swift */,
-				8649DCDB2B81882E00353F05 /* LongPollEvent.swift */,
+				8649DCDB2B81882E00353F05 /* LongPollResponse.swift */,
 				86D4E9EB2B82F440008A08A2 /* LongPollUpdates.swift */,
 				86D4E9F12B838012008A08A2 /* LongPollEventListener.swift */,
 			);
@@ -411,6 +416,15 @@
 				86D4E9EF2B8300A6008A08A2 /* SwiftVKLongPoll.swift */,
 			);
 			path = Messages;
+			sourceTree = "<group>";
+		};
+		86D4E9F52B8398B3008A08A2 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				86D4E9F82B8399FC008A08A2 /* LongPollEvent.swift */,
+				86D4E9F62B8398C6008A08A2 /* NewMessageEvent.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		86D76FE42B7E86D600D46B1C /* Background */ = {
@@ -495,7 +509,7 @@
 				86D4E9DF2B82F083008A08A2 /* SwiftVK */,
 				8623F96F2A30169C00270CD5 /* Extensions.swift */,
 				86FB95972A2113660069BFA1 /* AppInstance.swift */,
-				865606592A39914D004917AA /* Functions.swift */,
+				865606592A39914D004917AA /* global.swift */,
 				86E279BB2B78F15000819A72 /* WebInteractions.swift */,
 				86E279BD2B791B3100819A72 /* FileSystemInteractions.swift */,
 				860FC3A32A26188B00922426 /* Model */,
@@ -646,6 +660,7 @@
 			files = (
 				863D0EAF2B80306A00247CB7 /* MessageTime.swift in Sources */,
 				86A0B3F12B6FC86F00901F42 /* Conversations.swift in Sources */,
+				86D4E9F72B8398C6008A08A2 /* NewMessageEvent.swift in Sources */,
 				8658A64B2A32B66000D3F4C5 /* Photo.swift in Sources */,
 				86FB959A2A2113660069BFA1 /* ContentView.swift in Sources */,
 				86DB1AFF2B6EABC8006A1BCD /* Attachment.swift in Sources */,
@@ -655,14 +670,14 @@
 				86FB1AD32A2E659300E9D912 /* TabBar.swift in Sources */,
 				866667002A2A10CB0089A054 /* MessageInput.swift in Sources */,
 				86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */,
-				8649DCDC2B81882E00353F05 /* LongPollEvent.swift in Sources */,
+				8649DCDC2B81882E00353F05 /* LongPollResponse.swift in Sources */,
 				86A0B3F52B6FC89D00901F42 /* Chat.swift in Sources */,
 				8633F3AD2B70395300C5B0F0 /* ChatType.swift in Sources */,
 				869CBDE72A27FA57006171DD /* MessageCloud.swift in Sources */,
 				8658A6432A32498C00D3F4C5 /* SwiftVK.swift in Sources */,
 				8623F9702A30169C00270CD5 /* Extensions.swift in Sources */,
 				86088CCF2B7774750010D6F0 /* Group.swift in Sources */,
-				8656065A2A39914D004917AA /* Functions.swift in Sources */,
+				8656065A2A39914D004917AA /* global.swift in Sources */,
 				86E279BC2B78F15000819A72 /* WebInteractions.swift in Sources */,
 				8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */,
 				86D76FE62B7E86E800D46B1C /* Background.swift in Sources */,
@@ -706,6 +721,7 @@
 				86FB1AD12A2E653400E9D912 /* SplashScreen.swift in Sources */,
 				86088CD92B7790AB0010D6F0 /* MessageCloudStyles.swift in Sources */,
 				86D76FED2B7F650000D46B1C /* AttachmentsGrid.swift in Sources */,
+				86D4E9F92B8399FC008A08A2 /* LongPollEvent.swift in Sources */,
 				867EC29E2A295AE80003645F /* UnreadMessagesCount.swift in Sources */,
 				8633F3AB2B7037CA00C5B0F0 /* MessageToolbarImage.swift in Sources */,
 				8658A64D2A32B69100D3F4C5 /* Photos.swift in Sources */,
