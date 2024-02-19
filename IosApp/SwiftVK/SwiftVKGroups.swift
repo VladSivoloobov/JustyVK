@@ -7,7 +7,7 @@ extension SwiftVK{
         
         func getById(groupsIds: String?, groupId: String?, fields: String?, completion: @escaping ([VKGroup]) -> ()){
             let url = "https://api.vk.com/method/groups.getById"
-            let params: Parameters = filterParams(params: [
+            let params: Parameters = WebInteractions.filterParams(params: [
                 "access_token": token,
                 "group_ids": groupsIds ?? "",
                 "group_id": groupId ?? "",

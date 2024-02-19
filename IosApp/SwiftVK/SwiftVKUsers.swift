@@ -8,7 +8,7 @@ extension SwiftVK{
         
         func get(userId: Int?, fields: [String] = [""], completion: @escaping ([User]) -> ()){
             let url = "https://api.vk.com/method/users.get";
-            let params: Parameters = filterParams(params: [
+            let params: Parameters = WebInteractions.filterParams(params: [
                 "access_token": token,
                 "user_ids": userId ?? "",
                 "fields": fields.joined(separator: ","),

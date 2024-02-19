@@ -43,7 +43,7 @@ extension SwiftVK{
         
         func getConversations(offset: Int?, count: Int?, filter: String?, extended: Int?, fields: String?, groupId: Int?, completion: @escaping (Conversations) -> ()){
             let url = "https://api.vk.com/method/messages.getConversations";
-            let params: Parameters = filterParams(params: [
+            let params: Parameters = WebInteractions.filterParams(params: [
                 "access_token": token,
                 "count": count ?? "",
                 "filter": filter ?? "",

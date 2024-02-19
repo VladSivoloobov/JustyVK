@@ -53,6 +53,11 @@ struct ContentView: View {
             }
             
             SwiftVK(token: userInfo.token).messages.longPoll.startLongPolling();
+            SwiftVK(token: userInfo.token).messages.longPoll.addEventListener(event: .newMessage){
+                longPollEvent in
+                print("Событие в ")
+                print(longPollEvent);
+            }
         }
     }
 }

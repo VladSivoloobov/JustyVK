@@ -2,6 +2,12 @@ import Foundation
 import Alamofire
 
 struct WebInteractions{
+    static func filterParams(params: Parameters) -> Parameters{
+        return params.filter{ param -> Bool in
+            return String(describing: param.value) != "";
+        }
+    }
+    
     static func fetchData<T: Decodable>(url: String, method: HTTPMethod, parameters: Parameters, completion: @escaping (T?) -> Void) {
         AF.request(url, method: method, parameters: parameters).response { response in
             do {
