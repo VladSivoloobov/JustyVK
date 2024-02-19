@@ -1,10 +1,3 @@
-//
-//  DialogList.swift
-//  IosApp
-//
-//  Created by Vladislav on 30.05.2023.
-//
-
 import SwiftUI
 
 struct DialogList: View {
@@ -34,15 +27,6 @@ struct DialogList: View {
             .getConversations($conversations, $unreadMessagesCount)
             .toolbar{
                 EditButton()
-            }
-            .onAppear(){
-                SwiftVK(token: userInfo.token).messages.getLongPollServer{
-                    longPoll in
-                    SwiftVK(token: userInfo.token).messages.getLongPollEvent(server: longPoll.server, key: longPoll.key, ts: String(longPoll.ts)){
-                        longPollEvent in
-                        print(longPollEvent.updates)
-                    }
-                }
             }
         }
     }

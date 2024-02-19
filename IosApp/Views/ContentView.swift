@@ -51,6 +51,8 @@ struct ContentView: View {
                 userInfo.lastName = users[0].lastName;
                 userInfo.id = users[0].id;
             }
+            
+            SwiftVK(token: userInfo.token).messages.longPoll.startLongPolling();
         }
     }
 }

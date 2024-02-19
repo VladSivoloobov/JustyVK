@@ -24,18 +24,6 @@ enum LongPollUpdate: Codable {
         }
         throw DecodingError.typeMismatch(LongPollUpdate.self, DecodingError.Context(codingPath: decoder.codingPath, debugDescription: "Wrong type for LongPollUpdate"))
     }
-
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.singleValueContainer()
-        switch self {
-        case .integer(let x):
-            try container.encode(x)
-        case .string(let x):
-            try container.encode(x)
-        case .longPollAttachments(let x):
-            try container.encode(x)
-        }
-    }
 }
 
 struct LongPollAttachments: Codable {
