@@ -55,5 +55,26 @@ struct MessageList: View {
             }
             .zIndex(1)
         }
+        .onAppear(){
+            SwiftVK.SwiftVKMessages.SwiftVKLongPoll.addEventListener(event: .newMessage){
+                messageEvent in
+                if let messageEvent = messageEvent as? NewMessageEvent{
+                    if(messageEvent.peerId != companionId){
+                        return;
+                    }
+                    
+                    let newMessage = Message(
+                        date: messageEvent.timestamp,
+                        fromId: Int(messageEvent.attachments?.from ?? "0")!,
+                        text: messageEvent.text,
+                        attachments: []
+                    );
+                    
+                    print(newMessage);
+                    
+                    messageList.insert(newMessage, at: 0);
+                }
+            }
+        }
     }
 }

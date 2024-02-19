@@ -52,10 +52,13 @@ extension SwiftVK.SwiftVKMessages{
                        case .integer(let timestamp) = update[4],
                        case .string(let text) = update[5]{
                         var attachments: LongPollAttachments?;
+                        
                         if case .longPollAttachments(let longPollAttachments) = update[6]{
                             attachments = longPollAttachments
                         }
+                        
                         let messageEvent = NewMessageEvent(messageId: messageId, flags: flags, minorId: 0, peerId: peerId, timestamp: timestamp, text: text, attachments: attachments);
+                        
                         event.callback(messageEvent);
                     }
                 }
