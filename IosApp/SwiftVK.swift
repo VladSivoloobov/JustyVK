@@ -121,6 +121,32 @@ public struct SwiftVK {
             }
         }
         
+        func getLongPollServer(completion: @escaping (LongPoll) -> ()){
+            let url = "https://api.vk.com/method/messages.getLongPollServer";
+            let params: Parameters = [
+                "access_token": token,
+                "v": "5.131"
+            ];
+            
+            WebInteractions.fetchData(url: url, method: .get, parameters: params){
+                (longPoll: Response<LongPoll>?) in
+                if let longPollResponse = longPoll{
+                    completion(longPollResponse.response);
+                }
+            }
+        }
+        
+        func getLongPollEvent(server: String, key: String, ts: String, completion: @escaping (LongPollEvent) -> ()){
+            let url = "https://\(server)?act=a_check&key=\(key)&ts=\(ts)&wait=25&mode=2&version=2";
+            
+            WebInteractions.fetchData(url: url, method: .get, parameters: [:]){
+                (longPollResponse: LongPollEvent?) in
+                if let longPollEvent = longPollResponse {
+                    completion(longPollEvent);
+                }
+            }
+        }
+        
         func getConversations(offset: Int?, count: Int?, filter: String?, extended: Int?, fields: String?, groupId: Int?, completion: @escaping (Conversations) -> ()){
             let url = "https://api.vk.com/method/messages.getConversations";
             let params: Parameters = filterParams(params: [

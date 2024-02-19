@@ -35,6 +35,15 @@ struct DialogList: View {
             .toolbar{
                 EditButton()
             }
+            .onAppear(){
+                SwiftVK(token: userInfo.token).messages.getLongPollServer{
+                    longPoll in
+                    SwiftVK(token: userInfo.token).messages.getLongPollEvent(server: longPoll.server, key: longPoll.key, ts: String(longPoll.ts)){
+                        longPollEvent in
+                        print(longPollEvent.updates)
+                    }
+                }
+            }
         }
     }
 }
