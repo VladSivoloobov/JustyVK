@@ -8,33 +8,21 @@
 import SwiftUI
 
 struct MessageNavbar: View {
-    @State private var bottomSheetOpened = false;
-    var isOnline: Bool;
-    var name: String;
-    var onlineStatusString: String?;
-    
-    // TODO: Изменить на перечисление
+    @ObservedObject var dialogInfo: DialogInfo;
     
     var body: some View {
         VStack{
-            Text(name)
+            Text(dialogInfo.userName ?? "Неизвестно")
                 .fontWeight(.medium)
                 .lineLimit(1)
             
-            if(onlineStatusString != nil){
-                Text(onlineStatusString!)
+            if(dialogInfo.isOnlineString != nil){
+                Text(dialogInfo.isOnlineString!)
                     .font(.subheadline)
-                    .foregroundColor(isOnline ? .blue : .gray)
+                    .foregroundColor(dialogInfo.isOnline! ? .blue : .gray)
                     .padding(.bottom, 8)
                     .padding(.top, -10)
             }
         }
-        .onTapGesture {
-            bottomSheetOpened = true;
-        }
-        .sheet(isPresented: $bottomSheetOpened) {
-            Text("Открыто")
-        }
-
     }
 }

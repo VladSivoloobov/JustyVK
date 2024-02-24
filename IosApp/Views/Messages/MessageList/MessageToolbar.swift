@@ -3,10 +3,7 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct MessageToolbar: ViewModifier{
-    @State var name: String;
-    @State var image: String;
-    var onlineStatusVisible: String?;
-    var isOnlineToggler: Bool;
+    @ObservedObject var dialogInfo: DialogInfo;
     
     func body(content: Content) -> some View {
         content
@@ -14,10 +11,10 @@ struct MessageToolbar: ViewModifier{
             .navigationBarTitleDisplayMode(.inline)
             .toolbar{
                 ToolbarItem(placement: .navigationBarTrailing){
-                    MessageToolbarImage(image: image)
+                    MessageToolbarImage(image: dialogInfo.avatar ?? defaultImage)
                 }
                 ToolbarItem(placement: .principal){
-                    MessageNavbar(isOnline: isOnlineToggler, name: name, onlineStatusString: onlineStatusVisible)
+                    MessageNavbar(dialogInfo: dialogInfo)
                 }
             }
             .toolbarBackground(.visible, for: .navigationBar)
@@ -25,7 +22,7 @@ struct MessageToolbar: ViewModifier{
 }
 
 extension View {
-    func messageToolbar(name: String, image: String, onlineStatusVisible: String?, isOnline: Bool) -> some View{
-        modifier(MessageToolbar(name: name, image: image, onlineStatusVisible: onlineStatusVisible, isOnlineToggler: isOnline));
+    func messageToolbar(dialogInfo: DialogInfo) -> some View{
+        modifier(MessageToolbar(dialogInfo: dialogInfo));
     }
 }

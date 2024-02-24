@@ -8,14 +8,9 @@ extension UINavigationController {
 }
 
 struct MessageList: View {
-    @State var uiTabarController: UITabBarController?
-    @State var name: String;
-    @State var image: String;
     @State var messageList: [Message] = [];
     @EnvironmentObject var userInfo: UserInfo;
-    @State var companionId: Int;
-    var onlineStatusVisible: String?;
-    var isOnline: Bool;
+    @ObservedObject var dialogInfo: DialogInfo;
 
     @ViewBuilder
     func Background() -> Image{
@@ -48,9 +43,9 @@ struct MessageList: View {
                     .safeAreaInset(edge: .bottom){
                         MessageInput()
                     }
-                    .messageToolbar(name: name, image: image, onlineStatusVisible: onlineStatusVisible, isOnline: isOnline)
+                    .messageToolbar(dialogInfo: dialogInfo)
                 }
-                .getMessageList(scrollReader: scrollReader, messageList: $messageList, companionId: companionId)
+                .getMessageList(scrollReader: scrollReader, messageList: $messageList, companionId: dialogInfo.userId)
                 .padding(.bottom, -20)
             }
             .zIndex(1)
@@ -59,7 +54,7 @@ struct MessageList: View {
             SwiftVK.SwiftVKMessages.SwiftVKLongPoll.addEventListener(event: .newMessage){
                 messageEvent in
                 if let messageEvent = messageEvent as? NewMessageEvent{
-                    if(messageEvent.peerId != companionId){
+                    if(messageEvent.peerId != dialogInfo.userId){
                         return;
                     }
                     

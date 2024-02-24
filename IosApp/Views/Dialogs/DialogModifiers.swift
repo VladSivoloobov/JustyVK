@@ -48,20 +48,15 @@ struct DialogSwipeActions: ViewModifier{
 }
 
 struct DialogOverlay: ViewModifier{
-    var dialog: Conversation;
-    var companionId: Int;
-    @Binding var userName: String?;
-    @Binding var avatar: String?;
+    @ObservedObject var dialogInfo: DialogInfo;
     @EnvironmentObject var globalUIStates: GlobalUIStates;
-    var onlineStatusVisible: String?;
-    var isOnline: Bool;
     
     func body(content: Content) -> some View{
         content
             .overlay{
             NavigationLink(
                 destination: {
-                    MessageList(name: userName ?? "Неизвестно", image: avatar ?? defaultImage, companionId: companionId, onlineStatusVisible: onlineStatusVisible, isOnline: isOnline)
+                    MessageList(dialogInfo: dialogInfo)
                         .onAppear(){
                             //TODO: Место переключения таббара - выкл
                             globalUIStates.tabBarVisible.toggle();
@@ -132,8 +127,8 @@ struct GetConversations: ViewModifier{
 }
 
 extension View {
-    func dialogOverlay(dialog: Conversation, companionId: Int, userName: Binding<String?>, avatar: Binding<String?>, onlineStatusVisible: String?, isOnline: Bool) -> some View{
-        modifier(DialogOverlay(dialog: dialog, companionId: companionId, userName: userName, avatar: avatar, onlineStatusVisible: onlineStatusVisible, isOnline: isOnline))
+    func dialogOverlay(dialogInfo: DialogInfo) -> some View{
+        modifier(DialogOverlay(dialogInfo: dialogInfo))
     }
     
     func dialogSwipeActions() -> some View{

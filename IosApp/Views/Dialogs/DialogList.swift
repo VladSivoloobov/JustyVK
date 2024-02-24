@@ -14,8 +14,7 @@ struct DialogList: View {
                 Section{
                     ForEach(conversations, id: \.self.conversation.peer.id){ conversation in
                         DialogRow(
-                            conversation: conversation.conversation,
-                            lastMesage: conversation.lastMessage
+                            dialogInfo: DialogInfo(conversation: conversation.conversation, lastMesage: conversation.lastMessage)
                         )
                     }
                 }
