@@ -9,7 +9,8 @@ import SwiftUI
 
 @main
 struct AppInstance: App {
-    @StateObject var userInfo = UserInfo()
+    @StateObject var userInfo = UserInfo();
+    @StateObject var globalUIStates = GlobalUIStates();
     
     init(){
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).title = "Отмена"
@@ -20,9 +21,11 @@ struct AppInstance: App {
             if(userInfo.token.isEmpty){
                 Login()
                     .environmentObject(userInfo)
+                    .environmentObject(globalUIStates)
             } else{
                 ContentView()
                     .environmentObject(userInfo)
+                    .environmentObject(globalUIStates)
             }
         }
     }

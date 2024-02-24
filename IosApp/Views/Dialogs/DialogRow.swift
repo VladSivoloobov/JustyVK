@@ -16,7 +16,6 @@ struct DialogRow: View {
     @State var avatar: String?;
     @State var isOnline: Bool?;
     @State var isOnlineString: String?;
-    var tabBarIsVisible: Binding<Bool>;
     var attachmentTextColor = Color.gray;
     
     var userId: Int;
@@ -24,14 +23,13 @@ struct DialogRow: View {
     // TODO: Заменить на настоящее время
     var time: String = "22:02";
     
-    init(conversation: Conversation, lastMesage: ConversationInfo.ConversationLastMessage, tabBarVisibleBinding: Binding<Bool>) {
+    init(conversation: Conversation, lastMesage: ConversationInfo.ConversationLastMessage) {
         self.conversation = conversation
         self.lastMesage = lastMesage
         self.userName = conversation.chatSettings?.title
         self.userId = conversation.peer.id
         self.chatType = conversation.peer.type
         self.avatar = conversation.chatSettings?.photo.photo200 ?? defaultImage;
-        self.tabBarIsVisible = tabBarVisibleBinding;
         if(!lastMesage.attachments.isEmpty && lastMesage.text.isEmpty){
             attachmentTextColor = Color.white;
         }
@@ -132,6 +130,6 @@ struct DialogRow: View {
         }
         .dialogContextMenu()
         .dialogSwipeActions()
-        .dialogOverlay(dialog: conversation, tabBarVisibleBinding: tabBarIsVisible, companionId: userId, userName: $userName, avatar: $avatar, onlineStatusVisible: isOnlineString, isOnline: isOnline ?? false)
+        .dialogOverlay(dialog: conversation, companionId: userId, userName: $userName, avatar: $avatar, onlineStatusVisible: isOnlineString, isOnline: isOnline ?? false)
     }
 }

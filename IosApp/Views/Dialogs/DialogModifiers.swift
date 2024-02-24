@@ -50,9 +50,9 @@ struct DialogSwipeActions: ViewModifier{
 struct DialogOverlay: ViewModifier{
     var dialog: Conversation;
     var companionId: Int;
-    @Binding var tabBarVisibleBinding: Bool;
     @Binding var userName: String?;
     @Binding var avatar: String?;
+    @EnvironmentObject var globalUIStates: GlobalUIStates;
     var onlineStatusVisible: String?;
     var isOnline: Bool;
     
@@ -63,11 +63,13 @@ struct DialogOverlay: ViewModifier{
                 destination: {
                     MessageList(name: userName ?? "Неизвестно", image: avatar ?? defaultImage, companionId: companionId, onlineStatusVisible: onlineStatusVisible, isOnline: isOnline)
                         .onAppear(){
-                            self.tabBarVisibleBinding.toggle();
+                            //TODO: Место переключения таббара - выкл
+                            globalUIStates.tabBarVisible.toggle();
                         }
                         .onDisappear(){
                             withAnimation(.spring()){
-                                self.tabBarVisibleBinding.toggle();
+                                //TODO: Место переключения таббара - вкл
+                                globalUIStates.tabBarVisible.toggle();
                             }
                         }
                         .onAppear(){
@@ -130,8 +132,8 @@ struct GetConversations: ViewModifier{
 }
 
 extension View {
-    func dialogOverlay(dialog: Conversation, tabBarVisibleBinding: Binding<Bool>, companionId: Int, userName: Binding<String?>, avatar: Binding<String?>, onlineStatusVisible: String?, isOnline: Bool) -> some View{
-        modifier(DialogOverlay(dialog: dialog, companionId: companionId, tabBarVisibleBinding: tabBarVisibleBinding, userName: userName, avatar: avatar, onlineStatusVisible: onlineStatusVisible, isOnline: isOnline))
+    func dialogOverlay(dialog: Conversation, companionId: Int, userName: Binding<String?>, avatar: Binding<String?>, onlineStatusVisible: String?, isOnline: Bool) -> some View{
+        modifier(DialogOverlay(dialog: dialog, companionId: companionId, userName: userName, avatar: avatar, onlineStatusVisible: onlineStatusVisible, isOnline: isOnline))
     }
     
     func dialogSwipeActions() -> some View{

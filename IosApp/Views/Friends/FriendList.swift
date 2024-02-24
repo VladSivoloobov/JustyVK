@@ -9,8 +9,6 @@ import SwiftUI
 
 struct FriendList: View {
     @State var searchableFriendsText: String = "";
-    //TODO: Вынести этот биндинг отдельно куда-нибудь
-    @Binding var tabBarVisibleBinding: Bool;
     @EnvironmentObject var userInfo: UserInfo;
     @State var friendList = [User]()
     
@@ -26,8 +24,7 @@ struct FriendList: View {
                             lastSeenPlatform: friend.lastSeen?.platform ?? -404,
                             sex: friend.sex!,
                             isOnline:friend.online!,
-                            user: friend,
-                            tabBarVisibleBinding: $tabBarVisibleBinding
+                            user: friend
                         )
                     }
                 }
@@ -99,6 +96,6 @@ struct FriendList: View {
 
 struct FriendList_Previews: PreviewProvider {
     static var previews: some View {
-        FriendList(tabBarVisibleBinding: .constant(true))
+        FriendList()
     }
 }

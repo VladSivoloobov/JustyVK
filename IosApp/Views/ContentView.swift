@@ -15,27 +15,27 @@ enum Tabs: String{
 
 struct ContentView: View {
     @State private var selectedTab: Tabs = .messages;
-    @State var tabBarIsHidden: Bool = false;
     @EnvironmentObject var userInfo: UserInfo;
+    @EnvironmentObject var globalUIStates: GlobalUIStates;
     @State var unreadMessagesCounter: Int = 0;
     
     var body: some View {
         // TODO: Сделать кастомный таббар
         TabView(selection: $selectedTab){
-            FriendList(tabBarVisibleBinding: $tabBarIsHidden)
+            FriendList()
                 .tabItem{
                     Image(systemName: "person.2.fill")
                     Text("Друзья")
                 }
                 .tag(Tabs.friends)
-            DialogList(tabBarVisibleBinding: $tabBarIsHidden, unreadMessagesCount: $unreadMessagesCounter)
+            DialogList(unreadMessagesCount: $unreadMessagesCounter)
                 .tabItem{
                     Image(systemName: "message")
                     Text("Сообщения")
                 }
                 .badge(unreadMessagesCounter)
                 .tag(Tabs.messages)
-                .toolbar(tabBarIsHidden ? .hidden : .visible, for: .tabBar)
+                .toolbar(!globalUIStates.tabBarVisible ? .hidden : .visible, for: .tabBar)
             Settings()
                 .tabItem{
                     Image(systemName: "gear")

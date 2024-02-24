@@ -3,7 +3,6 @@ import SwiftUI
 struct DialogList: View {
     @State var searchString = "";
     @State var viewWidth = CGFloat.zero;
-    @Binding var tabBarVisibleBinding: Bool;
     @EnvironmentObject var userInfo: UserInfo;
     @State var conversations: [ConversationInfo] = [];
     @Binding var unreadMessagesCount: Int;
@@ -16,8 +15,7 @@ struct DialogList: View {
                     ForEach(conversations, id: \.self.conversation.peer.id){ conversation in
                         DialogRow(
                             conversation: conversation.conversation,
-                            lastMesage: conversation.lastMessage,
-                            tabBarVisibleBinding: $tabBarVisibleBinding
+                            lastMesage: conversation.lastMessage
                         )
                     }
                 }

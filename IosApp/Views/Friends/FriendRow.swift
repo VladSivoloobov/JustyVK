@@ -17,9 +17,10 @@ struct FriendRow: View {
     @State var sex: Int;
     @State private var lastSeenString = "";
     @State var isOnline: Int?;
+    
     @EnvironmentObject var userInfo: UserInfo;
+    @EnvironmentObject var globalUIStates: GlobalUIStates;
     @State var user: User;
-    @Binding var tabBarVisibleBinding: Bool;
     @State var isOnlineStatus: Bool?;
     
     var body: some View {
@@ -61,11 +62,13 @@ struct FriendRow: View {
                         user: user
                     )
                         .onAppear(){
-                            self.tabBarVisibleBinding.toggle();
+                            //Место переключения таббара - выкл
+                            globalUIStates.tabBarVisible.toggle();
                         }
                         .onDisappear(){
                             withAnimation(.spring()){
-                                self.tabBarVisibleBinding.toggle();
+                                //Место перключения таббара - выкл
+                                globalUIStates.tabBarVisible.toggle();
                             }
                         }
                 }, label: {
