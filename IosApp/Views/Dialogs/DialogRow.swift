@@ -102,6 +102,7 @@ struct DialogRow: View {
         .padding(.bottom, -7)
         .frame(maxHeight: 55, alignment: .center)
         .onAppear(){
+            print(String(userId));
             if(conversation.chatSettings?.title == nil && chatType == "user"){
                 SwiftVK(token: userInfo.token).users.get(userId: userId, fields: [
                     "photo_100",
@@ -110,7 +111,7 @@ struct DialogRow: View {
                     "last_seen"
                 ]){
                     users in
-                    userName = users[0].firstName + " " + users[0].lastName
+                    userName = users[0].firstName + " " + users[0].lastName;
                     avatar = users[0].photo100 ?? defaultImage;
                     
                     isOnline = users[0].online == 1;
@@ -126,6 +127,9 @@ struct DialogRow: View {
                     avatar = groups[0].photo200;
                     isOnline = false;
                 }
+            }
+            else{
+                avatar = conversation.chatSettings?.photo.photo200;
             }
         }
         .dialogContextMenu()
