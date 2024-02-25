@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MessageContextMenu: ViewModifier{
+struct MessageContext: ViewModifier{
     func body(content: Content) -> some View{
         content
             .contextMenu{
@@ -34,6 +34,6 @@ struct MessageContextMenu: ViewModifier{
 
 extension View {
     func messageContextMenu() -> some View{
-        modifier(MessageContextMenu());
+        modifier(MessageContext());
     }
 }

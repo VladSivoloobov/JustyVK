@@ -50,13 +50,14 @@ struct DialogSwipeActions: ViewModifier{
 struct DialogOverlay: ViewModifier{
     @ObservedObject var dialogInfo: DialogViewModel;
     @EnvironmentObject var globalUIStates: GlobalUIStates;
+    @EnvironmentObject var userInfo: UserInfo;
     
     func body(content: Content) -> some View{
         content
             .overlay{
             NavigationLink(
                 destination: {
-                    MessengerPage(dialogInfo: dialogInfo)
+                    MessengerPage(dialogInfo: dialogInfo, messenger: MessengerViewModel(userId: userInfo.id!))
                         .onAppear(){
                             //TODO: Место переключения таббара - выкл
                             globalUIStates.tabBarVisible.toggle();

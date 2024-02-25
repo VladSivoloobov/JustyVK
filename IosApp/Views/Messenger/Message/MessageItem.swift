@@ -2,7 +2,7 @@ import SwiftUI
 import SDWebImage
 import SDWebImageSwiftUI
 
-struct MessageCloud: View {
+struct MessageItem: View {
     @ObservedObject var messageModel: MessageViewModel;
     
     var body: some View {

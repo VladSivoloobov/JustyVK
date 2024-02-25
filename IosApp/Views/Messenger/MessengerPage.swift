@@ -8,9 +8,9 @@ extension UINavigationController {
 }
 
 struct MessengerPage: View {
-    @State var messageList: [Message] = [];
     @EnvironmentObject var userInfo: UserInfo;
     @ObservedObject var dialogInfo: DialogViewModel;
+    @StateObject var messenger: MessengerViewModel;
 
     var body: some View {
         ZStack{
@@ -18,15 +18,16 @@ struct MessengerPage: View {
                 GeometryReader { reader in
                     ScrollView{
                         VStack(spacing: 4){
-                            ForEach(0..<messageList.count, id: \.self){messageIndex in
-                                let message = messageList.reversed()[messageIndex];
-                                MessageCloud(
+                            ForEach(0..<messenger.messageList.count, id: \.self){
+                                index in
+                                let message = messenger.messageList.reversed()[index];
+                                MessageItem(
                                     messageModel: MessageViewModel(
                                         message: message,
                                         userId: userInfo.id!
                                     )
                                 )
-                                .id(messageIndex)
+                                .id(index)
                             }
                         }
                         .frame(minHeight: reader.size.height - 20, alignment: .bottom)
@@ -39,31 +40,10 @@ struct MessengerPage: View {
                     }
                     .messageToolbar(dialogInfo: dialogInfo)
                 }
-                .getMessageList(scrollReader: scrollReader, messageList: $messageList, companionId: dialogInfo.userId)
+                .getMessageList(scrollReader: scrollReader, messageList: $messenger.messageList, companionId: dialogInfo.userId)
                 .padding(.bottom, -20)
             }
             .zIndex(1)
-        }
-        .onAppear(){
-            SwiftVK.SwiftVKMessages.SwiftVKLongPoll.addEventListener(event: .newMessage){
-                messageEvent in
-                if let messageEvent = messageEvent as? NewMessageEvent{
-                    if(messageEvent.peerId != dialogInfo.userId){
-                        return;
-                    }
-                    
-                    let newMessage = Message(
-                        date: messageEvent.timestamp,
-                        fromId: Int(messageEvent.attachments?.from ?? "0")!,
-                        text: messageEvent.text,
-                        attachments: []
-                    );
-                    
-                    print(newMessage);
-                    
-                    messageList.insert(newMessage, at: 0);
-                }
-            }
         }
     }
 }

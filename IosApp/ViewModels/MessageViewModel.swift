@@ -4,6 +4,7 @@ class MessageViewModel: ObservableObject{
     init(message: Message, userId: Int) {
         self.message = message;
         self.fromMe = message.fromId == userId;
+        self.userId = userId;
         // TODO: Поменять время на настоящее
         self.time = "22:02";
         self.isAttachment = !message.attachments.isEmpty;
@@ -28,4 +29,6 @@ class MessageViewModel: ObservableObject{
     @Published var isAnimatedSticker: Bool = false;
     @Published var isAttachment: Bool;
     @Published var attachmentsCount: Int;
+    @Published var messageList: [Message] = [];
+    @Published var userId: Int;
 }

@@ -1,10 +1,3 @@
-//
-//  MessageTime.swift
-//  Весточка
-//
-//  Created by  Владислав on 17.02.2024.
-//
-
 import SwiftUI
 
 struct MessageTime: View {
