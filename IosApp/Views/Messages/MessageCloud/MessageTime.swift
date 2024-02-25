@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct MessageTime: View {
-    var time: String;
+    var messageTime: String;
     var body: some View {
-        Text(time)
+        Text(messageTime)
             .font(Font.system(size: 10))
             .foregroundColor(.white)
     }

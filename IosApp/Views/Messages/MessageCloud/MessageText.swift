@@ -8,22 +8,22 @@
 import SwiftUI
 
 struct MessageText: View {
-    var message: Message;
-    var time: String;
+    @ObservedObject var messageModel: MessageModel;
+    
     var body: some View {
         HStack(alignment: .bottom){
-            if(!message.text.isEmpty){
-                Text(message.text)
+            if(!messageModel.message.text.isEmpty){
+                Text(messageModel.message.text)
                     .font(.system(size: 17))
                     .foregroundColor(.white)
                     .fixedSize(horizontal: false, vertical: true)
             }
-            if(!message.attachments.isEmpty){
+            if(!messageModel.message.attachments.isEmpty){
                 Spacer();
-                MessageTime(time: time);
+                MessageTime(time: messageModel.time);
             }
         }
-        .padding(.vertical, 4)
-        .padding(.horizontal, 8)
+        .padding(.vertical, 6)
+        .padding(.horizontal, 10)
     }
 }

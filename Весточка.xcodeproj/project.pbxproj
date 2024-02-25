@@ -31,6 +31,7 @@
 		862588CC2B8AA16200BAFA29 /* DialogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CB2B8AA16200BAFA29 /* DialogModel.swift */; };
 		862588CE2B8AB5D200BAFA29 /* SwiftVKSingletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CD2B8AB5D200BAFA29 /* SwiftVKSingletone.swift */; };
 		862588D02B8AC80200BAFA29 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CF2B8AC80200BAFA29 /* MessageModel.swift */; };
+		862588D22B8AD0ED00BAFA29 /* Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588D12B8AD0ED00BAFA29 /* Attachments.swift */; };
 		8625D8302B753F3D007361EC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D82F2B753F3D007361EC /* Response.swift */; };
 		8625D8352B754121007361EC /* LastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D8342B754121007361EC /* LastActivity.swift */; };
 		8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */; };
@@ -121,6 +122,7 @@
 		862588CB2B8AA16200BAFA29 /* DialogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogModel.swift; sourceTree = "<group>"; };
 		862588CD2B8AB5D200BAFA29 /* SwiftVKSingletone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftVKSingletone.swift; sourceTree = "<group>"; };
 		862588CF2B8AC80200BAFA29 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		862588D12B8AD0ED00BAFA29 /* Attachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachments.swift; sourceTree = "<group>"; };
 		8625D82F2B753F3D007361EC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8625D8342B754121007361EC /* LastActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastActivity.swift; sourceTree = "<group>"; };
 		8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogModifiers.swift; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 			children = (
 				86D76FEC2B7F650000D46B1C /* AttachmentsGrid.swift */,
 				863D0EB02B80E4F800247CB7 /* AttachmentImage.swift */,
+				862588D12B8AD0ED00BAFA29 /* Attachments.swift */,
 			);
 			path = Attachments;
 			sourceTree = "<group>";
@@ -705,6 +708,7 @@
 				8633F3A92B6FEC9B00C5B0F0 /* MessageToolbar.swift in Sources */,
 				86088CD42B7783A40010D6F0 /* Sticker.swift in Sources */,
 				8617DCD12A31857F0099E3C1 /* UserInfo.swift in Sources */,
+				862588D22B8AD0ED00BAFA29 /* Attachments.swift in Sources */,
 				8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */,
 				86D4E9EC2B82F440008A08A2 /* LongPollUpdates.swift in Sources */,
 				86E279BE2B791B3100819A72 /* FileSystemInteractions.swift in Sources */,

@@ -16,29 +16,16 @@ struct MessageCloudContent: View {
                         AnimatedMessageSticker(sticker: messageModel.lastSticker!);
                     }
                 } else{
-                    if(!messageModel.message.attachments.isEmpty){
-                        ZStack(alignment: .bottomTrailing){
-                            AttachmentsGrid(message: messageModel.message);
-                            if(messageModel.message.text.isEmpty){
-                                MessageTime(time: messageModel.time)
-                                    .padding(.horizontal, 6)
-                                    .padding(.vertical, 4)
-                                    .background(Color(red: 0, green: 0, blue: 0).opacity(0.7))
-                                    .cornerRadius(10)
-                                    .offset(x: -5, y: -5)
-                            }
-                        };
-                    }
                     if(!messageModel.message.text.isEmpty){
-                        MessageText(message: messageModel.message, time: messageModel.time);
+                        MessageText(messageModel: messageModel);
                     }
                 }
             }
             if(messageModel.isSticker || messageModel.message.attachments.isEmpty){
-                MessageTime(time: messageModel.time)
+                MessageTime(messageTime: messageModel.time)
                     .padding(.trailing, 6)
                     .padding(.bottom, 4)
-            }
+           }
         }
     }
 }
