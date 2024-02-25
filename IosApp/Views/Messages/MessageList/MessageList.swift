@@ -10,7 +10,7 @@ extension UINavigationController {
 struct MessageList: View {
     @State var messageList: [Message] = [];
     @EnvironmentObject var userInfo: UserInfo;
-    @ObservedObject var dialogInfo: DialogModel;
+    @ObservedObject var dialogInfo: DialogViewModel;
 
     var body: some View {
         ZStack{
@@ -21,7 +21,7 @@ struct MessageList: View {
                             ForEach(0..<messageList.count, id: \.self){messageIndex in
                                 let message = messageList.reversed()[messageIndex];
                                 MessageCloud(
-                                    messageModel: MessageModel(
+                                    messageModel: MessageViewModel(
                                         message: message,
                                         userId: userInfo.id!
                                     )

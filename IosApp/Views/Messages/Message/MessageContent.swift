@@ -3,7 +3,7 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct MessageContent: View {
-    @ObservedObject var messageModel: MessageModel;
+    @ObservedObject var messageModel: MessageViewModel;
     
     var body: some View {
         VStack(alignment: .leading){

@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct Attachments: View{
-    @ObservedObject var messageModel: MessageModel;
+    @ObservedObject var messageModel: MessageViewModel;
     
     var body: some View{
         if(!messageModel.message.attachments.isEmpty){

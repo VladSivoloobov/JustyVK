@@ -1,14 +1,7 @@
-//
-//  MessageText.swift
-//  Весточка
-//
-//  Created by  Владислав on 17.02.2024.
-//
-
 import SwiftUI
 
 struct MessageText: View {
-    @ObservedObject var messageModel: MessageModel;
+    @ObservedObject var messageModel: MessageViewModel;
     
     var body: some View {
         HStack(alignment: .bottom){

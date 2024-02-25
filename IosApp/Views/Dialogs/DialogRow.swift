@@ -10,7 +10,7 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct DialogRow: View {
-    @StateObject var dialogInfo: DialogModel;
+    @StateObject var dialogInfo: DialogViewModel;
     @EnvironmentObject var userInfo: UserInfo;
     
     var body: some View {

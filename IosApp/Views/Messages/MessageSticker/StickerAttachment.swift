@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct StickerAttachment: View{
-    @ObservedObject var messageModel: MessageModel;
+    @ObservedObject var messageModel: MessageViewModel;
     
     var body: some View{
         if(!messageModel.isAnimatedSticker){

@@ -1,6 +1,6 @@
 import Foundation
 
-class MessageModel: ObservableObject{
+class MessageViewModel: ObservableObject{
     init(message: Message, userId: Int) {
         self.message = message;
         self.fromMe = message.fromId == userId;

@@ -3,7 +3,7 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct MessageCloud: View {
-    @ObservedObject var messageModel: MessageModel;
+    @ObservedObject var messageModel: MessageViewModel;
     
     var body: some View {
         Group{

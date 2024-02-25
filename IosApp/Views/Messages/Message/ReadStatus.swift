@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct UserReadMessageStatus: View {
+struct ReadStatus: View {
     var body: some View {
         Circle()
             .frame(width: 10)
@@ -17,6 +17,6 @@ struct UserReadMessageStatus: View {
 
 struct ReadStatus_Previews: PreviewProvider {
     static var previews: some View {
-        UserReadMessageStatus()
+        ReadStatus()
     }
 }

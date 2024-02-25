@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct FloatingTime: View{
-    @ObservedObject var messageModel: MessageModel;
+    @ObservedObject var messageModel: MessageViewModel;
     var body: some View{
         MessageTime(messageTime: messageModel.time)
             .padding(.horizontal, 6)

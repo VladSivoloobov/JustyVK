@@ -3,7 +3,7 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct MessageToolbar: ViewModifier{
-    @ObservedObject var dialogInfo: DialogModel;
+    @ObservedObject var dialogInfo: DialogViewModel;
     
     func body(content: Content) -> some View {
         content
@@ -22,7 +22,7 @@ struct MessageToolbar: ViewModifier{
 }
 
 extension View {
-    func messageToolbar(dialogInfo: DialogModel) -> some View{
+    func messageToolbar(dialogInfo: DialogViewModel) -> some View{
         modifier(MessageToolbar(dialogInfo: dialogInfo));
     }
 }
