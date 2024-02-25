@@ -48,7 +48,7 @@ struct DialogSwipeActions: ViewModifier{
 }
 
 struct DialogOverlay: ViewModifier{
-    @ObservedObject var dialogInfo: DialogInfo;
+    @ObservedObject var dialogInfo: DialogModel;
     @EnvironmentObject var globalUIStates: GlobalUIStates;
     
     func body(content: Content) -> some View{
@@ -127,7 +127,7 @@ struct GetConversations: ViewModifier{
 }
 
 extension View {
-    func dialogOverlay(dialogInfo: DialogInfo) -> some View{
+    func dialogOverlay(dialogInfo: DialogModel) -> some View{
         modifier(DialogOverlay(dialogInfo: dialogInfo))
     }
     

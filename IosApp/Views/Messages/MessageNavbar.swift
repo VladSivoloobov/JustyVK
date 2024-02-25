@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MessageNavbar: View {
-    @ObservedObject var dialogInfo: DialogInfo;
+    @ObservedObject var dialogInfo: DialogModel;
     
     var body: some View {
         VStack{

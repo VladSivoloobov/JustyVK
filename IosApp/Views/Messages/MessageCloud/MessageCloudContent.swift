@@ -3,28 +3,24 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct MessageCloudContent: View {
-    var isSticker: Bool;
-    var isAnimatedSticker: Bool;
-    var message: Message;
-    var lastSticker: Sticker?;
-    var time: String;
+    @ObservedObject var messageModel: MessageModel;
     
     var body: some View {
         Group{
             VStack(alignment: .leading){
-                if(isSticker){
-                    if(!isAnimatedSticker){
-                        MessageSticker(url: lastSticker?.images.last?.url);
+                if(messageModel.isSticker){
+                    if(!messageModel.isAnimatedSticker){
+                        MessageSticker(url: messageModel.lastSticker?.images.last?.url);
                     }
                     else{
-                        AnimatedMessageSticker(sticker: lastSticker!);
+                        AnimatedMessageSticker(sticker: messageModel.lastSticker!);
                     }
                 } else{
-                    if(!message.attachments.isEmpty){
+                    if(!messageModel.message.attachments.isEmpty){
                         ZStack(alignment: .bottomTrailing){
-                            AttachmentsGrid(message: message);
-                            if(message.text.isEmpty){
-                                MessageTime(time: time)
+                            AttachmentsGrid(message: messageModel.message);
+                            if(messageModel.message.text.isEmpty){
+                                MessageTime(time: messageModel.time)
                                     .padding(.horizontal, 6)
                                     .padding(.vertical, 4)
                                     .background(Color(red: 0, green: 0, blue: 0).opacity(0.7))
@@ -33,13 +29,13 @@ struct MessageCloudContent: View {
                             }
                         };
                     }
-                    if(!message.text.isEmpty){
-                        MessageText(message: message, time: time);
+                    if(!messageModel.message.text.isEmpty){
+                        MessageText(message: messageModel.message, time: messageModel.time);
                     }
                 }
             }
-            if(isSticker || message.attachments.isEmpty){
-                MessageTime(time: time)
+            if(messageModel.isSticker || messageModel.message.attachments.isEmpty){
+                MessageTime(time: messageModel.time)
                     .padding(.trailing, 6)
                     .padding(.bottom, 4)
             }

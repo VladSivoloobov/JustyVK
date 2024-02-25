@@ -1,7 +1,7 @@
 import Foundation
 import SwiftUI
 
-class DialogInfo: ObservableObject{
+class DialogModel: ObservableObject{
     init(conversation: Conversation, lastMesage: ConversationInfo.ConversationLastMessage) {
         self.conversation = conversation
         self.lastMesage = lastMesage

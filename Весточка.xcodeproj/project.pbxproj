@@ -28,8 +28,9 @@
 		8624F3EB2A26C36800FA20B1 /* ReadMessageStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3EA2A26C36800FA20B1 /* ReadMessageStatus.swift */; };
 		862588C82B8A964500BAFA29 /* DialogRowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588C72B8A964500BAFA29 /* DialogRowInfo.swift */; };
 		862588CA2B8A967B00BAFA29 /* GlobalUIStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588C92B8A967B00BAFA29 /* GlobalUIStates.swift */; };
-		862588CC2B8AA16200BAFA29 /* DialogInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CB2B8AA16200BAFA29 /* DialogInfo.swift */; };
+		862588CC2B8AA16200BAFA29 /* DialogModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CB2B8AA16200BAFA29 /* DialogModel.swift */; };
 		862588CE2B8AB5D200BAFA29 /* SwiftVKSingletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CD2B8AB5D200BAFA29 /* SwiftVKSingletone.swift */; };
+		862588D02B8AC80200BAFA29 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CF2B8AC80200BAFA29 /* MessageModel.swift */; };
 		8625D8302B753F3D007361EC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D82F2B753F3D007361EC /* Response.swift */; };
 		8625D8352B754121007361EC /* LastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D8342B754121007361EC /* LastActivity.swift */; };
 		8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */; };
@@ -117,8 +118,9 @@
 		8624F3EA2A26C36800FA20B1 /* ReadMessageStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadMessageStatus.swift; sourceTree = "<group>"; };
 		862588C72B8A964500BAFA29 /* DialogRowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRowInfo.swift; sourceTree = "<group>"; };
 		862588C92B8A967B00BAFA29 /* GlobalUIStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUIStates.swift; sourceTree = "<group>"; };
-		862588CB2B8AA16200BAFA29 /* DialogInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogInfo.swift; sourceTree = "<group>"; };
+		862588CB2B8AA16200BAFA29 /* DialogModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogModel.swift; sourceTree = "<group>"; };
 		862588CD2B8AB5D200BAFA29 /* SwiftVKSingletone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftVKSingletone.swift; sourceTree = "<group>"; };
+		862588CF2B8AC80200BAFA29 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		8625D82F2B753F3D007361EC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8625D8342B754121007361EC /* LastActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastActivity.swift; sourceTree = "<group>"; };
 		8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogModifiers.swift; sourceTree = "<group>"; };
@@ -253,7 +255,8 @@
 				8617DCD02A31857F0099E3C1 /* UserInfo.swift */,
 				862588C72B8A964500BAFA29 /* DialogRowInfo.swift */,
 				862588C92B8A967B00BAFA29 /* GlobalUIStates.swift */,
-				862588CB2B8AA16200BAFA29 /* DialogInfo.swift */,
+				862588CB2B8AA16200BAFA29 /* DialogModel.swift */,
+				862588CF2B8AC80200BAFA29 /* MessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -709,12 +712,13 @@
 				86088CD72B778F8C0010D6F0 /* MessageCloudContextMenu.swift in Sources */,
 				86E279BA2B78EED400819A72 /* AnimatedMessageSticker.swift in Sources */,
 				8625D8302B753F3D007361EC /* Response.swift in Sources */,
-				862588CC2B8AA16200BAFA29 /* DialogInfo.swift in Sources */,
+				862588CC2B8AA16200BAFA29 /* DialogModel.swift in Sources */,
 				861BD67E2A2D1170002F5404 /* ProfileButtonsBar.swift in Sources */,
 				86088CD12B7774AE0010D6F0 /* Groups.swift in Sources */,
 				86A0B3F82B6FC90400901F42 /* PinnedMessage.swift in Sources */,
 				86DB1B022B6EAC5B006A1BCD /* Video.swift in Sources */,
 				86D4E9F02B8300A7008A08A2 /* SwiftVKLongPoll.swift in Sources */,
+				862588D02B8AC80200BAFA29 /* MessageModel.swift in Sources */,
 				8624F3E52A26748700FA20B1 /* UserOnlineStatus.swift in Sources */,
 				861BD67A2A2D06DC002F5404 /* UserProfile.swift in Sources */,
 				86DB1AFB2B6EA967006A1BCD /* Messages.swift in Sources */,

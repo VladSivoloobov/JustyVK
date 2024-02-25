@@ -1,16 +1,26 @@
 import SwiftUI
 
 struct MessageCloudStyles: ViewModifier {
-    var fromMe: Bool;
-    var isSticker: Bool;
-    var isAttachment: Bool;
-    var attachmentsCount: Int = 0;
+    @ObservedObject var messageModel: MessageModel;
+    static public let paddingForAttachmentMessage = CGFloat(2);
+    
+    var paddingCount = MessageCloudStyles.paddingForAttachmentMessage;
+    
+    init(messageModel: MessageModel) {
+        self.messageModel = messageModel;
+        if(messageModel.isAttachment && messageModel.attachmentsCount > 1){
+            paddingCount = MessageCloudStyles.paddingForAttachmentMessage;
+        }
+        else{
+            paddingCount = 0;
+        }
+    }
     
     func body(content: Content) -> some View {
         content
-            .padding(.horizontal, isAttachment && attachmentsCount > 1 ? 2 : 0)
-            .padding(.vertical, isAttachment && attachmentsCount > 1 ? 2 : 0)
-            .background(messageCloudBackground(fromMe: fromMe, isSticker: isSticker))
+            .padding(.horizontal, paddingCount)
+            .padding(.vertical, paddingCount)
+            .background(messageCloudBackground(fromMe: messageModel.fromMe, isSticker: messageModel.isSticker))
             .cornerRadius(15)
             .compositingGroup()
     }
@@ -27,7 +37,7 @@ struct MessageCloudStyles: ViewModifier {
 }
 
 extension View {
-    func messageCloudStyles(fromMe: Bool, isSticker: Bool, isAttachment: Bool = false, attachmentsCount: Int) -> some View{
-        modifier(MessageCloudStyles(fromMe: fromMe, isSticker: isSticker, isAttachment: isAttachment, attachmentsCount: attachmentsCount))
+    func messageCloudStyles(messageModel: MessageModel) -> some View{
+        modifier(MessageCloudStyles(messageModel: messageModel))
     }
 }

@@ -10,7 +10,7 @@ extension UINavigationController {
 struct MessageList: View {
     @State var messageList: [Message] = [];
     @EnvironmentObject var userInfo: UserInfo;
-    @ObservedObject var dialogInfo: DialogInfo;
+    @ObservedObject var dialogInfo: DialogModel;
 
     @ViewBuilder
     func Background() -> Image{
@@ -28,9 +28,10 @@ struct MessageList: View {
                             ForEach(0..<messageList.count, id: \.self){messageIndex in
                                 let message = messageList.reversed()[messageIndex];
                                 MessageCloud(
-                                    message: message,
-                                    fromMe: message.fromId == userInfo.id,
-                                    time: "22:02"
+                                    messageModel: MessageModel(
+                                        message: message,
+                                        userId: userInfo.id!
+                                    )
                                 )
                                 .id(messageIndex)
                             }
