@@ -76,6 +76,7 @@ class VKDelegate: NSObject, WKNavigationDelegate{
             // TODO: Изменить этот способ сохранения токена на keychain
             UserDefaults.standard.set(accessToken, forKey: "accessToken");
             token(accessToken);
+            SwiftVKSingletone.setToken(token: accessToken);
         }
         
         decisionHandler(.cancel);

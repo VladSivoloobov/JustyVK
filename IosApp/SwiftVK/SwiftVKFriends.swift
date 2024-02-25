@@ -2,7 +2,10 @@ import Foundation
 import Alamofire
 
 extension SwiftVK{
-    public struct SwiftVKFriends{
+    public class SwiftVKFriends{
+        init(token: String) {
+            self.token = token
+        }
         public let token: String;
         
         func get(fields: [String] = ["photo_100"], completion: @escaping ([User]) -> ()){

@@ -21,7 +21,6 @@ struct AppInstance: App {
             if(userInfo.token.isEmpty){
                 Login()
                     .environmentObject(userInfo)
-                    .environmentObject(globalUIStates)
             } else{
                 ContentView()
                     .environmentObject(userInfo)

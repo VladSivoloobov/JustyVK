@@ -27,8 +27,8 @@ class DialogInfo: ObservableObject{
     @Published var time: String = "22:02";
     
     //TODO: Изменить swiftVK на синглтон
-    func getUserInfo(token: String){
-        SwiftVK(token: token).users.get(userId: userId, fields: [
+    func getUserInfo(){
+        SwiftVKSingletone.shared.users.get(userId: userId, fields: [
             "photo_100",
             "online",
             "sex",
@@ -44,8 +44,8 @@ class DialogInfo: ObservableObject{
         }
     }
     
-    func getGroupInfo(token: String){
-        SwiftVK(token: token).groups.getById(groupsIds: String(abs(userId)), groupId: nil, fields: nil){
+    func getGroupInfo(){
+        SwiftVKSingletone.shared.groups.getById(groupsIds: String(abs(userId)), groupId: nil, fields: nil){
             groups in
             self.userName = groups[0].name;
             self.avatar = groups[0].photo200;
@@ -74,12 +74,12 @@ class DialogInfo: ObservableObject{
         }
     }
     
-    func setChatTitle(token: String){
+    func setChatTitle(){
         if(conversation.chatSettings?.title == nil && chatType == "user"){
-            getUserInfo(token: token);
+            getUserInfo();
         }
         else if(userId < 0){
-            getGroupInfo(token: token)
+            getGroupInfo()
         }
         else{
             avatar = conversation.chatSettings?.photo.photo200;

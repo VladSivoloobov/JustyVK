@@ -57,7 +57,7 @@ struct DialogRow: View {
         .frame(maxHeight: 55, alignment: .center)
         .onAppear(){
             print(String(dialogInfo.userId));
-            dialogInfo.setChatTitle(token: userInfo.token);
+            dialogInfo.setChatTitle();
         }
         .dialogContextMenu()
         .dialogSwipeActions()

@@ -2,7 +2,10 @@ import Foundation
 import Alamofire
 
 extension SwiftVK{
-    public struct SwiftVKGroups{
+    public class SwiftVKGroups{
+        init(token: String) {
+            self.token = token
+        }
         public let token: String;
         
         func getById(groupsIds: String?, groupId: String?, fields: String?, completion: @escaping ([VKGroup]) -> ()){

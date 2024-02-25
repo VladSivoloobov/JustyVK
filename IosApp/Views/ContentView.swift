@@ -45,14 +45,14 @@ struct ContentView: View {
         }
         .zIndex(-1)
         .onAppear(){
-            SwiftVK(token: userInfo.token).users.get(userId: nil){
+            SwiftVKSingletone.shared.users.get(userId: nil){
                 users in
                 userInfo.firstName = users[0].firstName;
                 userInfo.lastName = users[0].lastName;
                 userInfo.id = users[0].id;
             }
             
-            SwiftVK(token: userInfo.token).messages.longPoll.startLongPolling();
+            SwiftVKSingletone.shared.messages.longPoll.startLongPolling();
             SwiftVK.SwiftVKMessages.SwiftVKLongPoll.addEventListener(event: .newMessage){
                 messageEvent in
                 if let messageEvent = messageEvent as? NewMessageEvent{

@@ -2,7 +2,10 @@ import Foundation
 import Alamofire
 
 extension SwiftVK{
-    public struct SwiftVKUsers{
+    public class SwiftVKUsers{
+        init(token: String) {
+            self.token = token
+        }
         private let url = "https://api.vk.com/method/users.get"
         public let token: String;
         

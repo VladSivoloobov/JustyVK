@@ -1,7 +1,7 @@
 import Alamofire
 import Foundation
 
-public struct SwiftVK {
+public class SwiftVK {
     public let token: String;
     public let friends: SwiftVKFriends;
     public let users: SwiftVKUsers;

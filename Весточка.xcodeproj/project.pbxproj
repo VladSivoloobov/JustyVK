@@ -29,6 +29,7 @@
 		862588C82B8A964500BAFA29 /* DialogRowInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588C72B8A964500BAFA29 /* DialogRowInfo.swift */; };
 		862588CA2B8A967B00BAFA29 /* GlobalUIStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588C92B8A967B00BAFA29 /* GlobalUIStates.swift */; };
 		862588CC2B8AA16200BAFA29 /* DialogInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CB2B8AA16200BAFA29 /* DialogInfo.swift */; };
+		862588CE2B8AB5D200BAFA29 /* SwiftVKSingletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CD2B8AB5D200BAFA29 /* SwiftVKSingletone.swift */; };
 		8625D8302B753F3D007361EC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D82F2B753F3D007361EC /* Response.swift */; };
 		8625D8352B754121007361EC /* LastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D8342B754121007361EC /* LastActivity.swift */; };
 		8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */; };
@@ -117,6 +118,7 @@
 		862588C72B8A964500BAFA29 /* DialogRowInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRowInfo.swift; sourceTree = "<group>"; };
 		862588C92B8A967B00BAFA29 /* GlobalUIStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUIStates.swift; sourceTree = "<group>"; };
 		862588CB2B8AA16200BAFA29 /* DialogInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogInfo.swift; sourceTree = "<group>"; };
+		862588CD2B8AB5D200BAFA29 /* SwiftVKSingletone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftVKSingletone.swift; sourceTree = "<group>"; };
 		8625D82F2B753F3D007361EC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8625D8342B754121007361EC /* LastActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastActivity.swift; sourceTree = "<group>"; };
 		8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogModifiers.swift; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				8658A6422A32498C00D3F4C5 /* SwiftVK.swift */,
+				862588CD2B8AB5D200BAFA29 /* SwiftVKSingletone.swift */,
 				86D4E9E02B82F0B1008A08A2 /* SwiftVKUsers.swift */,
 				86D4E9E42B82F18A008A08A2 /* SwiftVKPhotos.swift */,
 				86D4E9E72B82F1BD008A08A2 /* SwiftVKGroups.swift */,
@@ -736,6 +739,7 @@
 				867EC29E2A295AE80003645F /* UnreadMessagesCount.swift in Sources */,
 				8633F3AB2B7037CA00C5B0F0 /* MessageToolbarImage.swift in Sources */,
 				8658A64D2A32B69100D3F4C5 /* Photos.swift in Sources */,
+				862588CE2B8AB5D200BAFA29 /* SwiftVKSingletone.swift in Sources */,
 				863D0EAB2B802B8000247CB7 /* MessageText.swift in Sources */,
 				86FDC9F32A3184850009322D /* Login.swift in Sources */,
 				86D4E9EA2B82F203008A08A2 /* SwiftVKFriends.swift in Sources */,

@@ -34,8 +34,7 @@ struct FriendList: View {
                 if(friendList.count > 0){
                     return;
                 }
-                let vk = SwiftVK(token: userInfo.token);
-                vk.friends.get(
+                SwiftVKSingletone.shared.friends.get(
                     fields: [
                         "status",
                         "photo_100",

@@ -10,8 +10,7 @@ struct GetMessageList: ViewModifier {
     func body(content: Content) -> some View {
         content
             .onAppear{
-            // TODO: При взаимодействии с api изменить скролл
-                SwiftVK(token: userInfo.token).messages.getHistory(offset: nil, count: nil, userId: companionId, peerId: nil, rev: nil, extended: nil, fields: nil, groupId: nil){
+                SwiftVKSingletone.shared.messages.getHistory(offset: nil, count: nil, userId: companionId, peerId: nil, rev: nil, extended: nil, fields: nil, groupId: nil){
                         messages in
                         messageList = messages;
             }

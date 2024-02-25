@@ -105,8 +105,7 @@ struct UserProfile: View {
         .toolbarBackground(.hidden, for: .navigationBar)
         .ignoresSafeArea()
         .onAppear{
-            let vk = SwiftVK(token: userInfo.token);
-            vk.photos.get(ownerId: String(userId), albumId: "profile", rev: 1){ photos in
+            SwiftVKSingletone.shared.photos.get(ownerId: String(userId), albumId: "profile", rev: 1){ photos in
                 avatar = photos[0].sizes.last?.url ?? "https://vk.com/images/camera_400.png";
             }
             print(status)

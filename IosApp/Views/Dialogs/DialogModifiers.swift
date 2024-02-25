@@ -117,7 +117,7 @@ struct GetConversations: ViewModifier{
     func body(content: Content) -> some View {
         content
             .onAppear(){
-                SwiftVK(token: userInfo.token).messages.getConversations(offset: nil, count: 200, filter: nil, extended: nil, fields: "[id, ]", groupId: nil){
+                SwiftVKSingletone.shared.messages.getConversations(offset: nil, count: 200, filter: nil, extended: nil, fields: "[id, ]", groupId: nil){
                     conversationsList in
                     conversations = conversationsList.items;
                     unreadMessagesCount = conversationsList.unreadCount;

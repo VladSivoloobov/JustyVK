@@ -2,7 +2,10 @@ import Foundation
 import Alamofire
 
 extension SwiftVK{
-    public struct SwiftVKPhotos{
+    public class SwiftVKPhotos{
+        init(token: String) {
+            self.token = token
+        }
         public let token: String;
         let url = "https://api.vk.com/method/photos.get";
         
