@@ -20,7 +20,7 @@ struct MessageText: View {
             }
             if(!messageModel.message.attachments.isEmpty){
                 Spacer();
-                MessageTime(time: messageModel.time);
+                MessageTime(messageTime: messageModel.time);
             }
         }
         .padding(.vertical, 6)

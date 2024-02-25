@@ -9,13 +9,9 @@ struct MessageCloudContent: View {
         Group{
             VStack(alignment: .leading){
                 if(messageModel.isSticker){
-                    if(!messageModel.isAnimatedSticker){
-                        MessageSticker(url: messageModel.lastSticker?.images.last?.url);
-                    }
-                    else{
-                        AnimatedMessageSticker(sticker: messageModel.lastSticker!);
-                    }
+                    StickerAttachment(messageModel: messageModel);
                 } else{
+                    Attachments(messageModel: messageModel)
                     if(!messageModel.message.text.isEmpty){
                         MessageText(messageModel: messageModel);
                     }

@@ -32,6 +32,7 @@
 		862588CE2B8AB5D200BAFA29 /* SwiftVKSingletone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CD2B8AB5D200BAFA29 /* SwiftVKSingletone.swift */; };
 		862588D02B8AC80200BAFA29 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CF2B8AC80200BAFA29 /* MessageModel.swift */; };
 		862588D22B8AD0ED00BAFA29 /* Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588D12B8AD0ED00BAFA29 /* Attachments.swift */; };
+		862588D42B8B581300BAFA29 /* StickerAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588D32B8B581300BAFA29 /* StickerAttachment.swift */; };
 		8625D8302B753F3D007361EC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D82F2B753F3D007361EC /* Response.swift */; };
 		8625D8352B754121007361EC /* LastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D8342B754121007361EC /* LastActivity.swift */; };
 		8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */; };
@@ -123,6 +124,7 @@
 		862588CD2B8AB5D200BAFA29 /* SwiftVKSingletone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftVKSingletone.swift; sourceTree = "<group>"; };
 		862588CF2B8AC80200BAFA29 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		862588D12B8AD0ED00BAFA29 /* Attachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachments.swift; sourceTree = "<group>"; };
+		862588D32B8B581300BAFA29 /* StickerAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerAttachment.swift; sourceTree = "<group>"; };
 		8625D82F2B753F3D007361EC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8625D8342B754121007361EC /* LastActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastActivity.swift; sourceTree = "<group>"; };
 		8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogModifiers.swift; sourceTree = "<group>"; };
@@ -505,6 +507,7 @@
 				86E279B72B78EEC000819A72 /* MessageSticker.swift */,
 				86E279B92B78EED400819A72 /* AnimatedMessageSticker.swift */,
 				86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */,
+				862588D32B8B581300BAFA29 /* StickerAttachment.swift */,
 			);
 			path = MessageSticker;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				8633F3AB2B7037CA00C5B0F0 /* MessageToolbarImage.swift in Sources */,
 				8658A64D2A32B69100D3F4C5 /* Photos.swift in Sources */,
 				862588CE2B8AB5D200BAFA29 /* SwiftVKSingletone.swift in Sources */,
+				862588D42B8B581300BAFA29 /* StickerAttachment.swift in Sources */,
 				863D0EAB2B802B8000247CB7 /* MessageText.swift in Sources */,
 				86FDC9F32A3184850009322D /* Login.swift in Sources */,
 				86D4E9EA2B82F203008A08A2 /* SwiftVKFriends.swift in Sources */,
