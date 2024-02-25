@@ -2,15 +2,16 @@ import Foundation
 import SwiftUI
 
 class DialogViewModel: ObservableObject{
-    init(conversation: Conversation, lastMesage: ConversationInfo.ConversationLastMessage) {
-        self.conversation = conversation
-        self.lastMesage = lastMesage
-        self.userName = conversation.chatSettings?.title
-        self.userId = conversation.peer.id
-        self.chatType = conversation.peer.type
+    init(_ conversationInfo: ConversationInfo) {
+        self.conversation = conversationInfo.conversation;
+        self.lastMesage = conversationInfo.lastMessage;
+        self.userName = conversationInfo.conversation.chatSettings?.title
+        self.userId = conversationInfo.conversation.peer.id
+        self.chatType = conversationInfo.conversation.peer.type
         self.avatar = conversation.chatSettings?.photo.photo200 ?? defaultImage;
-        if(!lastMesage.attachments.isEmpty && lastMesage.text.isEmpty){
-            attachmentTextColor = Color.white;
+        
+        if(!self.lastMesage.attachments.isEmpty && self.lastMesage.text.isEmpty){
+            self.attachmentTextColor = Color.white;
         }
     }
     

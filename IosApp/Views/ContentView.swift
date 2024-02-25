@@ -22,13 +22,13 @@ struct ContentView: View {
     var body: some View {
         // TODO: Сделать кастомный таббар
         TabView(selection: $selectedTab){
-            FriendList()
+            FriendsPage()
                 .tabItem{
                     Image(systemName: "person.2.fill")
                     Text("Друзья")
                 }
                 .tag(Tabs.friends)
-            DialogList(unreadMessagesCount: $unreadMessagesCounter)
+            ConversationsPage(dialogList: DialogListViewModel())
                 .tabItem{
                     Image(systemName: "message")
                     Text("Сообщения")

@@ -56,7 +56,7 @@ struct DialogOverlay: ViewModifier{
             .overlay{
             NavigationLink(
                 destination: {
-                    MessageList(dialogInfo: dialogInfo)
+                    MessengerPage(dialogInfo: dialogInfo)
                         .onAppear(){
                             //TODO: Место переключения таббара - выкл
                             globalUIStates.tabBarVisible.toggle();
@@ -109,23 +109,6 @@ struct DialogModifiers: ViewModifier {
     }
 }
 
-struct GetConversations: ViewModifier{
-    @Binding var conversations: [ConversationInfo];
-    @EnvironmentObject var userInfo: UserInfo;
-    @Binding var unreadMessagesCount: Int;
-    
-    func body(content: Content) -> some View {
-        content
-            .onAppear(){
-                SwiftVKSingletone.shared.messages.getConversations(offset: nil, count: 200, filter: nil, extended: nil, fields: "[id, ]", groupId: nil){
-                    conversationsList in
-                    conversations = conversationsList.items;
-                    unreadMessagesCount = conversationsList.unreadCount;
-                }
-            }
-    }
-}
-
 extension View {
     func dialogOverlay(dialogInfo: DialogViewModel) -> some View{
         modifier(DialogOverlay(dialogInfo: dialogInfo))
@@ -141,9 +124,5 @@ extension View {
     
     func dialogModifiers(_ searchString: Binding<String>) -> some View{
         modifier(DialogModifiers(searchString: searchString))
-    }
-    
-    func getConversations(_ conversationList: Binding<[ConversationInfo]>, _ unreadMessagesCount: Binding<Int>) -> some View{
-        modifier(GetConversations(conversations: conversationList, unreadMessagesCount: unreadMessagesCount));
     }
 }

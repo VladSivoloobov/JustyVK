@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FriendList: View {
+struct FriendsPage: View {
     @State var searchableFriendsText: String = "";
     @EnvironmentObject var userInfo: UserInfo;
     @State var friendList = [User]()
@@ -95,6 +95,6 @@ struct FriendList: View {
 
 struct FriendList_Previews: PreviewProvider {
     static var previews: some View {
-        FriendList()
+        FriendsPage()
     }
 }

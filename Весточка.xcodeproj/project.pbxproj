@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608162B2A2756CD00AF16C7 /* MessageList.swift */; };
+		8608162C2A2756CD00AF16C7 /* MessengerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608162B2A2756CD00AF16C7 /* MessengerPage.swift */; };
 		86088CCF2B7774750010D6F0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86088CCE2B7774750010D6F0 /* Group.swift */; };
 		86088CD12B7774AE0010D6F0 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86088CD02B7774AE0010D6F0 /* Groups.swift */; };
 		86088CD42B7783A40010D6F0 /* Sticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86088CD32B7783A40010D6F0 /* Sticker.swift */; };
@@ -20,10 +20,10 @@
 		861BD67E2A2D1170002F5404 /* ProfileButtonsBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BD67D2A2D1170002F5404 /* ProfileButtonsBar.swift */; };
 		861BD6802A2D1E6E002F5404 /* HorizontalProfileAttachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861BD67F2A2D1E6E002F5404 /* HorizontalProfileAttachments.swift */; };
 		8623F9702A30169C00270CD5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8623F96F2A30169C00270CD5 /* Extensions.swift */; };
-		8624F3DC2A266C1F00FA20B1 /* DialogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3DB2A266C1F00FA20B1 /* DialogList.swift */; };
+		8624F3DC2A266C1F00FA20B1 /* ConversationsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3DB2A266C1F00FA20B1 /* ConversationsPage.swift */; };
 		8624F3DE2A266CE900FA20B1 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3DD2A266CE900FA20B1 /* Settings.swift */; };
-		8624F3E02A266D2A00FA20B1 /* FriendList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3DF2A266D2A00FA20B1 /* FriendList.swift */; };
-		8624F3E22A266E7F00FA20B1 /* DialogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3E12A266E7F00FA20B1 /* DialogRow.swift */; };
+		8624F3E02A266D2A00FA20B1 /* FriendsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3DF2A266D2A00FA20B1 /* FriendsPage.swift */; };
+		8624F3E22A266E7F00FA20B1 /* ConversationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3E12A266E7F00FA20B1 /* ConversationItem.swift */; };
 		8624F3E52A26748700FA20B1 /* UserOnlineStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3E42A26748700FA20B1 /* UserOnlineStatus.swift */; };
 		8624F3EB2A26C36800FA20B1 /* ReadStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8624F3EA2A26C36800FA20B1 /* ReadStatus.swift */; };
 		862588CA2B8A967B00BAFA29 /* GlobalUIStates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588C92B8A967B00BAFA29 /* GlobalUIStates.swift */; };
@@ -101,7 +101,7 @@
 
 /* Begin PBXFileReference section */
 		09A4F6C351E9B03C73851E90 /* Pods-Весточка.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Весточка.release.xcconfig"; path = "Target Support Files/Pods-Весточка/Pods-Весточка.release.xcconfig"; sourceTree = "<group>"; };
-		8608162B2A2756CD00AF16C7 /* MessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageList.swift; sourceTree = "<group>"; };
+		8608162B2A2756CD00AF16C7 /* MessengerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerPage.swift; sourceTree = "<group>"; };
 		86088CCE2B7774750010D6F0 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		86088CD02B7774AE0010D6F0 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
 		86088CD32B7783A40010D6F0 /* Sticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sticker.swift; sourceTree = "<group>"; };
@@ -114,10 +114,10 @@
 		861BD67D2A2D1170002F5404 /* ProfileButtonsBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonsBar.swift; sourceTree = "<group>"; };
 		861BD67F2A2D1E6E002F5404 /* HorizontalProfileAttachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalProfileAttachments.swift; sourceTree = "<group>"; };
 		8623F96F2A30169C00270CD5 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		8624F3DB2A266C1F00FA20B1 /* DialogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogList.swift; sourceTree = "<group>"; };
+		8624F3DB2A266C1F00FA20B1 /* ConversationsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsPage.swift; sourceTree = "<group>"; };
 		8624F3DD2A266CE900FA20B1 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
-		8624F3DF2A266D2A00FA20B1 /* FriendList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendList.swift; sourceTree = "<group>"; };
-		8624F3E12A266E7F00FA20B1 /* DialogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogRow.swift; sourceTree = "<group>"; };
+		8624F3DF2A266D2A00FA20B1 /* FriendsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsPage.swift; sourceTree = "<group>"; };
+		8624F3E12A266E7F00FA20B1 /* ConversationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationItem.swift; sourceTree = "<group>"; };
 		8624F3E42A26748700FA20B1 /* UserOnlineStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserOnlineStatus.swift; sourceTree = "<group>"; };
 		8624F3EA2A26C36800FA20B1 /* ReadStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadStatus.swift; sourceTree = "<group>"; };
 		862588C92B8A967B00BAFA29 /* GlobalUIStates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalUIStates.swift; sourceTree = "<group>"; };
@@ -247,7 +247,7 @@
 				86FB1AD02A2E653400E9D912 /* SplashScreen.swift */,
 				86E279B22B782D4400819A72 /* LottieView */,
 				866DF0922A2C073800EFE771 /* UI */,
-				869CBDE82A27FA61006171DD /* Messages */,
+				869CBDE82A27FA61006171DD /* Messenger */,
 				86B897B12A27D14200D0D633 /* Auth */,
 				861BD6782A2D06C2002F5404 /* UserProfile */,
 				8686099A2A2B812600611BC6 /* Friends */,
@@ -293,8 +293,8 @@
 		8624F3E32A266E8800FA20B1 /* Dialogs */ = {
 			isa = PBXGroup;
 			children = (
-				8624F3DB2A266C1F00FA20B1 /* DialogList.swift */,
-				8624F3E12A266E7F00FA20B1 /* DialogRow.swift */,
+				8624F3DB2A266C1F00FA20B1 /* ConversationsPage.swift */,
+				8624F3E12A266E7F00FA20B1 /* ConversationItem.swift */,
 				867EC29D2A295AE80003645F /* UnreadMessagesCount.swift */,
 				8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */,
 			);
@@ -348,15 +348,16 @@
 		8686099A2A2B812600611BC6 /* Friends */ = {
 			isa = PBXGroup;
 			children = (
-				8624F3DF2A266D2A00FA20B1 /* FriendList.swift */,
+				8624F3DF2A266D2A00FA20B1 /* FriendsPage.swift */,
 				8686099B2A2B81F000611BC6 /* FriendRow.swift */,
 			);
 			path = Friends;
 			sourceTree = "<group>";
 		};
-		869CBDE82A27FA61006171DD /* Messages */ = {
+		869CBDE82A27FA61006171DD /* Messenger */ = {
 			isa = PBXGroup;
 			children = (
+				8608162B2A2756CD00AF16C7 /* MessengerPage.swift */,
 				86D76FEB2B7EDDEE00D46B1C /* Attachments */,
 				86D76FE42B7E86D600D46B1C /* Background */,
 				86E279B52B78EE7000819A72 /* MessageSticker */,
@@ -366,7 +367,7 @@
 				866666FF2A2A10CB0089A054 /* MessageInput.swift */,
 				8633F3AA2B7037CA00C5B0F0 /* MessageToolbarImage.swift */,
 			);
-			path = Messages;
+			path = Messenger;
 			sourceTree = "<group>";
 		};
 		86A0B3F62B6FC8EE00901F42 /* Chat */ = {
@@ -490,7 +491,6 @@
 		86E279AC2B77960500819A72 /* MessageList */ = {
 			isa = PBXGroup;
 			children = (
-				8608162B2A2756CD00AF16C7 /* MessageList.swift */,
 				86E279AD2B77963100819A72 /* GetMessageList.swift */,
 				8633F3A82B6FEC9B00C5B0F0 /* MessageToolbar.swift */,
 			);
@@ -713,12 +713,12 @@
 				86D4E9E32B82F152008A08A2 /* SwiftVKMessages.swift in Sources */,
 				86D76FE32B7E6F6100D46B1C /* StickerSizes.swift in Sources */,
 				863D0EAD2B802DA200247CB7 /* ViewExtensions.swift in Sources */,
-				8624F3DC2A266C1F00FA20B1 /* DialogList.swift in Sources */,
+				8624F3DC2A266C1F00FA20B1 /* ConversationsPage.swift in Sources */,
 				8633F3A92B6FEC9B00C5B0F0 /* MessageToolbar.swift in Sources */,
 				86088CD42B7783A40010D6F0 /* Sticker.swift in Sources */,
 				8617DCD12A31857F0099E3C1 /* UserInfo.swift in Sources */,
 				862588D22B8AD0ED00BAFA29 /* Attachments.swift in Sources */,
-				8608162C2A2756CD00AF16C7 /* MessageList.swift in Sources */,
+				8608162C2A2756CD00AF16C7 /* MessengerPage.swift in Sources */,
 				86D4E9EC2B82F440008A08A2 /* LongPollUpdates.swift in Sources */,
 				86E279BE2B791B3100819A72 /* FileSystemInteractions.swift in Sources */,
 				862588CA2B8A967B00BAFA29 /* GlobalUIStates.swift in Sources */,
@@ -740,9 +740,9 @@
 				865A3E812A2D7C6400F6303F /* UserProfileInfoRow.swift in Sources */,
 				86E279B82B78EEC000819A72 /* MessageSticker.swift in Sources */,
 				8658A6542A32B70200D3F4C5 /* Friends.swift in Sources */,
-				8624F3E22A266E7F00FA20B1 /* DialogRow.swift in Sources */,
+				8624F3E22A266E7F00FA20B1 /* ConversationItem.swift in Sources */,
 				8658A6562A32B71D00D3F4C5 /* Friend.swift in Sources */,
-				8624F3E02A266D2A00FA20B1 /* FriendList.swift in Sources */,
+				8624F3E02A266D2A00FA20B1 /* FriendsPage.swift in Sources */,
 				8624F3EB2A26C36800FA20B1 /* ReadStatus.swift in Sources */,
 				86B080472B8B979D00CAC946 /* Conversations.swift in Sources */,
 				86D4E9E12B82F0B1008A08A2 /* SwiftVKUsers.swift in Sources */,

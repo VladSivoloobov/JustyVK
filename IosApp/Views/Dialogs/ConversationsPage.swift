@@ -1,27 +1,25 @@
 import SwiftUI
 
-struct DialogList: View {
+struct ConversationsPage: View {
     @State var searchString = "";
     @State var viewWidth = CGFloat.zero;
     @EnvironmentObject var userInfo: UserInfo;
-    @State var conversations: [ConversationInfo] = [];
-    @Binding var unreadMessagesCount: Int;
     @Environment(\.editMode) private var editMode
+    @StateObject var dialogList: DialogListViewModel;
     
     var body: some View {
         NavigationStack{
             List{
                 Section{
-                    ForEach(conversations, id: \.self.conversation.peer.id){ conversation in
-                        DialogRow(
-                            dialogInfo: DialogViewModel(conversation: conversation.conversation, lastMesage: conversation.lastMessage)
+                    ForEach(dialogList.conversations, id: \.self.conversation.peer.id){ conversationInfo in
+                        ConversationItem(
+                            dialogInfo: DialogViewModel(conversationInfo)
                         )
                     }
                 }
                 .listSectionSeparator(.hidden)
             }
             .dialogModifiers($searchString)
-            .getConversations($conversations, $unreadMessagesCount)
             .toolbar{
                 EditButton()
             }

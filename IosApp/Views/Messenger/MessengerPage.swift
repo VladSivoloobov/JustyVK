@@ -7,7 +7,7 @@ extension UINavigationController {
   }
 }
 
-struct MessageList: View {
+struct MessengerPage: View {
     @State var messageList: [Message] = [];
     @EnvironmentObject var userInfo: UserInfo;
     @ObservedObject var dialogInfo: DialogViewModel;
