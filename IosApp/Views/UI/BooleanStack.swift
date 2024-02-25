@@ -2,7 +2,6 @@ import Foundation
 import SwiftUI
 
 struct BooleanStack<Content: View>: View{
-    @ObservedObject var messageModel: MessageModel;
     let bool: Bool;
     var horizontalAlign: HorizontalAlignment = .center;
     var verticalAlign: VerticalAlignment = .center;

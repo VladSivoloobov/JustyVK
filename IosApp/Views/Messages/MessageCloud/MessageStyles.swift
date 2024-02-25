@@ -1,15 +1,15 @@
 import SwiftUI
 
-struct MessageCloudStyles: ViewModifier {
+struct MessageStyles: ViewModifier {
     @ObservedObject var messageModel: MessageModel;
     static public let paddingForAttachmentMessage = CGFloat(2);
     
-    var paddingCount = MessageCloudStyles.paddingForAttachmentMessage;
+    var paddingCount = MessageStyles.paddingForAttachmentMessage;
     
     init(messageModel: MessageModel) {
         self.messageModel = messageModel;
         if(messageModel.isAttachment && messageModel.attachmentsCount > 1){
-            paddingCount = MessageCloudStyles.paddingForAttachmentMessage;
+            paddingCount = MessageStyles.paddingForAttachmentMessage;
         }
         else{
             paddingCount = 0;
@@ -37,7 +37,7 @@ struct MessageCloudStyles: ViewModifier {
 }
 
 extension View {
-    func messageCloudStyles(messageModel: MessageModel) -> some View{
-        modifier(MessageCloudStyles(messageModel: messageModel))
+    func messageStyles(messageModel: MessageModel) -> some View{
+        modifier(MessageStyles(messageModel: messageModel))
     }
 }

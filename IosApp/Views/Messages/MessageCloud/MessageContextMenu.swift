@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct MessageCloudContextMenu: ViewModifier{
+struct MessageContextMenu: ViewModifier{
     func body(content: Content) -> some View{
         content
             .contextMenu{
@@ -33,7 +33,7 @@ struct MessageCloudContextMenu: ViewModifier{
 }
 
 extension View {
-    func messageCloudContextMenu() -> some View{
-        modifier(MessageCloudContextMenu());
+    func messageContextMenu() -> some View{
+        modifier(MessageContextMenu());
     }
 }

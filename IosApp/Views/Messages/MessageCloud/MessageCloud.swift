@@ -8,14 +8,15 @@ struct MessageCloud: View {
     var body: some View {
         Group{
             Group{
-                BooleanStack(messageModel: messageModel,
-                             bool: !messageModel.isSticker || !messageModel.isAnimatedSticker,
-                             horizontalAlign: .trailing,
-                             verticalAlign: .bottom, spacing: 0){
+                BooleanStack(
+                    bool: messageModel.message.text.count > 17,
+                    horizontalAlign: .trailing,
+                    verticalAlign: .bottom, spacing: 0
+                ){
                     MessageContent(messageModel: messageModel)
                 }
-                .messageCloudStyles(messageModel: messageModel)
-                .messageCloudContextMenu()
+                .messageStyles(messageModel: messageModel)
+                .messageContextMenu()
             }
             .frame(maxWidth: 300, alignment: messageModel.fromMe ? .trailing : .leading)
         }
