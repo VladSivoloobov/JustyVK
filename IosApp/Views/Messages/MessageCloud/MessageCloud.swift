@@ -8,21 +8,14 @@ struct MessageCloud: View {
     var body: some View {
         Group{
             Group{
-                //TODO: Отрефакторить это место
-                if(messageModel.isSticker || messageModel.isAnimatedSticker){
-                    VStack(alignment: .trailing, spacing: 0){
-                        MessageCloudContent(messageModel: messageModel)
-                    }
-                    .messageCloudStyles(messageModel: messageModel)
-                    .messageCloudContextMenu()
-                } else{
-                    HStack(alignment: .bottom){
-                        MessageCloudContent(messageModel: messageModel)
-                    }
-                    .messageCloudStyles(messageModel: messageModel)
-                    .messageCloudContextMenu()
+                BooleanStack(messageModel: messageModel,
+                             bool: !messageModel.isSticker || !messageModel.isAnimatedSticker,
+                             horizontalAlign: .trailing,
+                             verticalAlign: .bottom, spacing: 0){
+                    MessageContent(messageModel: messageModel)
                 }
-                
+                .messageCloudStyles(messageModel: messageModel)
+                .messageCloudContextMenu()
             }
             .frame(maxWidth: 300, alignment: messageModel.fromMe ? .trailing : .leading)
         }

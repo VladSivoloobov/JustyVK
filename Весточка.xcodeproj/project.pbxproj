@@ -33,6 +33,7 @@
 		862588D02B8AC80200BAFA29 /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588CF2B8AC80200BAFA29 /* MessageModel.swift */; };
 		862588D22B8AD0ED00BAFA29 /* Attachments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588D12B8AD0ED00BAFA29 /* Attachments.swift */; };
 		862588D42B8B581300BAFA29 /* StickerAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588D32B8B581300BAFA29 /* StickerAttachment.swift */; };
+		862588D62B8B5AF800BAFA29 /* BooleanStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862588D52B8B5AF800BAFA29 /* BooleanStack.swift */; };
 		8625D8302B753F3D007361EC /* Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D82F2B753F3D007361EC /* Response.swift */; };
 		8625D8352B754121007361EC /* LastActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8625D8342B754121007361EC /* LastActivity.swift */; };
 		8633F3A72B6FE33B00C5B0F0 /* DialogModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */; };
@@ -75,7 +76,7 @@
 		86D4E9F92B8399FC008A08A2 /* LongPollEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D4E9F82B8399FC008A08A2 /* LongPollEvent.swift */; };
 		86D76FE32B7E6F6100D46B1C /* StickerSizes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */; };
 		86D76FE62B7E86E800D46B1C /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE52B7E86E800D46B1C /* Background.swift */; };
-		86D76FEA2B7ECFAA00D46B1C /* MessageCloudContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */; };
+		86D76FEA2B7ECFAA00D46B1C /* MessageContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FE92B7ECFAA00D46B1C /* MessageContent.swift */; };
 		86D76FED2B7F650000D46B1C /* AttachmentsGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D76FEC2B7F650000D46B1C /* AttachmentsGrid.swift */; };
 		86DB1AFB2B6EA967006A1BCD /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFA2B6EA967006A1BCD /* Messages.swift */; };
 		86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86DB1AFC2B6EA975006A1BCD /* Message.swift */; };
@@ -125,6 +126,7 @@
 		862588CF2B8AC80200BAFA29 /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
 		862588D12B8AD0ED00BAFA29 /* Attachments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachments.swift; sourceTree = "<group>"; };
 		862588D32B8B581300BAFA29 /* StickerAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerAttachment.swift; sourceTree = "<group>"; };
+		862588D52B8B5AF800BAFA29 /* BooleanStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooleanStack.swift; sourceTree = "<group>"; };
 		8625D82F2B753F3D007361EC /* Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Response.swift; sourceTree = "<group>"; };
 		8625D8342B754121007361EC /* LastActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastActivity.swift; sourceTree = "<group>"; };
 		8633F3A62B6FE33B00C5B0F0 /* DialogModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DialogModifiers.swift; sourceTree = "<group>"; };
@@ -167,7 +169,7 @@
 		86D4E9F82B8399FC008A08A2 /* LongPollEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongPollEvent.swift; sourceTree = "<group>"; };
 		86D76FE22B7E6F6100D46B1C /* StickerSizes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickerSizes.swift; sourceTree = "<group>"; };
 		86D76FE52B7E86E800D46B1C /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
-		86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCloudContent.swift; sourceTree = "<group>"; };
+		86D76FE92B7ECFAA00D46B1C /* MessageContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageContent.swift; sourceTree = "<group>"; };
 		86D76FEC2B7F650000D46B1C /* AttachmentsGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsGrid.swift; sourceTree = "<group>"; };
 		86DB1AFA2B6EA967006A1BCD /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		86DB1AFC2B6EA975006A1BCD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -227,9 +229,10 @@
 				869CBDE62A27FA57006171DD /* MessageCloud.swift */,
 				86088CD62B778F8C0010D6F0 /* MessageCloudContextMenu.swift */,
 				86088CD82B7790AB0010D6F0 /* MessageCloudStyles.swift */,
-				86D76FE92B7ECFAA00D46B1C /* MessageCloudContent.swift */,
+				86D76FE92B7ECFAA00D46B1C /* MessageContent.swift */,
 				863D0EAA2B802B8000247CB7 /* MessageText.swift */,
 				863D0EAE2B80306A00247CB7 /* MessageTime.swift */,
+				862588D52B8B5AF800BAFA29 /* BooleanStack.swift */,
 			);
 			path = MessageCloud;
 			sourceTree = "<group>";
@@ -758,9 +761,10 @@
 				8658A65D2A32F11000D3F4C5 /* User.swift in Sources */,
 				8625D8352B754121007361EC /* LastActivity.swift in Sources */,
 				861BD67C2A2D0FC0002F5404 /* ProfileButtonLabel.swift in Sources */,
+				862588D62B8B5AF800BAFA29 /* BooleanStack.swift in Sources */,
 				8686099C2A2B81F000611BC6 /* FriendRow.swift in Sources */,
 				86FB95982A2113660069BFA1 /* AppInstance.swift in Sources */,
-				86D76FEA2B7ECFAA00D46B1C /* MessageCloudContent.swift in Sources */,
+				86D76FEA2B7ECFAA00D46B1C /* MessageContent.swift in Sources */,
 				862588C82B8A964500BAFA29 /* DialogRowInfo.swift in Sources */,
 				863D0EB12B80E4F800247CB7 /* AttachmentImage.swift in Sources */,
 			);

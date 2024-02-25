@@ -12,13 +12,6 @@ struct MessageList: View {
     @EnvironmentObject var userInfo: UserInfo;
     @ObservedObject var dialogInfo: DialogModel;
 
-    @ViewBuilder
-    func Background() -> Image{
-        let image = UIImage(named: "pattern-background")!;
-        Image(uiImage: resizeImage(image: image, targetSize: CGSize(width: 1000, height: 600))!)
-    }
-    
-    // TODO: Найти способ нормальной прокрутки scrollView при появлении клавиатуры
     var body: some View {
         ZStack{
             ScrollViewReader{ scrollReader in
