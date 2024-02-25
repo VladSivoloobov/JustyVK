@@ -179,7 +179,7 @@
 		86DB1AFC2B6EA975006A1BCD /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		86DB1AFE2B6EABC8006A1BCD /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
 		86DB1B012B6EAC5B006A1BCD /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
-		86DBB5CA2A2FCCEF00AF3E8E /* Весточка.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Весточка.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		86DBB5CA2A2FCCEF00AF3E8E /* JustyVK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JustyVK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		86E279AD2B77963100819A72 /* GetMessageList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMessageList.swift; sourceTree = "<group>"; };
 		86E279B32B782D5E00819A72 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		86E279B72B78EEC000819A72 /* MessageSticker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageSticker.swift; sourceTree = "<group>"; };
@@ -278,6 +278,17 @@
 				862588C92B8A967B00BAFA29 /* GlobalUIStates.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8612D5B02B8BFF5600A2B937 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				86E279BD2B791B3100819A72 /* FileSystemInteractions.swift */,
+				86E279BB2B78F15000819A72 /* WebInteractions.swift */,
+				865606592A39914D004917AA /* Global.swift */,
+				8623F96F2A30169C00270CD5 /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		861BD6782A2D06C2002F5404 /* UserProfile */ = {
@@ -522,29 +533,26 @@
 		86FB958B2A2113660069BFA1 = {
 			isa = PBXGroup;
 			children = (
-				86FB95962A2113660069BFA1 /* IosApp */,
+				86FB95962A2113660069BFA1 /* JustyVK */,
 				E0161DB0CFC6CEA9D2CFA582 /* Pods */,
-				86DBB5CA2A2FCCEF00AF3E8E /* Весточка.app */,
+				86DBB5CA2A2FCCEF00AF3E8E /* JustyVK.app */,
 			);
 			sourceTree = "<group>";
 		};
-		86FB95962A2113660069BFA1 /* IosApp */ = {
+		86FB95962A2113660069BFA1 /* JustyVK */ = {
 			isa = PBXGroup;
 			children = (
 				86B897B42A27DE7500D0D633 /* Info.plist */,
 				86FB959D2A2113680069BFA1 /* Preview Content */,
 				86FB959B2A2113680069BFA1 /* Assets.xcassets */,
-				86D4E9DF2B82F083008A08A2 /* SwiftVK */,
-				8623F96F2A30169C00270CD5 /* Extensions.swift */,
 				86FB95972A2113660069BFA1 /* AppInstance.swift */,
-				865606592A39914D004917AA /* Global.swift */,
-				86E279BB2B78F15000819A72 /* WebInteractions.swift */,
-				86E279BD2B791B3100819A72 /* FileSystemInteractions.swift */,
+				86D4E9DF2B82F083008A08A2 /* SwiftVK */,
+				8612D5B02B8BFF5600A2B937 /* Utils */,
 				86B0803B2B8B972700CAC946 /* ViewModels */,
 				860FC3A32A26188B00922426 /* Models */,
 				860FC3A22A26181A00922426 /* Views */,
 			);
-			path = IosApp;
+			path = JustyVK;
 			sourceTree = "<group>";
 		};
 		86FB959D2A2113680069BFA1 /* Preview Content */ = {
@@ -567,9 +575,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		86FB95932A2113660069BFA1 /* Весточка */ = {
+		86FB95932A2113660069BFA1 /* JustyVK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 86FB95A22A2113680069BFA1 /* Build configuration list for PBXNativeTarget "Весточка" */;
+			buildConfigurationList = 86FB95A22A2113680069BFA1 /* Build configuration list for PBXNativeTarget "JustyVK" */;
 			buildPhases = (
 				84169B26081ECE286191038A /* [CP] Check Pods Manifest.lock */,
 				86FB95902A2113660069BFA1 /* Sources */,
@@ -581,13 +589,13 @@
 			);
 			dependencies = (
 			);
-			name = "Весточка";
+			name = JustyVK;
 			packageProductDependencies = (
 				8658A6462A325D6600D3F4C5 /* SDWebImageSwiftUI */,
 				86E279B02B782BB000819A72 /* Lottie */,
 			);
 			productName = IosApp;
-			productReference = 86DBB5CA2A2FCCEF00AF3E8E /* Весточка.app */;
+			productReference = 86DBB5CA2A2FCCEF00AF3E8E /* JustyVK.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -605,7 +613,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 86FB958F2A2113660069BFA1 /* Build configuration list for PBXProject "Весточка" */;
+			buildConfigurationList = 86FB958F2A2113660069BFA1 /* Build configuration list for PBXProject "JustyVK" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -623,7 +631,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				86FB95932A2113660069BFA1 /* Весточка */,
+				86FB95932A2113660069BFA1 /* JustyVK */,
 			);
 		};
 /* End PBXProject section */
@@ -905,12 +913,12 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"IosApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"JustyVK/Preview Content\"";
 				DEVELOPMENT_TEAM = UZLQC3X283;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = IosApp/Info.plist;
+				INFOPLIST_FILE = JustyVK/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -923,7 +931,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vladislavsivolobov.IosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = vladislavsivolobov.JustyVK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -940,12 +948,12 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"IosApp/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"JustyVK/Preview Content\"";
 				DEVELOPMENT_TEAM = UZLQC3X283;
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = IosApp/Info.plist;
+				INFOPLIST_FILE = JustyVK/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -958,7 +966,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = vladislavsivolobov.IosApp;
+				PRODUCT_BUNDLE_IDENTIFIER = vladislavsivolobov.JustyVK;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -969,7 +977,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		86FB958F2A2113660069BFA1 /* Build configuration list for PBXProject "Весточка" */ = {
+		86FB958F2A2113660069BFA1 /* Build configuration list for PBXProject "JustyVK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86FB95A02A2113680069BFA1 /* Debug */,
@@ -978,7 +986,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		86FB95A22A2113680069BFA1 /* Build configuration list for PBXNativeTarget "Весточка" */ = {
+		86FB95A22A2113680069BFA1 /* Build configuration list for PBXNativeTarget "JustyVK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				86FB95A32A2113680069BFA1 /* Debug */,
