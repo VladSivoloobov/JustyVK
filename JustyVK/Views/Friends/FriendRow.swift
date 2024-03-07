@@ -10,76 +10,26 @@ import SDWebImage
 import SDWebImageSwiftUI
 
 struct FriendRow: View {
-    @State var name: String;
-    @State var image: String;
-    @State var lastSeenTime: Int;
-    @State var lastSeenPlatform: Int;
-    @State var sex: Int;
-    @State private var lastSeenString = "";
-    @State var isOnline: Int?;
-    
     @EnvironmentObject var userInfo: UserInfo;
     @EnvironmentObject var globalUIStates: GlobalUIStates;
-    @State var user: User;
-    @State var isOnlineStatus: Bool?;
+    @StateObject var userProfileViewModel: UserProfileViewModel;
     
     var body: some View {
         HStack(alignment: .center){
-            WebImage(url: URL(string: image))
-                .resizable(resizingMode: .stretch)
-                .aspectRatio(contentMode: .fill)
-                .frame(width: 40, height: 40)
-                .cornerRadius(.infinity)
-                .padding(.trailing, 5)
-                .overlay(alignment: .bottomTrailing){
-                    if(isOnline == 1){
-                        UserOnlineStatus(isOnline: $isOnlineStatus)
-                            .offset(x: -3)
-                    }
-                }
+            FriendAvatar(userProfileViewModel: userProfileViewModel)
             VStack(alignment: .leading){
-                Text(name)
+                Text(userProfileViewModel.name)
                     .font(.system(size: 17))
                     .fontWeight(.medium)
                 HStack(spacing: 2){
-                    Text(lastSeenString)
+                    Text(userProfileViewModel.lastSeenString)
                     
                 }
-                .foregroundColor(isOnline == 1 ? .green : .gray)
+                .foregroundColor(userProfileViewModel.isOnline ? .green : .gray)
                 .font(.system(size: 13))
             }
             .frame(maxWidth: .infinity, alignment: .leading)
-        }
-        .overlay{
-            NavigationLink(
-                destination: {
-                    UserProfile(
-                        userId: user.id,
-                        name: name,
-                        id: user.screenName ?? "",
-                        lastOnline: lastSeenString,
-                        status: user.status ?? "",
-                        user: user
-                    )
-                        .onAppear(){
-                            //Место переключения таббара - выкл
-                            globalUIStates.tabBarVisible.toggle();
-                        }
-                        .onDisappear(){
-                            withAnimation(.spring()){
-                                //Место перключения таббара - выкл
-                                globalUIStates.tabBarVisible.toggle();
-                            }
-                        }
-                }, label: {
-                    EmptyView()
-                }
-            )
-            .opacity(0)
-        }
-        .onAppear{
-            isOnlineStatus = isOnline == 1;
-            lastSeenString = SwiftVK.createLastSeenString(lastSeenTime: lastSeenTime, isOnline: isOnline, sex: sex);
+            .friendRowOverlay(userProfileViewModel: userProfileViewModel)
         }
     }
 }

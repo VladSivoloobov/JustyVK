@@ -32,12 +32,12 @@ public class SwiftVK {
         return array;
     }
     
-    public static func createLastSeenString(lastSeenTime: Int?, isOnline: Int?, sex: Int?) -> String{
-        if(lastSeenTime == nil || isOnline == nil || sex == nil){
+    public static func createLastSeenString(lastSeenTime: Int?, isOnline: Bool, sex: Int?) -> String{
+        if(lastSeenTime == nil || sex == nil){
             return "Неизвестно";
         }
         var lastSeenString = "";
-        if(isOnline == 1){
+        if(isOnline){
             lastSeenString = "в сети";
             return lastSeenString;
         }
@@ -53,6 +53,8 @@ public class SwiftVK {
             lastSeenString = "был(а) "
             break;
         }
+        
+        print(lastSeenTime);
         
         if(lastSeenTime == -404){
             lastSeenString += "недавно";

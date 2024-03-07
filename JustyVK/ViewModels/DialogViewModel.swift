@@ -19,7 +19,7 @@ class DialogViewModel: ObservableObject{
     @Published var lastMesage: ConversationInfo.ConversationLastMessage;
     @Published var userName: String?;
     @Published var avatar: String?;
-    @Published var isOnline: Bool?;
+    @Published var isOnline: Bool = false;
     @Published var isOnlineString: String?;
     @Published var attachmentTextColor = Color.gray;
     @Published var userId: Int;
@@ -40,7 +40,7 @@ class DialogViewModel: ObservableObject{
             self.avatar = users[0].photo100 ?? defaultImage;
             
             self.isOnline = users[0].online == 1;
-            self.isOnlineString = SwiftVK.createLastSeenString(lastSeenTime: users[0].lastSeen?.time, isOnline: users[0].online, sex: users[0].sex)
+            self.isOnlineString = SwiftVK.createLastSeenString(lastSeenTime: users[0].lastSeen?.time, isOnline: (users[0].online != nil), sex: users[0].sex)
             
         }
     }

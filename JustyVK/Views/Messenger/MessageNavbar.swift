@@ -19,7 +19,7 @@ struct MessageNavbar: View {
             if(dialogInfo.isOnlineString != nil){
                 Text(dialogInfo.isOnlineString!)
                     .font(.subheadline)
-                    .foregroundColor(dialogInfo.isOnline! ? .blue : .gray)
+                    .foregroundColor(dialogInfo.isOnline ? .blue : .gray)
                     .padding(.bottom, 8)
                     .padding(.top, -10)
             }

@@ -4,7 +4,8 @@ class MessengerViewModel: ObservableObject{
     
     init(userId: Int) {
         self.userId = userId;
-        startConversationPolling()
+        startConversationPolling();
+        debugConversations();
     }
     
     @Published var messageList: [Message] = [];
@@ -34,5 +35,14 @@ class MessengerViewModel: ObservableObject{
     
     func stopConversationPolling(){
         
+    }
+    
+    func debugConversations(){
+        SwiftVK.SwiftVKMessages.SwiftVKLongPoll.addEventListener(event: .newMessage){
+            messageEvent in
+            if let messageEvent = messageEvent as? NewMessageEvent{
+                print(messageEvent.text);
+            }
+        }
     }
 }

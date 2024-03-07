@@ -22,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         // TODO: Сделать кастомный таббар
         TabView(selection: $selectedTab){
-            FriendsPage()
+            FriendsPage(friendViewModel: FriendViewModel())
                 .tabItem{
                     Image(systemName: "person.2.fill")
                     Text("Друзья")
@@ -53,12 +53,6 @@ struct ContentView: View {
             }
             
             SwiftVKSingletone.shared.messages.longPoll.startLongPolling();
-            SwiftVK.SwiftVKMessages.SwiftVKLongPoll.addEventListener(event: .newMessage){
-                messageEvent in
-                if let messageEvent = messageEvent as? NewMessageEvent{
-                    print(messageEvent.text);
-                }
-            }
         }
     }
 }

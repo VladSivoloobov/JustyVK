@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct UserOnlineStatus: View {
-    @Binding var isOnline: Bool?;
+    @Binding var isOnline: Bool;
     @State var width: CGFloat?;
     var body: some View {
         Circle()
             .frame(width: width ?? 10)
-            .foregroundColor(isOnline ?? false ? .green : .clear)
+            .foregroundColor(isOnline ? .green : .clear)
             .overlay{
-                Circle().stroke(isOnline ?? false ? .black : .clear, lineWidth: 2)
+                Circle().stroke(isOnline ? .black : .clear, lineWidth: 2)
             }
     }
 }

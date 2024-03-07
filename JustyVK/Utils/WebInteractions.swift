@@ -12,6 +12,7 @@ struct WebInteractions{
         AF.request(url, method: method, parameters: parameters).response { response in
             do {
                 if let data = response.data {
+                    print(String(data: data, encoding: .utf8));
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
                     completion(decodedData)
                 }
