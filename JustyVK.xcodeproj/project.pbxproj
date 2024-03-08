@@ -548,6 +548,13 @@
 			path = MessageSticker;
 			sourceTree = "<group>";
 		};
+		86EC38012B9A554000797059 /* VKScripts */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VKScripts;
+			sourceTree = "<group>";
+		};
 		86FB958B2A2113660069BFA1 = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +571,7 @@
 				86FB959D2A2113680069BFA1 /* Preview Content */,
 				86FB959B2A2113680069BFA1 /* Assets.xcassets */,
 				86FB95972A2113660069BFA1 /* AppInstance.swift */,
+				86EC38012B9A554000797059 /* VKScripts */,
 				86D4E9DF2B82F083008A08A2 /* SwiftVK */,
 				8612D5B02B8BFF5600A2B937 /* Utils */,
 				86B0803B2B8B972700CAC946 /* ViewModels */,
