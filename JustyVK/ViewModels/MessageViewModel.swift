@@ -6,7 +6,7 @@ class MessageViewModel: ObservableObject{
         self.fromMe = message.fromId == userId;
         self.userId = userId;
         // TODO: Поменять время на настоящее
-        self.time = "22:02";
+        self.time = parseTime(time: message.date);
         self.isAttachment = !message.attachments.isEmpty;
         self.attachmentsCount = message.attachments.count;
         if(message.attachments.count > 0){

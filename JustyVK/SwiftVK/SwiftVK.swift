@@ -54,8 +54,6 @@ public class SwiftVK {
             break;
         }
         
-        print(lastSeenTime);
-        
         if(lastSeenTime == -404){
             lastSeenString += "недавно";
             return lastSeenString;

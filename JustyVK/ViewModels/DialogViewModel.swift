@@ -9,6 +9,7 @@ class DialogViewModel: ObservableObject{
         self.userId = conversationInfo.conversation.peer.id
         self.chatType = conversationInfo.conversation.peer.type
         self.avatar = conversation.chatSettings?.photo.photo200 ?? defaultImage;
+        self.time = parseTime(time: conversationInfo.lastMessage.date);
         
         if(!self.lastMesage.attachments.isEmpty && self.lastMesage.text.isEmpty){
             self.attachmentTextColor = Color.white;
