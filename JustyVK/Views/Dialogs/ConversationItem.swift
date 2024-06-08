@@ -45,10 +45,10 @@ struct ConversationItem: View {
                         .lineLimit(1...2)
                         .frame(maxHeight: 55, alignment: .top)
                     Spacer()
-                    //TODO: Заменить на настоящую переменную, это временная заглушка
-//                    if false{
-//                        UserReadMessageStatus()
-//                    }
+                    if dialogInfo.conversation.unreadCount != nil &&
+                        dialogInfo.conversation.unreadCount! > 0{
+                        ReadStatus()
+                    }
                 }
                 .offset(y: -5)
             }

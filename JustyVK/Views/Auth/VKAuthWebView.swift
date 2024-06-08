@@ -23,7 +23,7 @@ struct VKAuthWebView: UIViewRepresentable{
         url.path = "/authorize";
         
         url.queryItems = [
-            URLQueryItem(name: "client_id", value: "51662026"),
+            URLQueryItem(name: "client_id", value: "2685278"),
             URLQueryItem(name: "redirect_uri", value: "http://oauth.vk.com/blank.html"),
             URLQueryItem(name: "display", value: "mobile"),
             URLQueryItem(name: "response_type", value: "token"),

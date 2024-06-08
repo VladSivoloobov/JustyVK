@@ -26,3 +26,7 @@ struct ConversationsPage: View {
         }
     }
 }
+
+#Preview {
+    ConversationsPage(dialogList: DialogListViewModel(isPreview: true))
+}

@@ -16,7 +16,7 @@ class DialogViewModel: ObservableObject{
     }
     
     @Published var conversation: Conversation;
-    @Published var lastMesage: ConversationInfo.ConversationLastMessage;
+    @Published var lastMesage: Message;
     @Published var userName: String?;
     @Published var avatar: String?;
     @Published var isOnline: Bool = false;
@@ -54,7 +54,7 @@ class DialogViewModel: ObservableObject{
         }
     }
     
-    func lastMesagePreview(lastMessage: ConversationInfo.ConversationLastMessage) -> String{
+    func lastMesagePreview(lastMessage: Message) -> String{
         if(!lastMessage.text.isEmpty){
             return lastMessage.text;
         }

@@ -12,11 +12,14 @@ struct WebInteractions{
         AF.request(url, method: method, parameters: parameters).response { response in
             do {
                 if let data = response.data {
-                    print(String(data: data, encoding: .utf8));
+                    print(String(data: data, encoding: .utf8) ?? "nil");
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
                     completion(decodedData)
                 }
             } catch {
+                print(url);
+                print("error");
+                print("\n")
                 print(error)
                 completion(nil)
             }

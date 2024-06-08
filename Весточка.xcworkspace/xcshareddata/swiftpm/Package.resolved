@@ -1,12 +1,13 @@
 {
+  "originHash" : "e879f3623ecdc0c9d70a59ab8402784ef264ca5a7d6e44fd04531fc5bb469c5e",
   "pins" : [
     {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios",
       "state" : {
-        "revision" : "f522990668c2f9132323a2e68d924c7dcb9130b4",
-        "version" : "4.4.0"
+        "revision" : "769b88d83a42ca8d5572b020c96f47e3690b3796",
+        "version" : "4.4.3"
       }
     },
     {
@@ -14,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImage.git",
       "state" : {
-        "revision" : "c51ba84499268ea3020e6aee9e229c0f56b9d924",
-        "version" : "5.16.0"
+        "revision" : "b8523c1642f3c142b06dd98443ea7c48343a4dfd",
+        "version" : "5.19.3"
       }
     },
     {
@@ -23,10 +24,10 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/SDWebImage/SDWebImageSwiftUI.git",
       "state" : {
-        "revision" : "e837c37d45449fbd3b4745c10c5b5274e73edead",
-        "version" : "2.2.3"
+        "revision" : "53573d6dd017e354c0e7d8f1c86b77ef1383c996",
+        "version" : "2.2.7"
       }
     }
   ],
-  "version" : 2
+  "version" : 3
 }
