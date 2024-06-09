@@ -12,7 +12,7 @@ class MessengerViewModel: ObservableObject{
     
     @Published var companionId: Int;
     @Published var messageList: [Message] = [];
-    @Published var profilesList: [MessageProfileInfo] = [];
+    @Published var profilesList: [ExtendedInfo] = [];
     @Published var userId: Int;
     
     func getMessageList(){

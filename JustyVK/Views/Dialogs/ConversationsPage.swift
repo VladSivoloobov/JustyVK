@@ -13,7 +13,7 @@ struct ConversationsPage: View {
                 Section{
                     ForEach(dialogList.conversations, id: \.self.conversation.peer.id){ conversationInfo in
                         ConversationItem(
-                            dialogInfo: DialogViewModel(conversationInfo)
+                            dialogInfo: DialogViewModel(conversationInfo, profileList: dialogList.profileList)
                         )
                     }
                 }

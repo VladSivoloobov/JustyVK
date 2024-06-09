@@ -7,8 +7,8 @@ struct MessageItem: View {
     @ObservedObject var dialogInfo: DialogViewModel;
     
     var body: some View {
-        HStack{
-            if(!messageModel.fromMe){
+        HStack(alignment: .bottom){
+            if(!messageModel.fromMe && dialogInfo.chatType == .chat){
                 MessageAvatar(image: messageModel.profilesList.first(where: {
                     $0.id == messageModel.message.fromId;
                 })?.photo100 ?? defaultImage)

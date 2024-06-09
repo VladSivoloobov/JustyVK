@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MessageProfileInfo: Decodable {
+class ExtendedInfo: Decodable {
     var id: Int;
     var sex: Int?;
     var screenName: String;

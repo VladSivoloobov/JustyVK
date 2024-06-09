@@ -2,7 +2,9 @@ import Foundation
 import SwiftUI
 
 class DialogViewModel: ObservableObject{
-    init(_ conversationInfo: ConversationInfo) {
+    init(_ conversationInfo: ConversationInfo, profileList: [ExtendedInfo]) {
+        self.profileList = profileList;
+        self.conversationInfo = conversationInfo;
         self.conversation = conversationInfo.conversation;
         self.lastMesage = conversationInfo.lastMessage;
         self.userName = conversationInfo.conversation.chatSettings?.title
@@ -16,6 +18,8 @@ class DialogViewModel: ObservableObject{
         }
     }
     
+    @Published var profileList: [ExtendedInfo] = [];
+    @Published var conversationInfo: ConversationInfo;
     @Published var conversation: Conversation;
     @Published var lastMesage: Message;
     @Published var userName: String?;
@@ -28,22 +32,24 @@ class DialogViewModel: ObservableObject{
     // TODO: Заменить на настоящее время
     @Published var time: String = "22:02";
     
-    //TODO: Изменить swiftVK на синглтон
     func getUserInfo(){
-        SwiftVKSingletone.shared.users.get(userId: userId, fields: [
-            "photo_100",
-            "online",
-            "sex",
-            "last_seen"
-        ]){
-            users in
-            self.userName = users[0].firstName + " " + users[0].lastName;
-            self.avatar = users[0].photo100 ?? defaultImage;
-            
-            self.isOnline = users[0].online == 1;
-            self.isOnlineString = SwiftVK.createLastSeenString(lastSeenTime: users[0].lastSeen?.time, isOnline: (users[0].online != nil), sex: users[0].sex)
-            
+        let user = self.profileList.first(where: {
+            $0.id == self.userId;
+        })
+        
+        if(user == nil){
+            self.userName = "Неизвестно";
+            self.avatar = defaultImage;
+            self.isOnline = false;
+            self.isOnlineString = "Неизвестно";
+            return;
         }
+        
+        self.userName = user!.firstName + " " + user!.lastName;
+        self.avatar = user!.photo100;
+        
+        self.isOnline = user!.online == 1;
+//        self.isOnlineString = SwiftVK.createLastSeenString(lastSeenTime: user!.online, isOnline: (user?.online != nil), sex: user!.sex)
     }
     
     func getGroupInfo(){

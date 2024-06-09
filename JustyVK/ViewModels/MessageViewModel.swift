@@ -1,7 +1,7 @@
 import Foundation
 
 class MessageViewModel: ObservableObject{
-    init(message: Message, userId: Int, profilesList: [MessageProfileInfo] = []) {
+    init(message: Message, userId: Int, profilesList: [ExtendedInfo] = []) {
         self.message = message;
         self.fromId = message.fromId;
         self.fromMe = message.fromId == userId;
@@ -40,6 +40,6 @@ class MessageViewModel: ObservableObject{
     @Published var messageList: [Message] = [];
     @Published var userId: Int;
     @Published var avatar: String = defaultImage;
-    @Published var profilesList: [MessageProfileInfo];
+    @Published var profilesList: [ExtendedInfo];
     @Published var fromId: Int;
 }
