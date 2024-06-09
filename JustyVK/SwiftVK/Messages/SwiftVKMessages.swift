@@ -41,14 +41,22 @@ extension SwiftVK{
             }
         }
         
-        func getConversations(offset: Int?, count: Int?, filter: String?, extended: Int?, fields: String?, groupId: Int?, completion: @escaping (Conversations) -> ()){
+        func getConversations(offset: Int? = nil,
+                              count: Int? = nil,
+                              filter: String? = nil,
+                              extended: Int = 0,
+                              fields: [ExtendedFields] = [],
+                              groupId: Int? = nil,
+                              completion: @escaping (Conversations) -> ()){
             let url = "https://api.vk.com/method/messages.getConversations";
+            let extendedString = SwiftVK.createExtendedString(extendedItems: fields);
+            
             let params: Parameters = WebInteractions.filterParams(params: [
                 "access_token": token,
                 "count": count ?? "",
                 "filter": filter ?? "",
-                "extended": extended ?? "",
-                "fields": fields ?? "",
+                "extended": extended,
+                "fields": extendedString,
                 "groupId": groupId ?? "",
                 "v": "5.131"
             ]);

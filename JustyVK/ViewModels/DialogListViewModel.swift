@@ -12,9 +12,19 @@ class DialogListViewModel: ObservableObject{
     @Published var conversations: [ConversationInfo] = [];
     @Published var unreadMessagesCount: Int = 0;
     @Published var profileList: [ExtendedInfo] = [];
-    
+        
     func getConversations(){
-        SwiftVKSingletone.shared.messages.getConversations(offset: nil, count: 200, filter: nil, extended: 1, fields: "photo_50, photo_100, sex, screen_name, online_info, online", groupId: nil){
+        SwiftVKSingletone.shared.messages.getConversations(count: 200,
+                                                           extended: 1,
+                                                           fields: [
+                                                            .photo50,
+                                                            .photo100,
+                                                            .sex,
+                                                            .screenName,
+                                                            .onlineInfo,
+                                                            .online,
+                                                            .lastSeen
+                                                           ]){
             conversationsList in
             self.conversations = conversationsList.items;
             self.unreadMessagesCount = conversationsList.unreadCount ?? 0;

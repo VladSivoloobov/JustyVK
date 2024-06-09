@@ -49,7 +49,7 @@ class DialogViewModel: ObservableObject{
         self.avatar = user!.photo100;
         
         self.isOnline = user!.online == 1;
-//        self.isOnlineString = SwiftVK.createLastSeenString(lastSeenTime: user!.online, isOnline: (user?.online != nil), sex: user!.sex)
+        self.isOnlineString = SwiftVK.createLastSeenString(lastSeenTime: user!.online, isOnline: (user?.online != nil), sex: user!.sex)
     }
     
     func getGroupInfo(){

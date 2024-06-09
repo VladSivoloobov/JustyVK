@@ -65,4 +65,13 @@ public class SwiftVK {
         lastSeenString += calendar.getLastOnlineDateString(difference: daysDifference, date: date);
         return lastSeenString;
     }
+    
+    public static func createExtendedString(extendedItems: [ExtendedFields]) -> String{
+        let extendedString = extendedItems.map{
+            $0.rawValue;
+        }
+        .joined(separator: ", ");
+        
+        return extendedString;
+    }
 }

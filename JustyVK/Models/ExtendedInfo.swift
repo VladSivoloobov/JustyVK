@@ -19,6 +19,7 @@ class ExtendedInfo: Decodable {
     var lastName: String;
     var canAccessClosed: Bool;
     var isClosed: Bool;
+    var lastSeen: User.LastSeen?;
     
     enum CodingKeys: String, CodingKey {
         case id;
@@ -32,5 +33,6 @@ class ExtendedInfo: Decodable {
         case lastName = "last_name";
         case canAccessClosed = "can_access_closed";
         case isClosed = "is_closed";
+        case lastSeen = "last_seen";
     }
 }
