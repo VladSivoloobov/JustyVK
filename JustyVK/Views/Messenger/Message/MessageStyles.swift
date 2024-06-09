@@ -4,7 +4,7 @@ struct MessageStyles: ViewModifier {
     @ObservedObject var messageModel: MessageViewModel;
     static public let paddingForAttachmentMessage = CGFloat(2);
     
-    var paddingCount = MessageStyles.paddingForAttachmentMessage;
+    var paddingCount = CGFloat(10);
     
     init(messageModel: MessageViewModel) {
         self.messageModel = messageModel;
@@ -18,8 +18,8 @@ struct MessageStyles: ViewModifier {
     
     func body(content: Content) -> some View {
         content
-            .padding(.horizontal, paddingCount)
-            .padding(.vertical, paddingCount)
+            .padding(.horizontal, 3)
+            .padding(.vertical, 3)
             .background(messageCloudBackground(fromMe: messageModel.fromMe, isSticker: messageModel.isSticker))
             .cornerRadius(15)
             .compositingGroup()

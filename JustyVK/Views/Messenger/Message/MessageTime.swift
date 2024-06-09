@@ -6,5 +6,6 @@ struct MessageTime: View {
         Text(messageTime)
             .font(Font.system(size: 10))
             .foregroundColor(.white)
+            .opacity(0.7)
     }
 }

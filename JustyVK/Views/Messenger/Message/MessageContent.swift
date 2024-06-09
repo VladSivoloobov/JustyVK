@@ -19,7 +19,7 @@ struct MessageContent: View {
         if(messageModel.isSticker || messageModel.message.attachments.isEmpty){
             MessageTime(messageTime: messageModel.time)
                 .padding(.trailing, 10)
-                .padding(.bottom, 6)
+                .padding(.bottom, 1)
        }
     }
 }

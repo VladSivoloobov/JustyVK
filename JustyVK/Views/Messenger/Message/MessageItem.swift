@@ -5,9 +5,10 @@ import SDWebImageSwiftUI
 struct MessageItem: View {
     @ObservedObject var messageModel: MessageViewModel;
     @ObservedObject var dialogInfo: DialogViewModel;
+    var nextSame: Bool;
     
     var body: some View {
-        HStack(alignment: .bottom){
+        HStack(alignment: .bottom, spacing: 5){
             if(!messageModel.fromMe && dialogInfo.chatType == .chat){
                 MessageAvatar(image: messageModel.profilesList.first(where: {
                     $0.id == messageModel.message.fromId;
@@ -27,6 +28,6 @@ struct MessageItem: View {
             .frame(maxWidth: 300, alignment: messageModel.fromMe ? .trailing : .leading)
         }
         .frame(maxWidth: .infinity, alignment: messageModel.fromMe ? .trailing : .leading)
-        .padding(.horizontal, 5)
+        .padding(.horizontal, 10)
     }
 }
