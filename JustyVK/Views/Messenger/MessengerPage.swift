@@ -23,7 +23,8 @@ struct MessengerPage: View {
                                 let message = messenger.messageList.reversed()[index];
                                 MessageItem(messageModel: MessageViewModel(
                                     message: message,
-                                    userId: userInfo.id!
+                                    userId: userInfo.id!,
+                                    profilesList: messenger.profilesList
                                 ))
                                 .id(index)
                             }
