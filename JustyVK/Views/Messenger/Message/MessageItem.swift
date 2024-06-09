@@ -20,7 +20,7 @@ struct MessageItem: View {
                     horizontalAlign: .trailing,
                     verticalAlign: .bottom, spacing: 0
                 ){
-                    MessageContent(messageModel: messageModel)
+                    MessageContent(messageModel: messageModel, bool: messageModel.message.text.count > 17)
                 }
                 .messageStyles(messageModel: messageModel)
                 .messageContextMenu()
