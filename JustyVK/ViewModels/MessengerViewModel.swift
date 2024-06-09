@@ -2,14 +2,34 @@ import Foundation
 
 class MessengerViewModel: ObservableObject{
     
-    init(userId: Int) {
+    init(userId: Int, companionId: Int) {
         self.userId = userId;
+        self.companionId = companionId;
         startConversationPolling();
+        getMessageList()
         debugConversations();
     }
     
+    @Published var companionId: Int;
     @Published var messageList: [Message] = [];
+    @Published var profilesList: [MessageProfileInfo] = [];
     @Published var userId: Int;
+    
+    func getMessageList(){
+        SwiftVKSingletone.shared.messages.getHistory(offset: nil,
+                                                     count: nil,
+                                                     userId: companionId,
+                                                     peerId: nil,
+                                                     rev: nil,
+                                                     extended: 1,
+                                                     //TODO: Изменить на перечисление
+                                                     fields: "photo_50, photo_100, sex, screen_name, online_info, online",
+                                                     groupId: nil){
+            messages in
+            self.messageList = messages.items;
+            self.profilesList = messages.profiles;
+    }
+    }
     
     func startConversationPolling(){
         SwiftVK.SwiftVKMessages.SwiftVKLongPoll.addEventListener(event: .newMessage){

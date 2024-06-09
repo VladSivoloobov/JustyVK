@@ -19,7 +19,7 @@ extension SwiftVK{
                         extended: Int?,
                         fields: String?,
                         groupId: Int?,
-                        completion: @escaping ([Message]) -> ()){
+                        completion: @escaping (Messages) -> ()){
             let url = "https://api.vk.com/method/messages.getHistory"
             let params: Parameters = [
                 "access_token": token,
@@ -36,7 +36,7 @@ extension SwiftVK{
             WebInteractions.fetchData(url: url, method: .post, parameters: params){
                 (messages: Response<Messages>?) in
                 if let fetchedMessages = messages {
-                    completion(fetchedMessages.response.items);
+                    completion(fetchedMessages.response);
                 }
             }
         }

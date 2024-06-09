@@ -13,6 +13,9 @@
 		6968E9182C14E6A1003941DE /* CanWrite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968E9172C14E6A1003941DE /* CanWrite.swift */; };
 		6968E91A2C14E7A6003941DE /* ChatSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968E9192C14E7A6003941DE /* ChatSettings.swift */; };
 		6968E91C2C14E83A003941DE /* ChatPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968E91B2C14E83A003941DE /* ChatPhoto.swift */; };
+		6968E91E2C15A840003941DE /* MessageAvatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968E91D2C15A840003941DE /* MessageAvatar.swift */; };
+		6968E9202C15B3EF003941DE /* MessageProfileInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968E91F2C15B3EF003941DE /* MessageProfileInfo.swift */; };
+		6968E9222C15B48C003941DE /* OnlineInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6968E9212C15B48C003941DE /* OnlineInfo.swift */; };
 		8608162C2A2756CD00AF16C7 /* MessengerPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8608162B2A2756CD00AF16C7 /* MessengerPage.swift */; };
 		86088CCF2B7774750010D6F0 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86088CCE2B7774750010D6F0 /* Group.swift */; };
 		86088CD12B7774AE0010D6F0 /* Groups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86088CD02B7774AE0010D6F0 /* Groups.swift */; };
@@ -112,12 +115,15 @@
 
 /* Begin PBXFileReference section */
 		09A4F6C351E9B03C73851E90 /* Pods-Весточка.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Весточка.release.xcconfig"; path = "Target Support Files/Pods-Весточка/Pods-Весточка.release.xcconfig"; sourceTree = "<group>"; };
-		6968E9112C14DE7C003941DE /* Conversations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Conversations.swift; path = JustyVK/Models/Conversations.swift; sourceTree = SOURCE_ROOT; };
-		6968E9132C14DE9C003941DE /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Conversation.swift; path = JustyVK/Models/Conversation.swift; sourceTree = SOURCE_ROOT; };
+		6968E9112C14DE7C003941DE /* Conversations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Conversations.swift; path = JustyVK/Models/Conversations/Conversations.swift; sourceTree = SOURCE_ROOT; };
+		6968E9132C14DE9C003941DE /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Conversation.swift; path = JustyVK/Models/Conversations/Conversation.swift; sourceTree = SOURCE_ROOT; };
 		6968E9152C14E662003941DE /* PushSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushSettings.swift; sourceTree = "<group>"; };
 		6968E9172C14E6A1003941DE /* CanWrite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanWrite.swift; sourceTree = "<group>"; };
 		6968E9192C14E7A6003941DE /* ChatSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatSettings.swift; sourceTree = "<group>"; };
 		6968E91B2C14E83A003941DE /* ChatPhoto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatPhoto.swift; sourceTree = "<group>"; };
+		6968E91D2C15A840003941DE /* MessageAvatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageAvatar.swift; sourceTree = "<group>"; };
+		6968E91F2C15B3EF003941DE /* MessageProfileInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageProfileInfo.swift; sourceTree = "<group>"; };
+		6968E9212C15B48C003941DE /* OnlineInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnlineInfo.swift; sourceTree = "<group>"; };
 		8608162B2A2756CD00AF16C7 /* MessengerPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerPage.swift; sourceTree = "<group>"; };
 		86088CCE2B7774750010D6F0 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		86088CD02B7774AE0010D6F0 /* Groups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Groups.swift; sourceTree = "<group>"; };
@@ -258,6 +264,7 @@
 				863D0EAA2B802B8000247CB7 /* MessageText.swift */,
 				863D0EAE2B80306A00247CB7 /* MessageTime.swift */,
 				86B080392B8B926C00CAC946 /* FloatingTime.swift */,
+				6968E91D2C15A840003941DE /* MessageAvatar.swift */,
 			);
 			path = Message;
 			sourceTree = "<group>";
@@ -283,6 +290,7 @@
 		860FC3A32A26188B00922426 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6968E9212C15B48C003941DE /* OnlineInfo.swift */,
 				8625D82F2B753F3D007361EC /* Response.swift */,
 				8658A6492A32B64B00D3F4C5 /* Photos */,
 				8658A6502A32B6D500D3F4C5 /* Friends */,
@@ -520,6 +528,7 @@
 				86DB1AFC2B6EA975006A1BCD /* Message.swift */,
 				8625D8342B754121007361EC /* LastActivity.swift */,
 				8633F3AC2B70395300C5B0F0 /* ChatType.swift */,
+				6968E91F2C15B3EF003941DE /* MessageProfileInfo.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -735,6 +744,7 @@
 				8617DCCF2A3185010099E3C1 /* VKAuthWebView.swift in Sources */,
 				86FB1AD32A2E659300E9D912 /* TabBar.swift in Sources */,
 				866667002A2A10CB0089A054 /* MessageInput.swift in Sources */,
+				6968E91E2C15A840003941DE /* MessageAvatar.swift in Sources */,
 				86DB1AFD2B6EA975006A1BCD /* Message.swift in Sources */,
 				8649DCDC2B81882E00353F05 /* LongPollResponse.swift in Sources */,
 				86A0B3F52B6FC89D00901F42 /* Chat.swift in Sources */,
@@ -792,6 +802,7 @@
 				8658A6562A32B71D00D3F4C5 /* Friend.swift in Sources */,
 				8624F3E02A266D2A00FA20B1 /* FriendsPage.swift in Sources */,
 				8624F3EB2A26C36800FA20B1 /* ReadStatus.swift in Sources */,
+				6968E9202C15B3EF003941DE /* MessageProfileInfo.swift in Sources */,
 				86B0804B2B8BA63D00CAC946 /* MessengerViewModel.swift in Sources */,
 				86D4E9E12B82F0B1008A08A2 /* SwiftVKUsers.swift in Sources */,
 				86D4E9E52B82F18A008A08A2 /* SwiftVKPhotos.swift in Sources */,
@@ -803,6 +814,7 @@
 				86D76FED2B7F650000D46B1C /* AttachmentsGrid.swift in Sources */,
 				86D4E9F92B8399FC008A08A2 /* LongPollEvent.swift in Sources */,
 				867EC29E2A295AE80003645F /* UnreadMessagesCount.swift in Sources */,
+				6968E9222C15B48C003941DE /* OnlineInfo.swift in Sources */,
 				6968E91C2C14E83A003941DE /* ChatPhoto.swift in Sources */,
 				8633F3AB2B7037CA00C5B0F0 /* MessageToolbarImage.swift in Sources */,
 				8658A64D2A32B69100D3F4C5 /* Photos.swift in Sources */,

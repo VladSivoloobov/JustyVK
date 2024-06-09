@@ -57,7 +57,9 @@ struct DialogOverlay: ViewModifier{
             .overlay{
             NavigationLink(
                 destination: {
-                    MessengerPage(dialogInfo: dialogInfo, messenger: MessengerViewModel(userId: userInfo.id!))
+                    MessengerPage(dialogInfo: dialogInfo, 
+                                  messenger: MessengerViewModel(userId: userInfo.id!, companionId: dialogInfo.userId)
+                    )
                         .onAppear(){
                             //TODO: Место переключения таббара - выкл
                             globalUIStates.tabBarVisible.toggle();

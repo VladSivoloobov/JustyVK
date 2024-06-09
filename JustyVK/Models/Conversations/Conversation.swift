@@ -11,7 +11,7 @@ struct ConversationInfo: Decodable {
 struct Conversation: Decodable{
     struct ConversationPeer: Decodable{
         var id: Int;
-        var type: String;
+        var type: ConversationType;
         var localId: Int;
         
         enum CodingKeys: String, CodingKey{
@@ -40,4 +40,11 @@ struct Conversation: Decodable{
         case canWrite = "can_write";
         case chatSettings = "chat_settings";
     }
+}
+
+enum ConversationType: String, Decodable {
+    case user;
+    case chat;
+    case email;
+    case group;
 }

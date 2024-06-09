@@ -24,7 +24,7 @@ class DialogViewModel: ObservableObject{
     @Published var isOnlineString: String?;
     @Published var attachmentTextColor = Color.gray;
     @Published var userId: Int;
-    @Published var chatType: String;
+    @Published var chatType: ConversationType;
     // TODO: Заменить на настоящее время
     @Published var time: String = "22:02";
     
@@ -77,7 +77,7 @@ class DialogViewModel: ObservableObject{
     }
     
     func setChatTitle(){
-        if(conversation.chatSettings?.title == nil && chatType == "user"){
+        if(conversation.chatSettings?.title == nil && chatType == ConversationType.user){
             getUserInfo();
         }
         else if(userId < 0){

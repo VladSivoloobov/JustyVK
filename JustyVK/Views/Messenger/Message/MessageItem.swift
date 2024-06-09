@@ -6,7 +6,12 @@ struct MessageItem: View {
     @ObservedObject var messageModel: MessageViewModel;
     
     var body: some View {
-        Group{
+        HStack{
+            if(!messageModel.fromMe){
+                MessageAvatar(image: messageModel.profilesList.first(where: {
+                    $0.id == messageModel.message.fromId;
+                })?.photo100 ?? defaultImage)
+            }
             Group{
                 BooleanStack(
                     bool: messageModel.message.text.count > 17,

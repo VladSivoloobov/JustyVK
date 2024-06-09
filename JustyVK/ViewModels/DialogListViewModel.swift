@@ -16,7 +16,7 @@ class DialogListViewModel: ObservableObject{
         SwiftVKSingletone.shared.messages.getConversations(offset: nil, count: 200, filter: nil, extended: nil, fields: "[id, ]", groupId: nil){
             conversationsList in
             self.conversations = conversationsList.items;
-            self.unreadMessagesCount = conversationsList.unreadCount;
+            self.unreadMessagesCount = conversationsList.unreadCount ?? 0;
         }
     }
     
@@ -26,7 +26,7 @@ class DialogListViewModel: ObservableObject{
                 conversation: Conversation(
                     peer: Conversation.ConversationPeer(
                         id: 120,
-                        type: "conversation",
+                        type: ConversationType.user,
                         localId: 123
                     ),
                     inRead: 1,

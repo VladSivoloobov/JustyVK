@@ -21,16 +21,15 @@ struct MessengerPage: View {
                             ForEach(0..<messenger.messageList.count, id: \.self){
                                 index in
                                 let message = messenger.messageList.reversed()[index];
-                                MessageItem(
-                                    messageModel: MessageViewModel(
-                                        message: message,
-                                        userId: userInfo.id!
-                                    )
-                                )
+                                MessageItem(messageModel: MessageViewModel(
+                                    message: message,
+                                    userId: userInfo.id!
+                                ))
                                 .id(index)
                             }
                         }
-                        .frame(minHeight: reader.size.height - 20, alignment: .bottom)
+                        .frame(minHeight: reader.size.height - 20,
+                               alignment: .bottom)
                         .padding(.top, 10)
                         .padding(.bottom, 2)
                     }
@@ -40,7 +39,6 @@ struct MessengerPage: View {
                     }
                     .messageToolbar(dialogInfo: dialogInfo)
                 }
-                .getMessageList(scrollReader: scrollReader, messageList: $messenger.messageList, companionId: dialogInfo.userId)
                 .padding(.bottom, -20)
             }
             .zIndex(1)
