@@ -4,6 +4,7 @@ import SDWebImageSwiftUI
 
 struct MessageItem: View {
     @ObservedObject var messageModel: MessageViewModel;
+    @ObservedObject var dialogInfo: DialogViewModel;
     
     var body: some View {
         HStack{

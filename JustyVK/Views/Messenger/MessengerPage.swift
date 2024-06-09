@@ -25,7 +25,7 @@ struct MessengerPage: View {
                                     message: message,
                                     userId: userInfo.id!,
                                     profilesList: messenger.profilesList
-                                ))
+                                ), dialogInfo: dialogInfo)
                                 .id(index)
                             }
                         }

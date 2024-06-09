@@ -9,12 +9,12 @@ import Foundation
 
 class MessageProfileInfo: Decodable {
     var id: Int;
-    var sex: Int;
+    var sex: Int?;
     var screenName: String;
     var photo50: String;
     var photo100: String;
     var onlineInfo: OnlineInfo;
-    var online: Int;
+    var online: Int?;
     var firstName: String;
     var lastName: String;
     var canAccessClosed: Bool;
