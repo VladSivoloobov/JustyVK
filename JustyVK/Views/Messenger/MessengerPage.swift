@@ -11,6 +11,7 @@ struct MessengerPage: View {
     @EnvironmentObject var userInfo: UserInfo;
     @ObservedObject var dialogInfo: DialogViewModel;
     @StateObject var messenger: MessengerViewModel;
+    @State private var keyboardHeight: CGFloat = 0
     
     func checkNextMessage(message: Message, index: Int) -> Bool{
         let nextIndex = index + 1;
@@ -52,15 +53,24 @@ struct MessengerPage: View {
                                alignment: .bottom)
                         .padding(.top, 10)
                         .padding(.bottom, 2)
+                        .keyboardHeight($keyboardHeight)
+                        .animation(.easeInOut, value: keyboardHeight)
+                        .offset(y: -keyboardHeight / 2 == 0 ? -keyboardHeight / 2 : -keyboardHeight / 2 - 150)
                     }
+                    .scrollDismissesKeyboard(.interactively)
                     .defaultScrollAnchor(.bottom)
                     .safeAreaInset(edge: .bottom){
                         MessageInput()
+                            .offset(y: -keyboardHeight == 0 ? -keyboardHeight : -keyboardHeight + 30)
+                            .animation(.easeInOut, value: keyboardHeight)
                     }
                     .messageToolbar(dialogInfo: dialogInfo)
+                    .ignoresSafeArea(.keyboard)
                 }
                 .padding(.bottom, -20)
+                .ignoresSafeArea(.keyboard)
             }
+            .ignoresSafeArea(.keyboard)
             .zIndex(1)
         }
     }

@@ -22,11 +22,7 @@ class MessageViewModel: ObservableObject{
         else{
             self.isSticker = false;
         }
-        
-        SwiftVKSingletone.shared.photos.get(ownerId: String(message.fromId), albumId: "profile"){
-            photo in
-            self.avatar = photo[0].sizes.last?.url ?? defaultImage
-        }
+        //todo
     }
     
     @Published var message: Message;

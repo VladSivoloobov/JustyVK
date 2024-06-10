@@ -668,6 +668,7 @@
 				8658A6442A325D4B00D3F4C5 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 				8658A6452A325D6600D3F4C5 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
 				86E279AF2B782BB000819A72 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				69F362C82C165B3A008E24D3 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */,
 			);
 			productRefGroup = 86FB958B2A2113660069BFA1;
 			projectDirPath = "";
@@ -1054,6 +1055,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		69F362C82C165B3A008E24D3 /* XCRemoteSwiftPackageReference "SwiftUI-Introspect" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/siteline/SwiftUI-Introspect";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.4;
+			};
+		};
 		8658A6442A325D4B00D3F4C5 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";

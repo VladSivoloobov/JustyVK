@@ -13,6 +13,7 @@ struct MessageInput: View {
     @State var photosPickerIsActive: Bool = false;
     @State var selectedPhotos = [Image]();
     @State var selectedPhotosItems = [PhotosPickerItem]();
+    @FocusState var isInputActive: Bool
     
     var body: some View {
         HStack(alignment: .bottom){
@@ -27,15 +28,26 @@ struct MessageInput: View {
             }
             
             TextField("Сообщение", text: $messageText, axis: .vertical)
-            .padding(.horizontal, 10)
-            .lineLimit(0...30)
-            .frame(minHeight: 20, maxHeight: 180)
-            .background(
-                RoundedRectangle(cornerRadius: 20)
-                    .fill(Color(uiColor: UIColor.systemBackground))
-                    .padding(.vertical, -2)
-        
-            )
+                .focused($isInputActive)
+                .toolbar {
+                    ToolbarItemGroup(placement: .keyboard) {
+                        //TODO TEST
+                        Spacer()
+
+                        Button("Готово") {
+                            isInputActive = false
+                        }
+                    }
+                }
+                .padding(.horizontal, 10)
+                .lineLimit(0...30)
+                .frame(minHeight: 20, maxHeight: 180)
+                .background(
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color(uiColor: UIColor.systemBackground))
+                        .padding(.vertical, -2)
+            
+                )
             if messageText.isEmpty {
                 Button{
                     // TODO: Добавить возможность отправки стикеров через боттом шит
